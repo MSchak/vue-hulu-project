@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!--Main navigation shown here */-->
     <high-em-content></high-em-content>
     <related-slideshow></related-slideshow>
   </div>
@@ -18,5 +19,3 @@ export default {
   }
 }
 </script>
-
-    RelatedSlideshow

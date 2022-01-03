@@ -1,26 +1,23 @@
 <template>
     <div>
-    <plans-nav></plans-nav>
-    <h1>Choose Your Plan</h1>
-    <p></p>
-    <ul>
-        <li>Base Plans</li>
-        <li>Bundle/Save</li>
-    </ul>
-    <plans-carousel></plans-carousel>
+    <!--Main navigation hidden on this page */-->
+        <plans-nav></plans-nav>
+        <h1>Choose Your Plan</h1>
+        <p>Switch plans or cancel anytime.</p>
+        <plans-tablist></plans-tablist>
      </div>   
 </template>
 
 <script>
 
 import PlansNav from '../components/PlansNav.vue'
-import PlansCarousel from '../components/PlansCarousel.vue'
+import PlansTablist from '../components/PlansTablist'
 
 export default {
   name: 'Plans',
   components: {
       PlansNav,
-      PlansCarousel
+      PlansTablist
   }
 }
 </script>

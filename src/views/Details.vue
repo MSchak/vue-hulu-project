@@ -1,23 +1,26 @@
 <template>
+<div>
+    <!--Main navigation hidden on this page */-->
+    <details-header></details-header>
     <high-em-content></high-em-content>
+    <details-img-footer></details-img-footer>
     <sub-nav></sub-nav>
-    <dropdown-menu></dropdown-menu>
-    <show-grid></show-grid>
+</div>
 </template>
 
 <script>
 import HighEmContent from '../components/HighEmContent.vue'
 import SubNav from '../components/SubNav.vue'
-import DropdownMenu from '../components/DropdownMenu.vue'
-import ShowGrid from '../components/ShowGrid.vue'
+import DetailsHeader from '../components/DetailsHeader.vue'
+import DetailsImgFooter from '../components/DetailsImgFooter.vue'
 
 export default {
   name: 'Details',
   components: {
       HighEmContent,
       SubNav,
-      DropdownMenu,
-      ShowGrid
+      DetailsHeader,
+      DetailsImgFooter,
   }
 }
 </script>

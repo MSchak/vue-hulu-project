@@ -1,12 +1,17 @@
 <template>
-    <div>
-        <p>Grid</p>
+    <div class="grid-container">
+        <ep-tile></ep-tile>
     </div>
 </template>
 
 <script>
 
+import EpTile from './EpTile.vue'
+
 export default {
-    name: 'ShowGrid'
+    name: 'ShowGrid',
+      components: { 
+          EpTile 
+    } 
 }
 </script>

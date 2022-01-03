@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div>icon</div>
-        <div><router-link to="/">hamburger menu</router-link></div>
+        <div><img src="" alt="">icon</div>
+        <div><router-link to="/">Log In</router-link></div>
     </div>
 </template>
 
