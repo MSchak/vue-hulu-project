@@ -1,22 +1,30 @@
 <template>
-    <div>
-        <div>Make a carousel here</div>
-        <plans-panel></plans-panel>
-        <plans-panel></plans-panel>
-        <plans-panel></plans-panel>
+  <div class="container">
+    <div class="row">
+      <div>Make a carousel here</div>
 
+      <div class="col">
+        <plans-panel></plans-panel>
+      </div>
+
+      <div class="col">
+        <plans-panel></plans-panel>
+      </div>
+
+      <div class="col">
+        <plans-panel></plans-panel>
+      </div>
     </div>
-
+  </div>
 </template>
 
 <script>
-
-import PlansPanel from './PlansPanel.vue'
+import PlansPanel from "./PlansPanel.vue";
 
 export default {
-    name: 'PlansCarousel',
-    components: {
-        PlansPanel
-    }
-}
+  name: "PlansCarousel",
+  components: {
+    PlansPanel,
+  },
+};
 </script>

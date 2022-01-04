@@ -1,5 +1,5 @@
 <template>
-    <div>Select</div>
+    <button>Select</button>
 </template>
 
 <script>
