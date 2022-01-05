@@ -1,7 +1,7 @@
 <template>
   <div id="welcome">
     <div class="container-fluid">
-      <div class="row text-center">
+      <div class="row text-center bkg-img">
         <!--Main navigation hidden on this page */-->
         <login-dropdown></login-dropdown>
         <p><strong>Bundle with any hulu plan &amp; save</strong></p>
@@ -30,4 +30,11 @@ export default {
   },
 };
 </script>
+
+<style>
+.bkg-img{
+    background-image: url(~@/assets/welcome-bkg.jpeg);
+    height: 1000px;
+}
+</style>
 

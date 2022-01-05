@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-    <div class="container-fluid">
+    <div class="container-fluid m-3">
       <div class="row align-items-center">
         <div class="col-3">
           <img src="" alt="" />
@@ -14,7 +14,7 @@
           <router-link to="/details">Details</router-link>
         </div>
 
-        <div class="col-3 text-end">
+        <div class="col-3 text-end px-5">
           <button type="submit"></button>
         </div>
       </div>
