@@ -1,8 +1,13 @@
 <template>
-  <div class="home">
+  <div id="home" class="container-fluid">
+    <div class="row">
     <!--Main navigation shown here */-->
     <high-em-content></high-em-content>
+    </div>
+
+    <div class="row">
     <related-slideshow></related-slideshow>
+    </div>
   </div>
 </template>
 
