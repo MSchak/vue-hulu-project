@@ -1,5 +1,5 @@
 <template>
-  <div class="high-em-content col-4 m-5 align-content-end p-0">
+  <div class="high-em-content high-em-img row align-content-end">
         <high-em-content-block></high-em-content-block>
       </div>
 </template>
@@ -21,4 +21,5 @@ export default {
     height: 600px;
     padding: 0;
 }
+
 </style>

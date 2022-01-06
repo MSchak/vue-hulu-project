@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="ellipse-menu">
         <img src="" alt="">
         <p>Ellipse menu</p>
     </div>

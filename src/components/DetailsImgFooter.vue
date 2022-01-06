@@ -1,8 +1,6 @@
 <template>
-    <div>
-        <div class="high-em-color">
-            <p><strong>Starring: Stars</strong></p>
-        </div>
+    <div class="high-em-color col">
+            <p class="mb-0 p-1"><strong>Starring: Stars, stars, stars</strong></p>
     </div>
 </template>
 

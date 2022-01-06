@@ -1,7 +1,9 @@
 <template>
-    <div class="ep-tile">
-        <img src="" alt=""><p>Episode image</p>
+    <div class="col ep-tile me-1 p-0">
+        <div class="card border-0">
+        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="">
         <ep-content-block></ep-content-block>
+        </div>
     </div>
 </template>
 

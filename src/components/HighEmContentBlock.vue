@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="col-4 m-5 align-content-end p-0">
         <show-logo></show-logo>
         <ep-title></ep-title>
         <p class="ep-decription"></p>
