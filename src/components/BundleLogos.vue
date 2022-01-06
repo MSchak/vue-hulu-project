@@ -1,18 +1,18 @@
 <template>
   <div class="bundle-logos">
-      <div class="row">
+      <div class="d-flex justify-content-center">
 
-        <div class="col text-end">
+        <div class="ms-3 mx-3 text-end">
           <img src="" alt="" />
           <p>logo</p>
         </div>
 
-        <div class="col-3">
+        <div class="ms-3 mx-3">
           <img src="" alt="" />
           <p>logo</p>
         </div>
 
-        <div class="col text-start">
+        <div class="ms-3 mx-3 text-start">
           <img src="" alt="" />
           <p>logo</p>
         </div>

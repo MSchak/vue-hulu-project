@@ -1,15 +1,15 @@
 <template>
   <div id="plans">
-    <div class="container-fluid text-center">
+    <plans-nav></plans-nav>
+    <div class="plans-content container text-center">
       <!--Main navigation hidden on this page */-->
       <div class="row">
         <div class="col">
-          <plans-nav></plans-nav>
           <h1>Choose Your Plan</h1>
           <p>Switch plans or cancel anytime.</p>
-          <plans-tablist></plans-tablist>
         </div>
       </div>
+      <plans-tablist></plans-tablist>
     </div>
   </div>
 </template>

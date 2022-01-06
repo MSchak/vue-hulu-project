@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Current Episode</p>
+        <p class="card-subtitle">Current Episode</p>
     </div>
 </template>
 

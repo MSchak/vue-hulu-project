@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="ep-title mb-5">
         <p>Episode Title</p>
     </div>
 </template>

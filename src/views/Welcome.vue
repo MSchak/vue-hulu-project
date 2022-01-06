@@ -1,13 +1,16 @@
 <template>
   <div id="welcome">
+    <login-dropdown></login-dropdown>
     <div class="container-fluid">
-      <div class="row text-center bkg-img">
+      <div class="row text-center align-content-center bkg-img">
+        <div class="col">
         <!--Main navigation hidden on this page */-->
-        <login-dropdown></login-dropdown>
         <p><strong>Bundle with any hulu plan &amp; save</strong></p>
         <bundle-logos></bundle-logos>
+        <p><strong>Get endless entertainment, live sports and the shows and movies you love.</strong></p>
         <cta-button></cta-button>
-        <router-link to="/plans">Sign up for Hulu only</router-link>
+        <div class="sign-up-link m-3"><router-link to="/plans">Sign up for Hulu only</router-link></div>
+        </div>
       </div>
     </div>
   </div>
@@ -17,9 +20,9 @@
 </style>
 
 <script>
-import LoginDropdown from "../components/LoginDropdown";
-import BundleLogos from "../components/BundleLogos";
-import CtaButton from "../components/CtaButton";
+import LoginDropdown from "../components/LoginDropdown.vue";
+import BundleLogos from "../components/BundleLogos.vue";
+import CtaButton from "../components/CtaButton.vue";
 
 export default {
   name: "Welome",
@@ -34,7 +37,11 @@ export default {
 <style>
 .bkg-img{
     background-image: url(~@/assets/welcome-bkg.jpeg);
-    height: 1000px;
+    height: 800px;
+}
+
+#welcome p{
+  color: white;
 }
 </style>
 

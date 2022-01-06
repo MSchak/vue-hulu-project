@@ -1,8 +1,6 @@
 <template>
-  <div class="high-em-content high-em-img row align-content-end p-0">
-      <div class="col-4 m-5">
+  <div class="high-em-content col-4 m-5 align-content-end p-0">
         <high-em-content-block></high-em-content-block>
-      </div>
       </div>
 </template>
 

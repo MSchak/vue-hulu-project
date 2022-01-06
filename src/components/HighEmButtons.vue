@@ -1,14 +1,14 @@
 <template>
-  <div class="buttons row">
-    <div class="col-2">
+  <div class="buttons d-flex justify-content-between pe-5">
+    <div class="">
       <button class="btn btn-light p-3 px-5">Play</button>
     </div>
 
-    <div class="col-2">
+    <div class="">
       <button class="btn btn-outline-light p-3 px-5">Details</button>
     </div>
 
-    <div class="col-2">
+    <div class="">
       <ellipse-menu></ellipse-menu>
     </div>
   </div>

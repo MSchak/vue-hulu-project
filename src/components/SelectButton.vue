@@ -1,5 +1,7 @@
 <template>
-    <button>Select</button>
+    <button class="btn btn-outline-dark">Select</button>
+    <!--<button class="btn btn-dark">Select</button>*/-->
+
 </template>
 
 <script>

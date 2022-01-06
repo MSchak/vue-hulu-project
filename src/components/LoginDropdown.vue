@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="login-nav container-fluid">
     <div class="row">
       <div class="col text-end">
         <router-link to="/">Login icon</router-link>

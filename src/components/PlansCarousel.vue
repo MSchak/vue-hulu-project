@@ -1,15 +1,15 @@
 <template>
-    <div class="row plans-carousel justify-content-center">
+    <div class="plans-carousel d-flex justify-content-center m-5">
 
-      <div class="col-3 pnl">
+      <div class="l-card">
         <plans-panel></plans-panel>
       </div>
 
-      <div class="col-3 frnt-pnl pnl">
+      <div class="frnt-card">
         <plans-panel></plans-panel>
       </div>
 
-      <div class="col-3 pnl">
+      <div class="r-card">
         <plans-panel></plans-panel>
       </div>
     </div>
@@ -28,14 +28,15 @@ export default {
 
 <style>
 
-.pnl{
-background-color: white;
-box-shadow: 0 0 4px -1px black;
-margin-left: -5px;
-margin-right: -5px;
+.frnt-card{
+    z-index: 1;
 }
 
-.frnt-pnl{
-    z-index: 1;
+.l-card{
+  margin-right: -15px;
+}
+
+.r-card{
+  margin-left: -15px;
 }
 </style>

@@ -1,20 +1,40 @@
 <template>
-    <div>
-        <img src="" alt=""><p>Show image</p>
-        <img src="" alt=""><p>Show logo</p>
-        <ellipse-menu></ellipse-menu>
-        
-    </div>
+  <div class="show-img card mx-1">
+    <router-link to="/details"><img
+      class="card-img-top"
+      src="https://via.placeholder.com/350x200"
+      alt=""
+    /></router-link>
+    <ellipse-menu class="on-img"></ellipse-menu>
+    <h4 class="show-title card-title">Show title</h4>
+    <current-episode></current-episode>
+    <ellipse-menu class="on-card"></ellipse-menu>
+  </div>
 </template>
 
 <script>
-import EllipseMenu from './EllipseMenu.vue'
+import EllipseMenu from "./EllipseMenu.vue";
+import CurrentEpisode from "./CurrentEpisode.vue";
 
 export default {
-    name: 'RegEmTile',
-    components: {
-        EllipseMenu
-    }
-}
+  name: "RegEmTile",
+  components: {
+    EllipseMenu,
+    CurrentEpisode,
+  },
+};
 </script>
 
+<style>
+.on-img {
+  position: absolute;
+  top: -15px;
+  right: 5px;
+}
+
+.on-card {
+  position: absolute;
+  top: 115px;
+  right: 5px;
+}
+</style>
