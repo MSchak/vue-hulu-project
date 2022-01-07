@@ -2,6 +2,7 @@
   <div id="home">
     <section class="container-fluid">
     <!--Main navigation shown here */-->
+    <main-navigation></main-navigation>
     <high-em-content></high-em-content>
     </section>
 
@@ -25,13 +26,15 @@
 <script>
 
 import HighEmContent from '../components/HighEmContent.vue'
+import MainNavigation from '../components/MainNavigation.vue'
 import RelatedSlideshow from '../components/RelatedSlideshow.vue'
 
 export default {
   name: 'Home',
   components: {
     HighEmContent,
-    RelatedSlideshow
+    RelatedSlideshow,
+    MainNavigation
   }
 }
 </script>
