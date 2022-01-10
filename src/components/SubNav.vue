@@ -15,14 +15,12 @@
     </div>
   </div>
 
-  <div class="tab-content row ms-3">
-    <div class="col">
-      <div v-if="tab === 1" class="pane">
-        <dropdown-menu></dropdown-menu>
-        <show-grid></show-grid>
-      </div>
+        <div v-if="tab === 1" class="pane row">
+          <dropdown-menu></dropdown-menu>
+          </div>
 
-  <div class="tab-content row">
+
+  <div class="tab-content row m-3">
     <div class="col">
           <div v-if="tab === 2" class="pane row">
             <div class="col">
@@ -44,7 +42,9 @@
     </div>
   </div>
 
-      <div v-if="tab === 3" class="pane">
+       <div class="tab-content row m-3">
+    <div class="col">
+       <div v-if="tab === 3" class="pane">
         <h3>About This Show</h3>
         <h2>Show Title</h2>
         <p>
@@ -54,20 +54,17 @@
         </p>
       </div>
     </div>
-  </div>
-  <div></div>
+       </div>
 </template>
 
 <script>
 import DropdownMenu from "../components/DropdownMenu.vue";
-import ShowGrid from "../components/ShowGrid.vue";
 import RegEmTile from "../components/RegEmTile.vue";
 
 export default {
   name: "SubNav",
   components: {
     DropdownMenu,
-    ShowGrid,
     RegEmTile,
   },
   data() {
