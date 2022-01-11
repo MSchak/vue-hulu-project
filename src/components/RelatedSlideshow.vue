@@ -1,16 +1,24 @@
 <template>
   <div class="related-slideshow my-4">
     <h3>Related Description</h3>
-    <div class="slide-container d-flex">
-      <button>Left</button>
-    <reg-em-tile></reg-em-tile>
-    <reg-em-tile></reg-em-tile>
-    <reg-em-tile></reg-em-tile>
-    <reg-em-tile></reg-em-tile>
-    <reg-em-tile></reg-em-tile>
-    <button>Right</button>
-
-  </div>
+    <div class="slide-container">
+      <div class="slide-items d-flex">
+      <reg-em-tile></reg-em-tile>
+      <reg-em-tile></reg-em-tile>
+      <reg-em-tile></reg-em-tile>
+      <reg-em-tile></reg-em-tile>
+      <reg-em-tile></reg-em-tile>
+      <reg-em-tile></reg-em-tile>
+      <reg-em-tile></reg-em-tile>
+      <reg-em-tile></reg-em-tile>
+      <reg-em-tile></reg-em-tile>
+      <reg-em-tile></reg-em-tile>
+      </div>
+      <div class="slide-buttons">
+        <button @click="scrollBack"  class="back-btn btn btn-light">&#60;</button>
+        <button @click="scrollFwd" class="fwd-btn btn btn-light">&#62;</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,6 +30,46 @@ export default {
   components: {
     RegEmTile,
   },
+
 };
 </script>
+
+<style scoped>
+.related-slideshow {
+  position: relative;
+}
+
+.slide-container{
+overflow: scroll;
+}
+
+.back-btn,
+.fwd-btn {
+  position: absolute;
+}
+
+.back-btn {
+  left: 0px;
+  bottom: 100px;
+}
+
+.fwd-btn {
+  right: -10px;
+  bottom: 100px;
+}
+
+.btn-light {
+  border-radius: 50%;
+  background-color: white;
+}
+
+.slide-items{
+position: relative;
+left: 0px;
+}
+
+.slide-items:hover{
+  transform: translateX(-100%);
+}
+</style>
 

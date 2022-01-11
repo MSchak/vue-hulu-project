@@ -1,7 +1,7 @@
 <template>
     <div class="ellipse-menu">
         <img src="" alt="">
-        <p>Ellipse menu</p>
+        <p>...</p>
     </div>
 </template>
 

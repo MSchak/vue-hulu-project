@@ -6,7 +6,7 @@
     <high-em-content></high-em-content>
     </section>
 
-<section class="container-fluid m-4">
+<section class="container">
     <div class="row">
     <related-slideshow></related-slideshow>
     </div>
@@ -38,3 +38,17 @@ export default {
   }
 }
 </script>
+<style scoped>
+
+
+@media (min-width: 992px){
+  .container{
+    max-width: 1100px;
+  }
+}
+@media (min-width: 1200px){
+  .container{
+    max-width: 1500px;
+  }
+}
+</style>

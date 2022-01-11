@@ -26,6 +26,11 @@ export default {
 </script>
 
 <style>
+
+.show-img{
+  min-width: 20%;
+  overflow: hidden;
+}
 .on-img {
   position: absolute;
   top: -15px;
@@ -37,4 +42,5 @@ export default {
   top: 115px;
   right: 5px;
 }
+
 </style>
