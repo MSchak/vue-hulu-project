@@ -7,15 +7,15 @@
     </section>
 
 <section class="container">
-    <div class="row">
+    <div class="row mx-4 my-2">
     <related-slideshow></related-slideshow>
     </div>
 
-    <div class="row">
+    <div class="row mx-4 my-2">
     <related-slideshow></related-slideshow>
     </div>
 
-    <div class="row">
+    <div class="row mx-4 my-2">
     <related-slideshow></related-slideshow>
     </div>
   </section>
@@ -40,6 +40,11 @@ export default {
 </script>
 <style scoped>
 
+@media (min-width: 768px){
+.container{
+  max-width: 900px;
+}
+}
 
 @media (min-width: 992px){
   .container{

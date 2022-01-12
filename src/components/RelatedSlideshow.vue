@@ -9,14 +9,11 @@
       <reg-em-tile></reg-em-tile>
       <reg-em-tile></reg-em-tile>
       <reg-em-tile></reg-em-tile>
-      <reg-em-tile></reg-em-tile>
-      <reg-em-tile></reg-em-tile>
-      <reg-em-tile></reg-em-tile>
-      <reg-em-tile></reg-em-tile>
+  
       </div>
       <div class="slide-buttons">
-        <button @click="scrollBack"  class="back-btn btn btn-light">&#60;</button>
-        <button @click="scrollFwd" class="fwd-btn btn btn-light">&#62;</button>
+        <button @click="scrollBack()"  class="back-btn btn btn-light">&#60;</button>
+        <button @click="scrollFwd()" class="fwd-btn btn btn-light">&#62;</button>
       </div>
     </div>
   </div>
@@ -30,7 +27,16 @@ export default {
   components: {
     RegEmTile,
   },
-
+    methods: {
+      scrollFwd() {
+        var slideItems = document.querySelector(".slide-items")
+        slideItems.classList.add("scroll")
+      },
+      scrollBack(){
+        var slideItems = document.querySelector(".slide-items")
+        slideItems.classList.add("scroll-back")
+      }
+    }
 };
 </script>
 
@@ -40,7 +46,15 @@ export default {
 }
 
 .slide-container{
-overflow: scroll;
+  overflow-x: auto;
+}
+.slide-container::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
 }
 
 .back-btn,
@@ -66,10 +80,15 @@ overflow: scroll;
 .slide-items{
 position: relative;
 left: 0px;
+transition: transform 850ms;
 }
 
-.slide-items:hover{
+.scroll{
   transform: translateX(-100%);
+}
+
+.scroll-back{
+  transform: translateX(0%);
 }
 </style>
 
