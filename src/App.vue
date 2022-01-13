@@ -25,6 +25,17 @@ export default {
   src: local("Graphik"),
   url(./fonts/Graphik/Graphik-Font-Family/GraphikSemibold.otf) format("OpenType");
 }
+@font-face {
+  font-family: "Graphik Regular";
+  src: local("Graphik"),
+  url(./fonts/Graphik/Graphik-Font-Family/GraphikRegular.otf) format("OpenType");
+}
+
+@font-face {
+  font-family: "Graphik Thin";
+  src: local("Graphik"),
+  url(./fonts/Graphik/Graphik-Font-Family/GraphikThin.otf) format("OpenType");
+}
 
 #app{
   font-family: "Graphik Semibold";
