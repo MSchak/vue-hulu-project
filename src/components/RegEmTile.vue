@@ -30,17 +30,18 @@ export default {
 .show-img{
   min-width: 20%;
   overflow: hidden;
+  position: relative;
 }
 .on-img {
   position: absolute;
-  top: -15px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
 }
 
 .on-card {
   position: absolute;
-  top: 115px;
-  right: 5px;
+  top: 155px;
+  right: 10px;
 }
 
 </style>

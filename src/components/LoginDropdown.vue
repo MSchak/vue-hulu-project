@@ -2,7 +2,7 @@
   <div class="login-nav container-fluid">
     <div class="row">
       <div class="col text-end">
-        <router-link to="/">Login icon</router-link>
+        <router-link to="/"><img class="hamburger-menu mx-4 my-4" src="../assets/menu.png"></router-link>
       </div>
     </div>
   </div>
@@ -15,5 +15,15 @@ export default {
 </script>
 
 <style>
+
+.login-nav{
+  position:fixed;
+}
+
+.hamburger-menu{
+width: 20px;
+height: 20px;
+}
+
 </style>
 

@@ -26,3 +26,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#plans{
+  height: 100vh;
+  background-color: #f0f1f5;
+}
+</style>

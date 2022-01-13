@@ -1,8 +1,7 @@
 <template>
   <div id="home">
-    <section class="container-fluid">
-    <!--Main navigation shown here */-->
     <main-navigation></main-navigation>
+    <section class="container-fluid">
     <high-em-content></high-em-content>
     </section>
 
@@ -39,6 +38,10 @@ export default {
 }
 </script>
 <style scoped>
+
+#home{
+  height: 100vh;
+}
 
 @media (min-width: 768px){
 .container{

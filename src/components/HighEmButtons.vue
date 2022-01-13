@@ -1,5 +1,5 @@
 <template>
-  <div class="buttons d-flex justify-content-between pe-5">
+  <div class="buttons d-flex justify-content-between w-75">
     <div class="">
       <button class="btn btn-light p-3 px-5">Play</button>
     </div>
@@ -8,7 +8,7 @@
       <button class="btn btn-outline-light p-3 px-5">Details</button>
     </div>
 
-    <div class="">
+    <div class="ellipse d-flex">
       <ellipse-menu></ellipse-menu>
     </div>
   </div>
@@ -24,3 +24,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+.ellipse{
+
+}
+</style>

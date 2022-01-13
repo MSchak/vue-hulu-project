@@ -1,7 +1,6 @@
 <template>
-    <div class="ellipse-menu">
-        <img src="" alt="">
-        <p>...</p>
+    <div class="ellipse-menu d-flex">
+        <img class="align-self-center" src="../assets/ellipsis.jpg" alt="">
     </div>
 </template>
 
@@ -10,3 +9,10 @@ export default {
     name: 'EllipseMenu'
 }
 </script>
+
+<style scoped>
+.ellipse-menu img{
+    height: 15px;
+
+}
+</style>
