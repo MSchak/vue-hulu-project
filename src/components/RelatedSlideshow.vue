@@ -2,18 +2,21 @@
   <div class="related-slideshow my-4">
     <h3>Related Description</h3>
     <div class="slide-container">
-      <div class="slide-items d-flex">
-      <reg-em-tile></reg-em-tile>
-      <reg-em-tile></reg-em-tile>
-      <reg-em-tile></reg-em-tile>
-      <reg-em-tile></reg-em-tile>
-      <reg-em-tile></reg-em-tile>
-      <reg-em-tile></reg-em-tile>
-  
+      <div class="slide-items d-flex" :class="carouselClasses">
+        <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
       </div>
       <div class="slide-buttons">
-        <button @click="scrollBack()"  class="back-btn btn btn-light">&#60;</button>
-        <button @click="scrollFwd()" class="fwd-btn btn btn-light">&#62;</button>
+        <button @click="scrollBack()" class="back-btn btn btn-light">
+          &#60;
+        </button>
+        <button @click="scrollFwd()" class="fwd-btn btn btn-light">
+          &#62;
+        </button>
       </div>
     </div>
   </div>
@@ -27,16 +30,19 @@ export default {
   components: {
     RegEmTile,
   },
-    methods: {
-      scrollFwd() {
-        var slideItems = document.querySelector(".slide-items")
-        slideItems.classList.add("scroll")
-      },
-      scrollBack(){
-        var slideItems = document.querySelector(".slide-items")
-        slideItems.classList.add("scroll-back")
-      }
+  data() {
+    return{
+      carouselClasses: ""
     }
+  },
+  methods: {
+    scrollFwd() {
+      this.carouselClasses = "scroll"
+    },
+    scrollBack() {
+      this.carouselClasses = "scroll-back"
+    },
+  },
 };
 </script>
 
@@ -45,7 +51,7 @@ export default {
   position: relative;
 }
 
-.slide-container{
+.slide-container {
   overflow-x: auto;
 }
 .slide-container::-webkit-scrollbar {
@@ -54,7 +60,7 @@ export default {
 
 .slide-container {
   -ms-overflow-style: none;
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
 
 .back-btn,
@@ -77,17 +83,17 @@ export default {
   background-color: white;
 }
 
-.slide-items{
-position: relative;
-left: 0px;
-transition: transform 850ms;
+.slide-items {
+  position: relative;
+  left: 0px;
+  transition: transform 850ms;
 }
 
-.scroll{
+.scroll {
   transform: translateX(-100%);
 }
 
-.scroll-back{
+.scroll-back {
   transform: translateX(0%);
 }
 </style>

@@ -3,7 +3,7 @@
     <plans-nav></plans-nav>
     <div class="plans-content container text-center">
       <!--Main navigation hidden on this page */-->
-      <div class="row">
+      <div class="row m-5">
         <div class="col">
           <h1>Choose Your Plan</h1>
           <p>Switch plans or cancel anytime.</p>
@@ -29,7 +29,11 @@ export default {
 
 <style scoped>
 #plans{
-  height: 100vh;
-  background-color: #f0f1f5;
+  height: 1000px;
+  background-color: #f7f7f9;
+}
+
+p{
+  color: #636e85;
 }
 </style>

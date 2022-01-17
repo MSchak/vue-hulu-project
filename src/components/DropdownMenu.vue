@@ -5,17 +5,17 @@
     </button>
     <ul v-if="active" class="drpdwn-menu p-0 w-25 ms-4">
       <li class="drpdwn-item">
-        <button @click="btn = 1; toggle()" class="btn w-100 text-start">
+        <button @click="showSeason(1)" class="btn w-100 text-start">
           Season 1
         </button>
       </li>
       <li class="drpdwn-item">
-        <button @click="btn = 2; toggle()" class="btn w-100 text-start">
+        <button @click="showSeason(2)" class="btn w-100 text-start">
           Season 2
         </button>
       </li>
       <li class="drpdwn-item">
-        <button @click="btn = 3; toggle()" class="btn w-100 text-start">
+        <button @click="showSeason(3)" class="btn w-100 text-start">
           Season 3
         </button>
       </li>
@@ -75,6 +75,10 @@ export default {
     toggle() {
       this.active = !this.active;
     },
+    showSeason(season){
+      this.btn = season;
+      this.toggle()
+    }
 
   },
 };

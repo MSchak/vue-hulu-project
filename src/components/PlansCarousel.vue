@@ -44,6 +44,10 @@ export default {
 </script>
 
 <style>
+
+.plans-carousel{
+max-width: 1000px;
+}
 .frnt-card,
 .l-card,
 .r-card {
@@ -51,17 +55,17 @@ export default {
 }
 .frnt-card {
   z-index: 1;
-  height: 450px;
+  height: 530px;
 }
 
 .l-card {
   margin-right: -15px;
-  height: 400px;
+  height: 480px;
 }
 
 .r-card {
   margin-left: -15px;
-  height: 400px;
+  height: 480px;
 }
 
 .bndle-logos {
