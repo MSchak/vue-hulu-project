@@ -2,11 +2,11 @@
   <div id="welcome">
     <login-dropdown></login-dropdown>
     <div class="container-fluid">
-      <div class="row text-center align-content-center bkg-img">
+      <div class="row text-center align-content-center bkg-img pt-4">
         <div class="col d-flex flex-column align-items-center mt-5">
           <p class="special mb-4">Bundle with any hulu plan &amp; save</p>
           <img
-            class="bndle-logos mb-4"
+            class="bndle-logos mb-3"
             src="../assets/bndle-logos.png"
             alt=""
           />
@@ -16,7 +16,7 @@
             love.
           </p>
           </div>
-          <div><button class="cta-btn btn btn-light m-3"><router-link class="cta-link" to="/plans">Get the Disney Bundle</router-link></button></div>
+          <div><button class="cta-btn btn btn-light m-2"><router-link class="cta-link" to="/plans">Get the Disney Bundle</router-link></button></div>
           <div class="m-3">
             <router-link class="sign-up-link" to="/plans">Sign up for Hulu only</router-link>
           </div>
@@ -63,10 +63,12 @@ export default {
   color: white;
   font-size: 22px;
   line-height: 30px;
+  max-width: 670px;
+  letter-spacing: .5px;
 }
 
 .bndle-logos {
-  width: 510px;
+  width: 600px;
 }
 
 .special {

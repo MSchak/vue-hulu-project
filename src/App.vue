@@ -60,6 +60,11 @@ h1{
   font-size: 3em;
 }
 
+h3{
+  font-family: "Graphik Bold";
+  font-size: 1.25em;
+}
+
 p{
   font-family: "Graphik Regular";
   font-size: 1em;

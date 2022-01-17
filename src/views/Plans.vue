@@ -3,7 +3,7 @@
     <plans-nav></plans-nav>
     <div class="plans-content container text-center">
       <!--Main navigation hidden on this page */-->
-      <div class="row m-5">
+      <div class="row m-5 mb-4">
         <div class="col">
           <h1>Choose Your Plan</h1>
           <p>Switch plans or cancel anytime.</p>
