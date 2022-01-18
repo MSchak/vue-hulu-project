@@ -59,4 +59,9 @@ export default {
     max-width: 1500px;
   }
 }
+@media (min-width: 1500px){
+  .container{
+    max-width: 2000px;
+  }
+}
 </style>

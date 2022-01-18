@@ -1,6 +1,6 @@
 <template>
   <div class="related-slideshow my-4">
-    <h3>Related Description</h3>
+    <h2>Related Description</h2>
     <div class="slide-container">
       <div class="slide-items d-flex" :class="carouselClasses">
         <reg-em-tile></reg-em-tile>

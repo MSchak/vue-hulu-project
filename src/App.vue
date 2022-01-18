@@ -60,9 +60,19 @@ h1{
   font-size: 3em;
 }
 
+h2{
+  font-size: 1.125em;
+  text-transform: uppercase;
+}
+
 h3{
   font-family: "Graphik Bold";
   font-size: 1.25em;
+}
+
+h4{
+  font-family: "Graphik Semibold";
+  font-size: 1em;
 }
 
 p{

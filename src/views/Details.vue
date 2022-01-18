@@ -1,11 +1,8 @@
 <template>
   <div id="details">
-    <main-navigation></main-navigation>
     <div class="container-fluid">
-      <div class="row justify-content-center my-3">
-        <!--Main navigation hidden on this page */-->
         <details-header></details-header>
-      </div>
+
 
       <div class="row">
         <high-em-content></high-em-content>
@@ -25,7 +22,6 @@ import HighEmContent from "../components/HighEmContent.vue";
 import SubNav from "../components/SubNav.vue";
 import DetailsHeader from "../components/DetailsHeader.vue";
 import DetailsImgFooter from "../components/DetailsImgFooter.vue";
-import MainNavigation from '../components/MainNavigation.vue';
 
 export default {
   name: "Details",
@@ -34,7 +30,6 @@ export default {
     SubNav,
     DetailsHeader,
     DetailsImgFooter,
-    MainNavigation,
   },
 };
 </script>

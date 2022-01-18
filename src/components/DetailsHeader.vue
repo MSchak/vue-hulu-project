@@ -1,7 +1,12 @@
 <template>
-  <div class="details-header col-2 text-center">
-    <h4>Show title</h4>
-    <button class="x-icon">Exit button</button>
+  <div class="details-header row my-3 align-items-center w-100">
+    <div class="col-7 text-end pe-5">
+      <p class="title">Show title</p>
+    </div>
+
+    <div class="col text-end">
+      <button class="x-icon"><router-link to="/">button</router-link></button>
+    </div>
   </div>
 </template>
 
@@ -11,12 +16,22 @@ export default {
 };
 </script>
 
-<style>
-.x-icon {
-  position: absolute;
-  top: 95px;
-  right: 25px;
+<style scoped>
+
+.details-header{
+  position: fixed;
+  border-bottom: .01px solid white;
+  z-index: 100;
+  height: 60px;
 }
 
+.title{
+  font-family: "Graphik Light";
+font-weight: bold;
+text-transform: uppercase;
+font-size: 12px;
+color: white;
+letter-spacing: 2px;
+}
 </style>
 
