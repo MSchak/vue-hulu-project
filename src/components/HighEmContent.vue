@@ -1,5 +1,5 @@
 <template>
-  <div class="high-em-content high-em-img row align-content-end">
+  <div class="high-em-content high-em-img row align-content-end pb-2">
     <div class="col-4 m-5 align-content-end p-0">
       <div class="show-logo d-flex mb-4">
         <img src="" alt="" />
@@ -34,7 +34,7 @@ export default {
     rgba(232, 246, 252, 0.52),
     rgb(203 26 6 / 81%)
   );
-  height: 600px;
+  height: 700px;
   padding: 0;
 }
 

@@ -9,6 +9,13 @@
         <reg-em-tile></reg-em-tile>
         <reg-em-tile></reg-em-tile>
         <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
+        <reg-em-tile></reg-em-tile>
+        
       </div>
       <div class="slide-buttons">
         <button @click="scrollBack()" class="back-btn btn btn-light">

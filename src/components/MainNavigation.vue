@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
     <div class="nav-container container-fluid mx-3">
-      <div class="row align-items-center h-100 mx-4">
+      <div class="row align-items-center h-100 mx-4 pt-1">
         <div class="col-3">
           <p class="title mb-0">hulu</p>
         </div>
@@ -46,9 +46,15 @@ export default {
 }
 
 .nav-items{
-  text-transform: uppercase;
-  color: white;
+   font-family: "Graphik Regular";
+font-weight: bold;
+text-transform: uppercase;
+font-size: 14px;
+color: white;
+letter-spacing: 2px;
+
 }
+
 
 .nav-item{
   text-decoration: none;

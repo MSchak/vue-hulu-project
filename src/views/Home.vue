@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <main-navigation></main-navigation>
-    <section class="container-fluid">
+    <section class="container-fluid pb-2">
     <high-em-content></high-em-content>
     </section>
 
@@ -17,7 +17,9 @@
     <div class="row mx-4 my-2">
     <related-slideshow></related-slideshow>
     </div>
+
   </section>
+
       </div>
 
 </template>
