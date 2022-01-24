@@ -1,8 +1,7 @@
 <template>
   <div class="drpdwn my-4">
-    <button @click="toggle" class="btn btn-light w-25 text-start ms-4">
-      Dropdown
-    </button>
+    <button @click="toggle" class="drpdwn-btn btn btn-light w-25 text-start ms-4">
+    Season {{displayedSeason}}</button>
     <ul v-if="active" class="drpdwn-menu p-0 w-25 ms-4">
       <li class="drpdwn-item">
         <button @click="showSeason(1)" class="btn w-100 text-start">
@@ -68,7 +67,8 @@ export default {
   data() {
     return {
       active: false,
-      btn: 2
+      btn: 2,
+      displayedSeason: 1
     };
   },
   methods: {
@@ -77,6 +77,7 @@ export default {
     },
     showSeason(season){
       this.btn = season;
+      this.displayedSeason = season;
       this.toggle()
     }
 
@@ -85,6 +86,12 @@ export default {
 </script>
 
 <style scoped>
+
+.drpdwn-btn{
+  width: 325px;
+  height: 64px;
+}
+
 .drpdwn-menu {
   list-style-type: none;
   background-color: #f9fafb;
