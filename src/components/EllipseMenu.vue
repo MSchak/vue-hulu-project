@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 .ellipse-menu img{
-    height: 15px;
+    height: 20px;
 
 }
 </style>
