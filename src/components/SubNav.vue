@@ -38,65 +38,65 @@
     <episodes-tab></episodes-tab>
   </div>
 
-  <div class="tab-content row m-3">
+  <div class="you-make-like tab-content row m-3 mt-5">
     <div class="col">
       <div v-if="tab === 2" class="pane">
-        <div class="row">
+        <div class="you-may-like row">
         <div class="col">
-          <reg-em-tile></reg-em-tile>
+          <show-tile></show-tile>
+        </div>
+         <div class="col">
+          <show-tile></show-tile>
+        </div>
+       <div class="col">
+          <show-tile></show-tile>
         </div>
         <div class="col">
-          <reg-em-tile></reg-em-tile>
+          <show-tile></show-tile>
         </div>
         <div class="col">
-          <reg-em-tile></reg-em-tile>
+          <show-tile></show-tile>
+        </div>
+        </div>
+              <div class="you-may-like row p-0">
+        <div class="col">
+          <show-tile></show-tile>
+        </div>
+         <div class="col">
+          <show-tile></show-tile>
+        </div>
+       <div class="col">
+          <show-tile></show-tile>
         </div>
         <div class="col">
-          <reg-em-tile></reg-em-tile>
+          <show-tile></show-tile>
         </div>
         <div class="col">
-          <reg-em-tile></reg-em-tile>
-          </div>
+          <show-tile></show-tile>
         </div>
-              <div class="row">
-        <div class="col">
-          <reg-em-tile></reg-em-tile>
         </div>
+               <div class="you-may-like row p-0">
         <div class="col">
-          <reg-em-tile></reg-em-tile>
+          <show-tile></show-tile>
         </div>
-        <div class="col">
-          <reg-em-tile></reg-em-tile>
+         <div class="col">
+          <show-tile></show-tile>
         </div>
-        <div class="col">
-          <reg-em-tile></reg-em-tile>
+       <div class="col">
+          <show-tile></show-tile>
         </div>
         <div class="col">
-          <reg-em-tile></reg-em-tile>
-          </div>
-        </div>
-              <div class="row">
-        <div class="col">
-          <reg-em-tile></reg-em-tile>
+          <show-tile></show-tile>
         </div>
         <div class="col">
-          <reg-em-tile></reg-em-tile>
+          <show-tile></show-tile>
         </div>
-        <div class="col">
-          <reg-em-tile></reg-em-tile>
-        </div>
-        <div class="col">
-          <reg-em-tile></reg-em-tile>
-        </div>
-        <div class="col">
-          <reg-em-tile></reg-em-tile>
-          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="tab-content row m-3">
+  <div class="details tab-content row m-3">
     <div class="col">
       <div v-if="tab === 3" class="pane details">
         <h3>About This Show</h3>
@@ -112,13 +112,13 @@
 
 <script>
 import EpisodesTab from "./EpisodesTab.vue";
-import RegEmTile from "../components/RegEmTile.vue";
+import ShowTile from "../components/ShowTile.vue";
 
 export default {
   name: "SubNav",
   components: {
     EpisodesTab,
-    RegEmTile,
+    ShowTile,
   },
   data() {
     return {
@@ -152,6 +152,10 @@ export default {
   border-bottom: 4px solid rgb(203 26 6);
 }
 
+.you-may-like .col{
+padding-right: 1px;
+padding-left: 0px;
+}
 .details{
   height: 600px;
 }

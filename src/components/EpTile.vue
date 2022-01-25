@@ -10,8 +10,8 @@
         <p class="ep-number"><strong>Episode 1</strong></p>
         <p class="ep-title">Episode title</p>
         <p class="ep-description">
-          When 40 year old Liza struggles to find employment, she passes herself
-          off as 26 in order to get a job at a publishing house.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+          semper viverra purus, at fermentum mi venenatis eget.
         </p>
         <ellipse-menu class="on-card"></ellipse-menu>
       </div>
