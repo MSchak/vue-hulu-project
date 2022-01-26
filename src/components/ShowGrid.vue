@@ -14,6 +14,13 @@
         <ep-tile></ep-tile>
         <ep-tile></ep-tile>
         </div>
+          <div class="row">
+        <ep-tile></ep-tile>
+        <ep-tile></ep-tile>
+        <ep-tile></ep-tile>
+        <ep-tile></ep-tile>
+        <ep-tile></ep-tile>
+        </div>
     </div>
 </template>
 

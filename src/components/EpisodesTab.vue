@@ -64,7 +64,7 @@ export default {
   data() {
     return {
       active: false,
-      btn: 2,
+      btn: 1,
       seasonNumber: 1,
     };
   },

@@ -20,10 +20,10 @@ export default {
 
 .details-header{
   position: fixed;
-  border-bottom: .01px solid white;
   z-index: 100;
   height: 60px;
 }
+
 
 .title{
   font-family: "Graphik Light";

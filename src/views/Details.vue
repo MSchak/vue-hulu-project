@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import DetailsHighEmContent from "../components/DetailsHighEmContent.vue"
+import DetailsHighEmContent from "../components/DetailsHighEmContent.vue";
 import SubNav from "../components/SubNav.vue";
 import DetailsHeader from "../components/DetailsHeader.vue";
 import DetailsImgFooter from "../components/DetailsImgFooter.vue";

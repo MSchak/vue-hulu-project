@@ -8,15 +8,15 @@
       />
       <div class="card-body pt-1 d-flex">
         <div>
-        <p class="ep-number"><strong>Episode 1</strong></p>
-        <h5>Episode title</h5>
-        <p class="ep-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-          semper viverra purus, at fermentum mi venenatis eget.
-        </p>
+          <p class="ep-number"><strong>Episode 1</strong></p>
+          <h5>Episode title</h5>
+          <p class="ep-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+            semper viverra purus, at fermentum mi venenatis eget.
+          </p>
         </div>
         <div>
-        <ellipse-menu class="on-card"></ellipse-menu>
+          <ellipse-menu class="pt-2 pe-2"></ellipse-menu>
         </div>
       </div>
     </div>
@@ -46,7 +46,6 @@ export default {
   text-transform: uppercase;
   margin-bottom: 3px;
 }
-
 
 .ep-description {
   font-size: 0.875em;
