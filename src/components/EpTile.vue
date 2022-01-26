@@ -6,14 +6,18 @@
         class="card-img-top"
         alt=""
       />
-      <div class="card-body pt-1">
+      <div class="card-body pt-1 d-flex">
+        <div>
         <p class="ep-number"><strong>Episode 1</strong></p>
-        <p class="ep-title">Episode title</p>
+        <h5>Episode title</h5>
         <p class="ep-description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
           semper viverra purus, at fermentum mi venenatis eget.
         </p>
+        </div>
+        <div>
         <ellipse-menu class="on-card"></ellipse-menu>
+        </div>
       </div>
     </div>
   </div>
@@ -43,11 +47,6 @@ export default {
   margin-bottom: 3px;
 }
 
-.ep-title {
-  font-family: "Graphik Medium";
-  font-size: 1em;
-  letter-spacing: -0.5px;
-}
 
 .ep-description {
   font-size: 0.875em;
@@ -55,11 +54,5 @@ export default {
   color: #6b7790;
   opacity: 80%;
   margin-right: 25px;
-}
-
-.on-card {
-  position: absolute;
-  left: 284px;
-  top: 184px;
 }
 </style>

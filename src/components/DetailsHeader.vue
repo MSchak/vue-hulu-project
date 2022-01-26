@@ -5,7 +5,7 @@
     </div>
 
     <div class="col text-end">
-      <button class="x-icon"><router-link to="/">button</router-link></button>
+      <button class="x-icon"><router-link to="/">x</router-link></button>
     </div>
   </div>
 </template>

@@ -6,7 +6,7 @@
         src="https://via.placeholder.com/350x200"
         alt=""
     /></router-link>
-    <h4 class="show-title card-title my-2 pt-1">Show title</h4>
+    <h5 class="card-title my-2 pt-1">Show title</h5>
     <p class="description">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper
       viverra purus, at fermentum mi venenatis eget. Nullam lobortis, odio at
@@ -41,6 +41,7 @@ export default {
 .card-title {
   text-transform: capitalize;
 }
+
 
 .description {
   font-size: 0.875em;

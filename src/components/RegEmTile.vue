@@ -7,9 +7,15 @@
         alt=""
     /></router-link>
     <ellipse-menu class="on-img"></ellipse-menu>
-    <h4 class="show-title card-title my-2">Show title</h4>
+    <div class="card-body d-flex justify-content-between">
+      <div>
+    <h5 class="show-title card-title my-2">Show title</h5>
     <p class="card-subtitle">S1 E1 - Name of this episode</p>
-    <ellipse-menu class="on-card"></ellipse-menu>
+      </div>
+    <div>
+    <ellipse-menu class="pt-2 pe-2"></ellipse-menu>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -34,6 +40,9 @@ export default {
   border: none;
 }
 
+.card-body{
+  padding: 0px;
+}
 .card-subtitle {
   font-size: .90em;
   overflow:hidden;
@@ -44,9 +53,5 @@ export default {
   right: 10px;
 }
 
-.on-card {
-  position: absolute;
-  top: 155px;
-  right: 10px;
-}
+
 </style>

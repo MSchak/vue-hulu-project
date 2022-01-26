@@ -71,10 +71,19 @@ h3{
 }
 
 h4{
-  font-family: "Graphik Semibold";
-  font-size: 1em;
+  font-family: "Graphik Light";
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -.5px;
+    color: #292C33;
 }
 
+h5{
+   font-family: "Graphik Medium";
+  font-size: 1em;
+  letter-spacing: -0.5px;
+  text-transform: capitalize;
+}
 p{
   font-family: "Graphik Regular";
   font-size: 1em;
