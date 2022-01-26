@@ -1,36 +1,35 @@
 <template>
   <div class="tabs row ms-3 align-items-center">
-    <div class="col">
-      <ul class="nav nav-tabs justify-content-start" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
+    <div class="col h-100">
+      <ul class="nav nav-tabs justify-content-start h-100 align-content-center" id="myTab" role="tablist">
+        <li class="nav-item h-100" role="presentation">
           <button
             @click="tab = 1"
             :class="{ active: tab == 1 }"
-            class="nav-link"
+            class="nav-link h-100"
           >
             Episodes
           </button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item h-100" role="presentation">
           <button
             @click="tab = 2"
             :class="{ active: tab == 2 }"
-            class="nav-link"
+            class="nav-link h-100"
           >
             You may also like
           </button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item h-100" role="presentation">
           <button
             @click="tab = 3"
             :class="{ active: tab == 3 }"
-            class="nav-link"
+            class="nav-link h-100"
           >
             Details
           </button>
         </li>
       </ul>
-      <div class="nav-accent-bar ms-2"></div>
     </div>
   </div>
 

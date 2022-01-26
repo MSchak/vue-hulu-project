@@ -2,7 +2,7 @@
   <div id="details">
     <div class="container-fluid">
         <details-header></details-header>
-        <high-em-content></high-em-content>
+        <details-high-em-content></details-high-em-content>
         <details-img-footer></details-img-footer>
         <sub-nav></sub-nav>
     </div>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import HighEmContent from "../components/HighEmContent.vue";
+import DetailsHighEmContent from "../components/DetailsHighEmContent.vue"
 import SubNav from "../components/SubNav.vue";
 import DetailsHeader from "../components/DetailsHeader.vue";
 import DetailsImgFooter from "../components/DetailsImgFooter.vue";
@@ -18,7 +18,7 @@ import DetailsImgFooter from "../components/DetailsImgFooter.vue";
 export default {
   name: "Details",
   components: {
-    HighEmContent,
+    DetailsHighEmContent,
     SubNav,
     DetailsHeader,
     DetailsImgFooter,
