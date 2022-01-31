@@ -2,15 +2,15 @@
   <div id="welcome">
     <login-dropdown></login-dropdown>
     <div class="container-fluid">
-      <div class="row text-center align-content-center bkg-img pt-4">
+      <div class="row text-center align-content-center bkg-img pt-4 px-5 px-md-0">
         <div class="col d-flex flex-column align-items-center mt-5">
-          <p class="special mb-4">Bundle with any hulu plan &amp; save</p>
+          <p class="special mb-2 mb-md-4">Bundle with any hulu plan &amp; save</p>
           <img
             class="bndle-logos mb-3"
             src="../assets/bndle-logos.png"
             alt=""
           />
-          <div class="plain w-50">
+          <div class="plain w-100 w-lg-50">
           <p>
             Get endless entertainment, live sports and the shows and movies you
             love.
@@ -23,9 +23,9 @@
         </div>
       </div>
         <div class="row">
-        <div class="col next-content d-flex flex-column text-center p-5">
-        <p class="special mt-5">Included in all plans</p>
-        <h1 class="pb-4">All The TV You Love</h1>
+        <div class="col next-content d-flex flex-column text-center p-3 p-md-5 px-3 px-md-0">
+        <p class="special mt-lg-5 mt-4">Included in all plans</p>
+        <h1 class="pb-1 pb-lg-4">All The TV You Love</h1>
         <div class="d-flex justify-content-center"><p class="tv-details">Stream full seasons of exclusive series, current-season episodes, hit movies, Hulu Originals, kids show, and more.</p></div>
           </div>
           </div>
@@ -61,14 +61,14 @@ export default {
   font-family: "Graphik Regular";
   font-weight: bold;
   color: white;
-  font-size: 22px;
+  font-size: 1.125em;
   line-height: 30px;
   max-width: 670px;
   letter-spacing: .5px;
 }
 
 .bndle-logos {
-  width: 600px;
+  width: 90%;
 }
 
 .special {
@@ -81,8 +81,8 @@ export default {
 }
 
 .cta-btn {
-  height: 56px; 
-min-width: 136px;
+  height: 45px; 
+min-width: 265px;
     padding: 0 32px;
     border: none;
 }
@@ -112,14 +112,79 @@ min-width: 136px;
 
 h1{
   color: white;
-  font-size: 48px;
+  font-size: 36px;
+  letter-spacing: .5px;
 }
 
 .tv-details{
-  font-size: 18px;
-      font-family: "Graphik Thin";
+  font-size: 1em;
+      font-family: "Graphik Light";
   color: white;
   max-width: 680px;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 768px){
+  .bkg-img {
+  height: 600px;
+}
+
+.plain{
+  font-size: 1.375em;
+}
+.bndle-logos {
+  width: 515px;
+}
+
+.cta-btn {
+  height: 56px; 
+min-width: 136px;
+}
+
+h1{
+  font-size: 64px;
+}
+.tv-details{
+  font-size: 1.125em;
+}
+}
+
+@media (min-width: 992px){
+  .bkg-img {
+  height: 660px;
+}
+
+.bndle-logos {
+  width: 600px;
+}
+
+.cta-btn {
+  height: 56px; 
+min-width: 136px;
+}
+
+h1{
+  font-size: 48px;
+}
+}
+
+@media (min-width: 1200px){
+
+h1{
+  font-size: 4em;
+}
+.tv-details{
+  max-width: 900px;
+}
+}
+@media (min-width: 1600px){
+
+h1{
+  font-size: 4.5em;
+}
+.tv-details{
+  font-size: 1.5em;
+}
 }
 
 </style>
