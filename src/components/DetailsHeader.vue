@@ -1,11 +1,11 @@
 <template>
   <div class="details-header row my-3 align-items-center w-100">
     <div class="col-7 text-end pe-5">
-      <p class="title">Show title</p>
+      <p class="title mb-0">Show title</p>
     </div>
 
     <div class="col text-end">
-      <button class="x-icon"><router-link to="/">x</router-link></button>
+      <button class="btn"><router-link to="/"><fa icon="times" size="1x" class="x-icon"/></router-link></button>
     </div>
   </div>
 </template>
@@ -32,6 +32,10 @@ text-transform: uppercase;
 font-size: 12px;
 color: white;
 letter-spacing: 2px;
+}
+
+.x-icon{
+  color: white;
 }
 </style>
 

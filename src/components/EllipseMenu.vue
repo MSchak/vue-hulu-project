@@ -1,6 +1,6 @@
 <template>
     <div class="ellipse-menu d-flex">
-        <img class="align-self-center" src="../assets/ellipsis.jpg" alt="">
+        <fa icon="ellipsis-v" class="align-self-center"/>
     </div>
 </template>
 
@@ -11,8 +11,5 @@ export default {
 </script>
 
 <style scoped>
-.ellipse-menu img{
-    height: 20px;
 
-}
 </style>

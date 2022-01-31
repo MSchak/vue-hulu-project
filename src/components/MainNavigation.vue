@@ -15,8 +15,8 @@
           </ul>
         </div>
 
-        <div class="col-3 text-end px-5">
-          <img class="search" src="../assets/search.png" />
+        <div class="col-3 text-end px-5 search">
+          <fa icon="search" size="lg"/>
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@ letter-spacing: 2px;
   list-style-type: none;
 }
 .search{
-  width: 30px;
+color: white;
 }
 
 

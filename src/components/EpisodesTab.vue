@@ -2,9 +2,9 @@
   <div class="episodes-tab drpdwn my-4">
     <button
       @click="toggle"
-      class="drpdwn-btn btn btn-light text-start ms-4"
+      class="drpdwn-btn btn btn-light ms-4 d-flex justify-content-between align-items-center"
     >
-      Season {{ seasonNumber }}
+      Season {{ seasonNumber }}<fa icon="caret-down"/>
     </button>
     <ul v-if="active" class="drpdwn-menu p-0 ms-4">
       <li class="drpdwn-item">

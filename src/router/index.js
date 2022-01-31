@@ -5,6 +5,7 @@ import Plans from '../views/Plans.vue'
 import Details from '../views/Details.vue'
 
 
+
 const routes = [
   {
     path: '/',

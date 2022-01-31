@@ -18,7 +18,7 @@
     <related-slideshow></related-slideshow>
     </div>
 
-  </section>
+  </section> 
 
       </div>
 

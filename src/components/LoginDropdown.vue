@@ -1,8 +1,8 @@
 <template>
   <div class="login-nav container-fluid">
-    <div class="row">
-      <div class="col text-end">
-        <router-link to="/"><img class="hamburger-menu mx-5 my-4" src="../assets/menu.png"></router-link>
+    <div class="row h-100">
+      <div class="this col d-flex justify-content-end align-items-center h-100">
+        <router-link to="/"><fa icon="bars" size="2x"/></router-link>
       </div>
     </div>
   </div>
@@ -18,10 +18,12 @@ export default {
 
 .login-nav{
   position:fixed;
+  height:75px;
 }
 
-.hamburger-menu{
-width: 18px;
+
+.fa-bars{
+color: white;
 }
 
 </style>

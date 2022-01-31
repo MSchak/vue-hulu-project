@@ -1,18 +1,21 @@
 <template>
   <div class="high-em-content high-em-img row align-content-end pb-2">
-    <div class="col-4 m-5 align-content-end p-0">
-      <div class="show-logo d-flex mb-4">
-        <img src="" alt="" />
+    <b-spinner v-if="loading"></b-spinner>
+    <template v-if="!loading">
+      <div class="col-4 m-5 align-content-end p-0">
+        <div class="show-logo d-flex mb-4">
+          <img src="" alt="" />
+        </div>
+        <div class="ep-title">
+          <p>{{showDetails.title}}</p>
+        </div>
+        <p class="ep-decription">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          mollis commodo augue sed molestie.
+        </p>
+        <high-em-buttons></high-em-buttons>
       </div>
-      <div class="ep-title">
-        <p>S1 E1 - Episode Title</p>
-      </div>
-      <p class="ep-decription">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-        mollis commodo augue sed molestie.
-      </p>
-      <high-em-buttons></high-em-buttons>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -21,9 +24,20 @@ import HighEmButtons from "./HighEmButtons.vue";
 
 export default {
   name: "HighEmContent",
+  data(){
+    return {
+      showDetails: {}
+    }
+  },
   components: {
     HighEmButtons,
   },
+  methods:{
+    getFeaturedEpisode(){
+      this.loading = true
+
+    }
+  }
 };
 </script>
 

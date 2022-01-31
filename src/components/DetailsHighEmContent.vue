@@ -13,7 +13,7 @@
       </p>
       <div class="d-flex mt-5">
       <div>
-        <button class="btn play-btn"></button>
+        <button class="btn play-btn"><fa icon="play-circle" size="4x"/></button>
       </div>
       <div class="d-flex align-items-center mx-3">
         <p class="play-ep">Watch next episode: {{ episodeNumber }}</p>
@@ -59,10 +59,7 @@ export default {
   color: white;
 }
 .play-btn{
-    background-color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    color: white;
 }
 .play-ep {
     font-family: "Graphik Medium";
