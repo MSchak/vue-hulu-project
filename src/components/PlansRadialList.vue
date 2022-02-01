@@ -1,0 +1,248 @@
+<template>
+  <div class="plans-radial row">
+    <div class="plans-container d-flex justify-content-evenly">
+      <div
+        class="plans-card card mx-1"
+        :class="{ 'highlight-card': plan == 1 }"
+      >
+        <div
+          class="highlight pt-2 pb-2"
+          :class="{ 'highlight-select': plan == 1 }"
+        >
+          Most Popular
+        </div>
+        <div class="card-body">
+          <p>Hulu</p>
+          <input
+            type="radio"
+            id="1"
+            value="1"
+            name="plan-choices"
+            class="radio"
+            v-model="plan"
+          />
+          <img class="check" v-if="plan == 1" src="../assets/check.png" />
+        </div>
+      </div>
+
+      <div
+        class="plans-card card mx-1"
+        :class="{ 'highlight-card': plan == 2 }"
+      >
+        <div
+          class="highlight pt-2 pb-2"
+          :class="{ 'highlight-select': plan == 2 }"
+        >
+          Bundle &amp; Save
+        </div>
+        <div class="card-body">
+          <p>Hulu, Disney+, and ESPN+</p>
+          <input
+            type="radio"
+            id="2"
+            value="2"
+            name="plan-choices"
+            class="radio"
+            v-model="plan"
+          />
+          <img class="check" v-if="plan == 2" src="../assets/check.png" />
+        </div>
+      </div>
+
+      <div
+        class="plans-card card mx-1"
+        :class="{ 'highlight-card': plan == 3 }"
+      >
+        <div
+          class="highlight pt-2 pb-2"
+          :class="{ 'highlight-select': plan == 3 }"
+        >
+          Bundle &amp; Save
+        </div>
+        <div class="card-body">
+          <p>Hulu (No Ads), Disney+, and ESPN+</p>
+          <input
+            type="radio"
+            id="3"
+            value="3"
+            name="plan-choices"
+            class="radio"
+            v-model="plan"
+          />
+          <img class="check" v-if="plan == 3" src="../assets/check.png" />
+        </div>
+      </div>
+
+      <div
+        class="plans-card card mx-1"
+        :class="{ 'highlight-card': plan == 4 }"
+      >
+        <div class="card-body">
+          <p>Hulu + Live TV, Disney+, and ESPN+</p>
+          <input
+            type="radio"
+            id="4"
+            value="4"
+            name="plan-choices"
+            class="radio"
+            v-model="plan"
+          />
+          <img class="check" v-if="plan == 4" src="../assets/check.png" />
+        </div>
+      </div>
+
+      <div
+        class="plans-card card mx-1"
+        :class="{ 'highlight-card': plan == 5 }"
+      >
+        <div class="card-body">
+          <p>Hulu (No Ads)</p>
+          <input
+            type="radio"
+            id="5"
+            value="5"
+            name="plan-choices"
+            class="radio"
+            v-model="plan"
+          />
+          <img class="check" v-if="plan == 5" src="../assets/check.png" />
+        </div>
+      </div>
+
+      <div
+        class="plans-card card mx-1"
+        :class="{ 'highlight-card': plan == 6 }"
+      >
+        <div class="card-body">
+          <p>Hulu (No Ads) + Live TV, Disney+, and ESPN+</p>
+          <input
+            type="radio"
+            id="6"
+            value="6"
+            name="plan-choices"
+            class="radio"
+            v-model="plan"
+          />
+          <img class="check" v-if="plan == 6" src="../assets/check.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="submit row align-items-end">
+    <div class="submit-btn col mb-4">
+      <div><input type="submit" value="Select" class="select w-100" /></div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "PlansRadialList",
+  data() {
+    return {
+      plan: 0,
+    };
+  },
+};
+</script>
+
+<style scoped>
+.plans-container {
+  overflow: scroll;
+  height: 200px;
+}
+.plans-card {
+  width: 140px;
+  height: 175px;
+  flex-shrink: 0;
+  box-sizing: content-box;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 10px 20px -5px rgb(0 0 0 / 8%);
+}
+
+.highlight-card {
+  border: 2px solid #29a869;
+}
+
+.card-body {
+  padding: 10px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body p {
+  font-weight: bold;
+  font-family: "Graphik Medium";
+  font-size: 1.125em;
+}
+.highlight {
+  background: #dde0e6;
+  border-bottom: solid 1px #dde0e6;
+  color: #272c35;
+  padding-top: 5px;
+  font-size: 0.625em;
+  text-transform: uppercase;
+  font-family: "Graphik Semibold";
+  letter-spacing: 1px;
+}
+
+.highlight-select {
+  background-color: #29a869;
+  color: white;
+  padding-top: 5px;
+  font-size: 0.625em;
+  text-transform: uppercase;
+  font-family: "Graphik Semibold";
+  letter-spacing: 1px;
+}
+.radio {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+}
+
+input[type="radio"] {
+  border: 0px;
+  width: 100%;
+  height: 2em;
+}
+.check {
+  position: absolute;
+  bottom: 10px;
+  width: 32px;
+}
+
+.submit {
+  height: 550px;
+}
+
+.submit-btn {
+  height: 25px;
+}
+
+.select {
+  text-transform: uppercase;
+  font-family: "Graphik Regular";
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  background-color: #272c35;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+@media (min-width: 992px) {
+  .plans-radial {
+    display: none;
+  }
+
+  .submit{
+      display:none;
+  }
+}
+</style>

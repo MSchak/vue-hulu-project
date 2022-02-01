@@ -57,7 +57,7 @@ export default {
 
 h1{
   font-family: "Graphik Bold";
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 h2{
@@ -86,6 +86,17 @@ h5{
 }
 p{
   font-family: "Graphik Regular";
-  font-size: 1em;
+  font-size: .875em;
+  letter-spacing: .5px;
+}
+
+@media (min-width: 992px){
+  h1{
+    font-size: 3em;
+  }
+
+  p{
+    font-size: 1em;
+  }
 }
 </style>

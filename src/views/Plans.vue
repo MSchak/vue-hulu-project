@@ -10,6 +10,7 @@
         </div>
       </div>
       <plans-tablist></plans-tablist>
+      <plans-radial-list></plans-radial-list>
     </div>
   </div>
 </template>
@@ -17,12 +18,14 @@
 <script>
 import PlansNav from "../components/PlansNav.vue";
 import PlansTablist from "../components/PlansTablist.vue";
+import PlansRadialList from "../components/PlansRadialList.vue"
 
 export default {
   name: "Plans",
   components: {
     PlansNav,
     PlansTablist,
+    PlansRadialList
   },
 };
 </script>
@@ -36,4 +39,10 @@ export default {
 p{
   color: #636e85;
 }
+
+.container{
+  max-width: 100%;
+}
+
+
 </style>

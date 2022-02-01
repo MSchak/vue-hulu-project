@@ -3,16 +3,11 @@
     <div class="card l-card pt-5 px-4 align-self-center">
       <div class="card-body m-2">
         <h3 class="card-title mb-4">Hulu (No Ads)</h3>
-        <p class="info">Get First Month Free, Then</p>
+        <img class="bndle-logos" src="../assets/bndle-logos-color.png" alt="" />
+                <p class="pt-3"><span class="price">$19.99</span><span class="time-period">/ month</span></p>
 
-        <p class="pt-3">
-          <span class="price">$12.99</span
-          ><span class="time-period">/ month</span>
-        </p>
         <p class="card-text pb-4">
-          Our ad-free plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more with no ad interruptions.
-
-
+         Access live sports with ESPN+, endless, ad-free entertainment with Disney+, and award-winning Hulu Originals with Hulu (No Ads).
         </p>
         <button class="btn btn-outline-dark w-100">Select</button>
       </div>
@@ -20,17 +15,13 @@
 
     <div class="card frnt-card pt-4 px-4 align-self-center">
       <div class="card-body m-2">
-        <div><p class="badge">Most Popular</p></div>
+        <div><p class="badge">Save 36% -$7.98 Off*</p></div>
         <h3 class="card-title mb-4">Hulu</h3>
-        <p class="info">Get First Month Free, Then</p>
-        <p class="pt-3">
-          <span class="price">$6.99</span
-          ><span class="time-period">/ month</span>
-        </p>
+        <img class="bndle-logos" src="../assets/bndle-logos-color.png" alt="" />
+                <p class="pt-3"><span class="price">$13.99</span><span class="time-period">/ month</span></p>
+
         <p class="card-text pb-4">
-          Our ad-supported plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more.
-
-
+          Access live sports with ESPN+, endless, ad-free entertainment with Disney+, and award-winning Hulu Originals with Hulu (ad-supported). *In monthly savings.
         </p>
         <button class="btn btn-dark w-100">Select</button>
       </div>
@@ -39,13 +30,11 @@
     <div class="card r-card pt-5 px-4 align-self-center">
       <div class="card-body m-2">
         <h3 class="card-title mb-4">Hulu (No Ads) + Live TV</h3>
-        <p class="info">Now with Disney+ and ESPN+</p>
-        <p class="pt-3">
-          <span class="price">$69.99</span
-          ><span class="time-period">/ month</span>
-        </p>
-        <p class="card-text pb-3 mb-0">
-          Access 75+ channels with Live TV, endless, ad-free entertainment with Disney+, live sports with ESPN+, and award-winning Hulu originals with Hulu (ad-supported).
+        <img class="bndle-logos" src="../assets/bndle-logos-color.png" alt="" />
+                <p class="pt-3"><span class="price">$75.99</span><span class="time-period">/ month</span></p>
+
+        <p class="card-text pb-4">
+          Access 75+ channels with Live TV, endless, ad-free entertainment with Disney+, live sports with ESPN+, and award-winning Hulu originals with Hulu (No Ads).
         </p>
         <button class="btn btn-outline-dark w-100">Select</button>
       </div>
@@ -54,8 +43,9 @@
 </template>
 
 <script>
+
 export default {
-  name: "PlansCarousel",
+  name: "BundleCarousel",
 };
 </script>
 
@@ -72,18 +62,18 @@ export default {
 }
 .frnt-card {
   z-index: 1;
-  height: 450px;
+  height: 530px;
   border-top: 5px solid #29a869;
   box-shadow: 0 10px 20px -5px rgb(0 0 0 / 8%);
 }
 
 .l-card {
-  height: 420px;
+  height: 480px;
   box-shadow: 0 2px 3px 0 rgb(0 0 0 / 8%);
 }
 
 .r-card {
-  height: 420px;
+  height: 480px;
   box-shadow: 0 2px 3px 0 rgb(0 0 0 / 8%);
 }
 
@@ -100,19 +90,16 @@ export default {
   letter-spacing: 1px;
   font-size: 0.6875rem;
 }
-.info {
-  color: #1ac972;
-  font-family: "Graphik Medium";
-  margin-bottom: 0px;
+.bndle-logos {
+  width: 80%;
 }
-
-.price {
-  font-family: "Graphik Medium";
-  font-size: 2em;
+.price{
+    font-family: "Graphik Medium";
+    font-size: 2em;
 }
-.time-period {
-  font-family: "Graphik Bold";
-  font-size: 1.125em;
+.time-period{
+    font-family: "Graphik Bold";
+    font-size: 1.125em;
 }
 .card-text {
   color: #636e85;
@@ -130,7 +117,7 @@ export default {
   padding: 12px;
 }
 
-.btn-dark {
+.btn-dark{
   color: white;
 }
 </style>
