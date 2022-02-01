@@ -1,5 +1,5 @@
 <template>
-  <div class="plans-radial row">
+  <div class="plans-radial row mx-2 justify-content-center">
     <div class="plans-container d-flex justify-content-evenly">
       <div
         class="plans-card card mx-1"
@@ -129,6 +129,86 @@
     </div>
   </div>
 
+  <div class="plan-details-container d-flex justify-content-center">
+    <div class="plan-details" v-if="plan == 1">
+      <h3>Get Hulu 30 days free</h3>
+      <p><strong>then $6.99/month</strong></p>
+      <p class="details-info">
+        Our ad-supported plan lets you watch exclusive series, hit movies,
+        Originals, kids shows, and tons more.
+      </p>
+    </div>
+
+    <div class="plan-details" v-if="plan == 2">
+      <img
+        class="bundle-logos"
+        src="../assets/bndle-logos-color.png"
+        alt="Bundle Logos"
+      />
+      <p><strong>Get Hulu, Disney+, and ESPN+ for $13.99/month.</strong></p>
+      <p class="details-info">
+        Access live sports with ESPN+, endless, ad-free entertainment with
+        Disney+, and award-winning Hulu Originals with Hulu (ad-supported).
+      </p>
+    </div>
+
+    <div class="plan-details" v-if="plan == 3">
+      <img
+        class="bundle-logos"
+        src="../assets/bndle-logos-color.png"
+        alt="Bundle Logos"
+      />
+      <p>
+        <strong>Get Hulu (No Ads) Disney+, and ESPN+ for $19.99/month.</strong>
+      </p>
+      <p class="details-info">
+        Access live sports with ESPN+, endless, ad-free entertainment with
+        Disney+, and award-winning Hulu Originals with Hulu (No Ads).
+      </p>
+    </div>
+
+    <div class="plan-details" v-if="plan == 4">
+      <p>
+        <strong
+          >Get Hulu + Live TV, Disney+, and ESPN+ for $69.99/month.</strong
+        >
+      </p>
+      <p class="details-info">
+        Access 75+ channels with Live TV, endless, ad-free entertainment with
+        Disney+, live sports with ESPN+, and award-winning Hulu originals with
+        Hulu (ad-supported).
+      </p>
+    </div>
+
+    <div class="plan-details" v-if="plan == 5">
+      <h3>Get Hulu (No Ads) 30 days free</h3>
+      <p><strong>then $12.99/month</strong></p>
+      <p class="details-info">
+        Our ad-free plan lets you watch exclusive series, hit movies, Originals,
+        kids shows, and tons more with no ad interruptions.
+      </p>
+    </div>
+
+    <div class="plan-details" v-if="plan == 6">
+      <img
+        class="bundle-logos"
+        src="../assets/bndle-logos-color.png"
+        alt="Bundle Logos"
+      />
+      <p>
+        <strong
+          >Get Hulu (No Ads) + Live TV, Disney+, and ESPN+ for
+          $75.99/month.</strong
+        >
+      </p>
+      <p class="details-info">
+        Access 75+ channels with Live TV, endless, ad-free entertainment with
+        Disney+, live sports with ESPN+, and award-winning Hulu originals with
+        Hulu (No Ads).
+      </p>
+    </div>
+  </div>
+
   <div class="submit row align-items-end">
     <div class="submit-btn col mb-4">
       <div><input type="submit" value="Select" class="select w-100" /></div>
@@ -149,8 +229,12 @@ export default {
 
 <style scoped>
 .plans-container {
+  max-width: 900px;
   overflow: scroll;
   height: 200px;
+}
+.plans-container::-webkit-scrollbar {
+  display: none;
 }
 .plans-card {
   width: 140px;
@@ -216,9 +300,32 @@ input[type="radio"] {
   bottom: 10px;
   width: 32px;
 }
+.plan-details-container {
+  height: 300px;
+}
 
+.plan-details {
+  width: 50%;
+  text-align: start;
+}
+.plan-details h3{
+  font-size: .875em;
+  margin-bottom: 4px;
+}
+.plan-details p{
+  margin-bottom: 8px;
+}
+
+.details-info{
+  color: #636E85;
+  opacity: 85%;
+}
+.bundle-logos {
+  width: 200px;
+  margin-bottom: 20px;
+}
 .submit {
-  height: 550px;
+  height: 245px;
 }
 
 .submit-btn {
@@ -241,8 +348,16 @@ input[type="radio"] {
     display: none;
   }
 
-  .submit{
-      display:none;
+  .submit {
+    display: none;
+  }
+
+  .plan-details-container{
+    display: none!important;
+  }
+
+  .plan-details{
+    display:none;
   }
 }
 </style>
