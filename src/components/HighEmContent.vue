@@ -62,7 +62,43 @@ export default {
 }
 
 .ep-decription {
+  display: none;
+}
+
+@media (min-width: 576px){
+  .high-em-img{
+    height:540px;
+  }
+}
+
+@media (min-width: 768px){
+   .high-em-img{
+    height:440px;
+  }
+
+  .ep-decription {
   font-family: "Graphik Regular";
   color: white;
+  font-size: .875em;
+  display: block;
+}
+}
+
+@media (min-width: 992px){
+   .high-em-img{
+    height:560px;
+  }
+}
+@media (min-width: 1200px){
+  .high-em-img{
+    height: 600px;
+  }
+
+}
+
+@media (min-width: 1400px){
+   .high-em-img{
+    height: 700px;
+  }
 }
 </style>

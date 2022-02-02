@@ -32,10 +32,11 @@ export default {
 
 <style scoped>
 .show-img {
-  min-width: 16.666666%;
+  min-width: 49.0%;
   overflow: hidden;
   position: relative;
 }
+
 .card {
   border: none;
 }
@@ -44,7 +45,7 @@ export default {
   padding: 0px;
 }
 .card-subtitle {
-  font-size: .90em;
+  font-size: .75em;
   overflow:hidden;
 }
 .on-img {
@@ -52,6 +53,24 @@ export default {
   top: 10px;
   right: 10px;
 }
+@media (min-width: 768px){
+  .show-img {
+  min-width: 33.33333%;
+}
+}
+@media (min-width: 992px){
+.show-img {
+  min-width: 25%;
+}
+.card-subtitle{
+  font-size: .875em;
+}
+}
 
+@media (min-width: 1400px){
+.show-img {
+  min-width: 20%;
+}
+}
 
 </style>

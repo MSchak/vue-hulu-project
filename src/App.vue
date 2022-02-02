@@ -80,7 +80,7 @@ h4{
 
 h5{
    font-family: "Graphik Medium";
-  font-size: 1em;
+  font-size: .875em;
   letter-spacing: -0.5px;
   text-transform: capitalize;
 }
@@ -102,7 +102,10 @@ p{
   h1{
     font-size: 3em;
   }
-
+ h5{
+    font-size: 1em;
+  letter-spacing: -0.5px;
+ }
   p{
     font-size: 1em;
   }

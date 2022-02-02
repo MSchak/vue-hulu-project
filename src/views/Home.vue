@@ -45,6 +45,16 @@ export default {
   height: 100vh;
 }
 
+.container{
+  max-width: 550px;
+}
+
+@media (min-width: 576px){
+  .container{
+    max-width: 740px;
+  }
+}
+
 @media (min-width: 768px){
 .container{
   max-width: 900px;

@@ -77,7 +77,7 @@ export default {
   text-transform: uppercase;
   color: #00ed82;
   font-size: 12px;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.0px;
 }
 
 .cta-btn {

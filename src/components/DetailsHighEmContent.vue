@@ -34,7 +34,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .high-em-img {
   background-image: linear-gradient(
     to left,
