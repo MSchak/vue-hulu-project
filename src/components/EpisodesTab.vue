@@ -121,4 +121,9 @@ export default {
   color: black;
   font-weight: bold;
 }
+
+@media (min-width:1500px){
+  
+}
+
 </style>

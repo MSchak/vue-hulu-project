@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs row ms-3 align-items-center">
+  <div class="tabs row ps-4 align-items-center">
     <div class="col h-100">
       <ul class="nav nav-tabs justify-content-start h-100 align-content-center" id="myTab" role="tablist">
         <li class="nav-item h-100" role="presentation">

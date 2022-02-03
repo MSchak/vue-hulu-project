@@ -1,6 +1,6 @@
 <template>
-  <div class="high-em-content high-em-img row align-content-end pb-2 ps-5">
-    <div class="col-4 m-5 align-content-end p-0 pb-5">
+  <div class="high-em-content high-em-img row align-content-end">
+    <div class="col-4 m-5 align-content-end p-0">
       <div class="show-logo d-flex mb-4">
         <img src="" alt="" />
       </div>
@@ -57,6 +57,10 @@ export default {
 .ep-decription {
   font-family: "Graphik Regular";
   color: white;
+}
+
+.play-btn{
+  padding: 0px;
 }
 .play-btn{
     color: white;

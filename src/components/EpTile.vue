@@ -1,6 +1,6 @@
 <template>
   <div class="col ep-tile me-1 p-0 d-flex justify-content-center">
-    <div class="card border-0">
+    <div class="episode-card card border-0">
       <img
         src="https://via.placeholder.com/350x200"
         class="card-img-top"
@@ -35,6 +35,10 @@ export default {
 </script>
 
 <style scoped>
+
+.episode-card{
+max-width: 400px; 
+}
 .card-body {
   padding: 0px;
 }
