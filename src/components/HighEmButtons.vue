@@ -44,7 +44,7 @@ export default {
 }
 
 .play{
-    padding-top: 5px;
+    padding-top: 3px;
 }
 
 .details-link{

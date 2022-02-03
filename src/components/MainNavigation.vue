@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
-    <div class="nav-container container-fluid mx-3">
-      <div class="row align-items-center h-100 mx-1 me-4 pt-1">
+    <div class="nav-container container-fluid px-md-4">
+      <div class="row align-items-center h-100 mx-1 me-4 pt-1 px-xl-2">
         <div class="col-1">
           <p class="title mb-0">hulu</p>
         </div>

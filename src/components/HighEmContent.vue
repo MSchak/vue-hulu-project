@@ -2,7 +2,7 @@
   <div class="high-em-content high-em-img row align-content-end pb-2">
     <b-spinner v-if="loading"></b-spinner>
     <template v-if="!loading">
-      <div class="col-4 m-5 align-content-end p-0">
+      <div class="col-4 m-4 ms-md-4 ps-2 ps-md-3 pb-lg-2 p-xxl-4 align-content-end">
         <div class="show-logo d-flex mb-4">
           <img src="" alt="" />
         </div>
@@ -44,9 +44,9 @@ export default {
 <style>
 .high-em-img {
   background-image: linear-gradient(
-    to left,
+    180deg,
     rgba(232, 246, 252, 0.52),
-    rgb(203 26 6 / 81%)
+    rgb(203 26 6 / 50%)
   );
   height: 700px;
   padding: 0;
@@ -66,13 +66,18 @@ export default {
 }
 
 @media (min-width: 576px){
-  .high-em-img{
+  .high-em-img{  
     height:540px;
   }
 }
 
 @media (min-width: 768px){
    .high-em-img{
+      background-image: linear-gradient(
+    to left,
+    rgba(232, 246, 252, 0.52),
+    rgb(203 26 6 / 81%)
+  );
     height:440px;
   }
 

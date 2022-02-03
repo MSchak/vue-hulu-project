@@ -5,16 +5,16 @@
     <high-em-content></high-em-content>
     </section>
 
-<section class="container">
-    <div class="row mx-4 my-2">
+<section class="container px-xl-4">
+    <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2 mt-lg-4 pt-lg-1">
     <related-slideshow></related-slideshow>
     </div>
 
-    <div class="row mx-4 my-2">
+    <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2">
     <related-slideshow></related-slideshow>
     </div>
 
-    <div class="row mx-4 my-2">
+    <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2">
     <related-slideshow></related-slideshow>
     </div>
 
@@ -51,19 +51,19 @@ export default {
 
 @media (min-width: 576px){
   .container{
-    max-width: 740px;
+    max-width: 768px;
   }
 }
 
 @media (min-width: 768px){
 .container{
-  max-width: 900px;
+  max-width: 992px;
 }
 }
 
 @media (min-width: 992px){
   .container{
-    max-width: 1100px;
+    max-width: 1200px;
   }
 }
 @media (min-width: 1200px){
