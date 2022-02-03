@@ -2,7 +2,7 @@
   <div class="episodes-tab drpdwn my-4">
     <button
       @click="toggle"
-      class="drpdwn-btn btn btn-light ms-4 d-flex justify-content-between align-items-center"
+      class="drpdwn-btn btn btn-light ms-3 ms-lg-4 d-flex justify-content-between align-items-center"
     >
       Season {{ seasonNumber }}<fa icon="caret-down"/>
     </button>
@@ -24,8 +24,8 @@
       </li>
     </ul>
 
-    <div class="seasons-content row ms-3">
-      <div class="col">
+    <div class="seasons-content row ms-1">
+      <div class="col p-0">
         <div v-if="btn === 1">
           <div class="m-4">Season One</div>
           <show-grid></show-grid>
@@ -33,8 +33,8 @@
       </div>
     </div>
 
-    <div class="seasons-content row ms-3">
-      <div class="col">
+    <div class="seasons-content row ms-1">
+      <div class="col p-0">
         <div v-if="btn === 2">
           <div class="m-4">Season Two</div>
           <show-grid></show-grid>
@@ -42,8 +42,8 @@
       </div>
     </div>
 
-    <div class="seasons-content row ms-3">
-      <div class="col">
+    <div class="seasons-content row ms-1">
+      <div class="col p-0">
         <div v-if="btn === 3">
           <div class="m-4">Season Three</div>
           <show-grid></show-grid>
@@ -122,8 +122,5 @@ export default {
   font-weight: bold;
 }
 
-@media (min-width:1500px){
-  
-}
 
 </style>

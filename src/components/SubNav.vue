@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs row ps-4 align-items-center">
+  <div class="tabs row ps-0 ps-lg-4 align-items-center">
     <div class="col h-100">
       <ul class="nav nav-tabs justify-content-start h-100 align-content-center" id="myTab" role="tablist">
         <li class="nav-item h-100" role="presentation">
@@ -134,7 +134,7 @@ export default {
 
 <style scoped>
 .tabs {
-  height: 72px;
+  height: 64px;
   border-bottom: 0.5px solid lightgrey;
 }
 
@@ -144,9 +144,9 @@ export default {
 
 .nav-link {
   font-family: "Graphik Medium";
+  font-size: .75em;
   color: #6b7790;
   text-transform: uppercase;
-  font-size: 0.875em;
   border: none;
 }
 
@@ -177,5 +177,15 @@ export default {
   word-spacing: 1px;
   color: #6b7790;
   opacity: 80%;
+}
+
+@media (min-width:992px){
+  .tabs {
+  height: 72px;
+  border-bottom: 0.5px solid lightgrey;
+}
+.nav-link{
+  font-size: .875em;
+}
 }
 </style>

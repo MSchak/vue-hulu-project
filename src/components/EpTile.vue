@@ -1,5 +1,5 @@
 <template>
-  <div class="col ep-tile me-1 p-0 d-flex justify-content-center">
+  <div class="ep-tile me-1 p-0 d-flex justify-content-center">
     <div class="episode-card card border-0">
       <img
         src="https://via.placeholder.com/350x200"
@@ -36,8 +36,8 @@ export default {
 
 <style scoped>
 
-.episode-card{
-max-width: 400px; 
+.ep-tile{
+ width: 48%;
 }
 .card-body {
   padding: 0px;
@@ -57,5 +57,30 @@ max-width: 400px;
   color: #6b7790;
   opacity: 80%;
   margin-right: 25px;
+}
+
+
+@media (min-width: 768px){
+  .ep-tile{
+ width: 32%;
+}
+}
+
+@media (min-width: 992px){
+  .ep-tile{
+ width: 24%;
+}
+}
+
+@media (min-width: 1200px){
+  .ep-tile{
+ width: 19%;
+}
+}
+
+@media (min-width: 1800px){
+  .ep-tile{
+ width: 15%;
+}
 }
 </style>

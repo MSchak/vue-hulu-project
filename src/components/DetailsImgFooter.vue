@@ -1,6 +1,6 @@
 <template>
   <div class="details-footer row align-content-center">
-    <div class="high-em-color col ms-5 p-0">
+    <div class="high-em-color col ms-4 ms-lg-5 p-0">
       <p class="m-0 stars"><strong>Starring:</strong> Stars, stars, stars</p>
     </div>
   </div>
