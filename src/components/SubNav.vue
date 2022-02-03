@@ -37,70 +37,34 @@
     <episodes-tab></episodes-tab>
   </div>
 
-  <div class="you-make-like tab-content row m-3 pt-4">
-    <div class="col">
+  <div class="you-make-like tab-content row pt-4">
       <div v-if="tab === 2" class="pane">
-        <div class="you-may-like row">
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-        </div>
-        <div class="you-may-like row p-0">
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-        </div>
-        <div class="you-may-like row p-0">
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-          <div class="col">
-            <show-tile></show-tile>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        <div class="you-may-like d-flex flex-row flex-wrap justify-content-center mx-lg-4">
 
-  <div class="details tab-content row ms-4 ps-2">
+            <show-tile></show-tile>
+            <show-tile></show-tile>
+            <show-tile></show-tile>
+             <show-tile></show-tile>
+            <show-tile></show-tile>
+            <show-tile></show-tile>
+             <show-tile></show-tile>
+            <show-tile></show-tile>
+            <show-tile></show-tile>
+             <show-tile></show-tile>
+            <show-tile></show-tile>
+            <show-tile></show-tile>
+        </div>
+        </div>
+        </div>
+
+
+
+  <div class="details tab-content row ms-0 ms-lg-4 ps-1">
     <div class="col">
       <div v-if="tab === 3" class="pane details">
         <h5 class="mb-3">About This Show</h5>
         <h4>Show Title</h4>
-        <p class="show-description w-50">
+        <p class="show-description">
           Description of the show will go here. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit. Praesent semper viverra purus, at
           fermentum mi venenatis eget. Nullam lobortis, odio at pulvinar auctor,
@@ -177,6 +141,12 @@ export default {
   word-spacing: 1px;
   color: #6b7790;
   opacity: 80%;
+}
+
+@media (min-width:576px) {
+  .show-description{
+    width: 50%;
+  }
 }
 
 @media (min-width:992px){

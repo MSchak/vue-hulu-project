@@ -32,28 +32,5 @@ export default {
 </script>
 
 <style scoped>
-.grid-container{
-    max-width: 500px;
-}
-@media (min-width: 576px){
-.grid-container{
-    max-width: 768px;
-}
-}
-@media (min-width: 768px){
-.grid-container{
-    max-width: 992px;
-}
-}
 
-@media (min-width: 992px){
-.grid-container{
-    max-width: 1200px;
-}
-}
-@media (min-width: 1200px){
-.grid-container{
-    max-width: 2500px;
-}
-}
 </style>

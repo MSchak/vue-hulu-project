@@ -1,5 +1,5 @@
 <template>
-  <div class="show-img card pb-3">
+  <div class="show-img card pb-3 me-1">
     <router-link to="/details"
       ><img
         class="card-img-top"
@@ -36,8 +36,7 @@ export default {
 
 <style scoped>
 .show-img {
-  min-width: 16.666666%;
-  overflow: hidden;
+  width: 49%;
   position: relative;
 }
 .card {
@@ -54,5 +53,23 @@ export default {
   color: #6b7790;
   opacity: 80%;
   margin-right: 25px;
+}
+
+@media (min-width: 768px){
+  .show-img{
+    width: 32%;
+  }
+}
+
+@media (min-width: 1200px){
+  .show-img{
+    width: 24%;
+  }
+}
+
+@media (min-width: 1600px){
+  .show-img{
+    width: 19%;
+  }
 }
 </style>
