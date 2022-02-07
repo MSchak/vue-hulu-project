@@ -7,6 +7,5 @@ import {faCoffee, faTimes, faEllipsisV, faSearch,faPlayCircle, faCaretDown, faBa
 
 library.add(faCoffee,faTimes, faEllipsisV,faSearch,faPlayCircle, faCaretDown, faBars, faCaretRight);
 
-
 createApp(App)
 .component('fa', FontAwesomeIcon).use(router).mount('#app')

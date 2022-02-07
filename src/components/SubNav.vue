@@ -1,7 +1,11 @@
 <template>
   <div class="tabs row ps-0 ps-lg-4 align-items-center">
     <div class="col h-100">
-      <ul class="nav nav-tabs justify-content-start h-100 align-content-center" id="myTab" role="tablist">
+      <ul
+        class="nav nav-tabs justify-content-start h-100 align-content-center"
+        id="myTab"
+        role="tablist"
+      >
         <li class="nav-item h-100" role="presentation">
           <button
             @click="tab = 1"
@@ -38,26 +42,31 @@
   </div>
 
   <div class="you-make-like tab-content row pt-4">
-      <div v-if="tab === 2" class="pane">
-        <div class="you-may-like d-flex flex-row flex-wrap justify-content-center mx-lg-4">
-
-            <show-tile></show-tile>
-            <show-tile></show-tile>
-            <show-tile></show-tile>
-             <show-tile></show-tile>
-            <show-tile></show-tile>
-            <show-tile></show-tile>
-             <show-tile></show-tile>
-            <show-tile></show-tile>
-            <show-tile></show-tile>
-             <show-tile></show-tile>
-            <show-tile></show-tile>
-            <show-tile></show-tile>
-        </div>
-        </div>
-        </div>
-
-
+    <div v-if="tab === 2" class="pane">
+      <div
+        class="
+          you-may-like
+          d-flex
+          flex-row flex-wrap
+          justify-content-center
+          mx-lg-4
+        "
+      >
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+        <show-tile></show-tile>
+      </div>
+    </div>
+  </div>
 
   <div class="details tab-content row ms-0 ms-lg-4 ps-1">
     <div class="col">
@@ -108,7 +117,7 @@ export default {
 
 .nav-link {
   font-family: "Graphik Medium";
-  font-size: .75em;
+  font-size: 0.75em;
   color: #6b7790;
   text-transform: uppercase;
   border: none;
@@ -132,30 +141,30 @@ export default {
   font-family: "Graphik Medium";
   font-size: 1em;
   letter-spacing: -0.5px;
-  color: #292C33;
+  color: #292c33;
 }
-.show-description{
- font-size: 1em;
- letter-spacing:.5px ;
+.show-description {
+  font-size: 1em;
+  letter-spacing: 0.5px;
   line-height: 24px;
   word-spacing: 1px;
   color: #6b7790;
   opacity: 80%;
 }
 
-@media (min-width:576px) {
-  .show-description{
+@media (min-width: 576px) {
+  .show-description {
     width: 50%;
   }
 }
 
-@media (min-width:992px){
+@media (min-width: 992px) {
   .tabs {
-  height: 72px;
-  border-bottom: 0.5px solid lightgrey;
-}
-.nav-link{
-  font-size: .875em;
-}
+    height: 72px;
+    border-bottom: 0.5px solid lightgrey;
+  }
+  .nav-link {
+    font-size: 0.875em;
+  }
 }
 </style>

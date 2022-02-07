@@ -1,5 +1,6 @@
 <template>
-  <div class="high-em-content high-em-img row align-content-end">
+  <div :style="highEmImg" class="high-em-content high-em-img row">
+    <div class="gradient d-flex align-items-end pb-2">
     <div class="col-10 col-md-6 col-xxl-4 m-4 m-lg-5 align-content-end p-0">
       <div class="show-logo d-flex mb-4">
         <img src="" alt="" />
@@ -20,26 +21,63 @@
       </div>
     </div>
     </div>
+    </div>
   </div>
 </template>
 
 <script>
+
+import axios from "axios";
+
 export default {
   name: "DetailsHighEmContent",
   data() {
     return {
+      showDetails: {},
       episodeNumber: "S1 E3",
+        options: {
+        method: "GET",
+        url: "https://movies-tvshows-data-imdb.p.rapidapi.com/",
+        params: { type: "get-show-images-by-imdb", imdb: "tt2741602" },
+        headers: {
+          "x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com",
+          "x-rapidapi-key":
+            "0bd8a923e7msh8c59b63cd726838p1433d2jsne4605bc6e80f",
+        },
+      },
     };
+  },
+    created() {
+    axios
+      .request(this.options)
+      .then((response) => {
+        console.log(response.data);
+        this.showDetails = response.data;
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  },
+  computed: {
+    highEmImg() {
+      return {
+        backgroundImage: `url(${this.showDetails.fanart})`,
+      };
+    },
   },
 };
 </script>
 
 <style scoped>
 .high-em-img {
+  padding: 0;
+}
+
+.gradient {
   background-image: linear-gradient(
     180deg,
-    rgba(232, 246, 252, 0.52),
-    rgb(203 26 6 / 50%)
+    rgba(253, 253, 253, 1%),
+    rgb(203 26 6 / 100%)
   );
   padding: 0;
 }
@@ -74,14 +112,15 @@ export default {
   text-transform: uppercase;
   margin-bottom: 0px;
 }
+
 @media (min-width: 768px){
-  .high-em-img{
+    .gradient {
     background-image: linear-gradient(
-    to left,
-    rgba(232, 246, 252, 0.52),
-    rgb(203 26 6 / 81%)
-  );
-  }
+      to left,
+      rgba(253, 253, 253, 15%),
+      rgb(203 26 6 / 81%)
+    );
+}
 }
 @media (min-width: 992px){
 
