@@ -9,7 +9,7 @@
     </div>
 
     <div class="ellipse d-flex">
-    <fa icon="ellipsis-v" size="md" class="ellipse align-self-center" />
+    <fa icon="ellipsis-v" class="ellipse align-self-center" />
     </div>
   </div>
 </template>

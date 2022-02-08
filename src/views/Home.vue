@@ -7,15 +7,15 @@
 
 <section class="container px-xl-4">
     <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2 mt-lg-4 pt-lg-1">
-    <related-slideshow></related-slideshow>
+    <tv-for-you></tv-for-you>
     </div>
 
     <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2">
-    <related-slideshow></related-slideshow>
+    <movies-for-you></movies-for-you>
     </div>
 
     <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2">
-    <related-slideshow></related-slideshow>
+    <keep-watching></keep-watching>
     </div>
 
   </section> 
@@ -28,14 +28,18 @@
 
 import HighEmContent from '../components/HighEmContent.vue'
 import MainNavigation from '../components/MainNavigation.vue'
-import RelatedSlideshow from '../components/RelatedSlideshow.vue'
+import TvForYou from '../components/TvForYou.vue'
+import MoviesForYou from '../components/MoviesForYou.vue'
+import KeepWatching from '../components/KeepWatching.vue'
 
 export default {
   name: 'Home',
   components: {
     HighEmContent,
-    RelatedSlideshow,
-    MainNavigation
+    MainNavigation,
+    TvForYou,
+    MoviesForYou,
+    KeepWatching,
   }
 }
 </script>
