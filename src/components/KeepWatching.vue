@@ -3,19 +3,7 @@
     <h2>Keep Watching</h2>
     <div class="slide-container">
       <div class="slide-items d-flex" :class="carouselClasses">
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        <reg-em-tile></reg-em-tile>
-        
+        <reg-em-tile v-for="show in keepWatchingShows" :key="show.id" :imgPath="show.backdrop_path" :title="show.name"></reg-em-tile>
       </div>
       <div class="slide-buttons">
         <button @click="scrollBack()" class="back-btn btn btn-light">
@@ -31,6 +19,7 @@
 
 <script>
 import RegEmTile from "./RegEmTile.vue";
+import axios from 'axios'
 
 export default {
   name: "KeepWatching",
@@ -39,7 +28,8 @@ export default {
   },
   data() {
     return{
-      carouselClasses: ""
+      carouselClasses: "",
+      keepWatchingShows: []
     }
   },
   methods: {
@@ -50,6 +40,16 @@ export default {
       this.carouselClasses = "scroll-back"
     },
   },
+  created(){
+    axios.get('https://api.themoviedb.org/3/trending/tv/week?api_key=51c374b022c8809f8ebb065eaa0a82f6')
+    .then((response) => {
+    this.keepWatchingShows = response.data.results
+    console.log(this.keepWatchingShows)
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
 };
 </script>
 

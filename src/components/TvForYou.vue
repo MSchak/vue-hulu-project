@@ -5,9 +5,9 @@
       <div v-if="red == true" class="slide-items d-flex" :class="carouselClasses">
         <tv-for-you-tile
           v-for="show in tvShows"
-          :key="show.imdb_id"
-          :showKey="show.imdb_id"
-          :showTitle="show.title"
+          :key="show.id"
+          :showTitle="show.name"
+          :showImgPath="show.backdrop_path"
         >
         </tv-for-you-tile>
       </div>
@@ -37,17 +37,7 @@ export default {
       carouselClasses: "",
       tvShows: [],
       red: true,
-      options: {
-        method: "GET",
-        url: "https://movies-tvshows-data-imdb.p.rapidapi.com/",
-        params: { type: "get-trending-shows", page: "1" },
-        headers: {
-          "x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com",
-          "x-rapidapi-key":
-            "0bd8a923e7msh8c59b63cd726838p1433d2jsne4605bc6e80f",
-        },
-      },
-    };
+    }
   },
   methods: {
     scrollFwd() {
@@ -59,11 +49,10 @@ export default {
   },
   created() {
     axios
-      .request(this.options)
+      .request('https://api.themoviedb.org/3/tv/popular?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1')
       .then((response) => {
-        console.log(response.data);
-        this.tvShows = response.data.tv_results;
-        console.log(this.tvShows);
+        this.tvShows = response.data.results
+        console.log(this.tvShows)
       })
       .catch(function (error) {
         console.error(error);

@@ -13,40 +13,27 @@
 
 <script>
 import EllipseMenu from "./EllipseMenu.vue"
-import axios from "axios"
+import axios from 'axios'
 
 export default {
   name: "TvForYouTile",
-  props: ['showKey', 'showTitle'],
+  props: ['showImgPath', 'showTitle'],
   components: {
     EllipseMenu,
   },
   data(){
     return{
       showImg: '',
-   options: {
-        method: "GET",
-        url: "https://movies-tvshows-data-imdb.p.rapidapi.com/",
-        params: { type: "get-show-images-by-imdb", imdb: this.showKey },
-        headers: {
-          "x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com",
-          "x-rapidapi-key":
-            "0bd8a923e7msh8c59b63cd726838p1433d2jsne4605bc6e80f",
-        },
-      },
     }
-  },
+  },  
 created(){
-    axios
-      .request(this.options)
+    axios.get(`https://image.tmdb.org/t/p/original${this.showImgPath}`)
       .then((response) => {
-        console.log(response.data);
-        this.showImg = response.data.fanart
-        console.log(this.showImg)
+       this.showImg = response.config.url
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.error(error);
-      });
+      })
   }
 };
 </script>

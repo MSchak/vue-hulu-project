@@ -3,13 +3,13 @@
     <router-link to="/details"
       ><img
         class="card-img-top"
-        src="https://via.placeholder.com/350x200"
+        :src="showImg"
         alt=""
     /></router-link>
     <ellipse-menu class="on-img"></ellipse-menu>
     <div class="card-body d-flex justify-content-between">
       <div>
-    <h5 class="show-title card-title my-2">Show title</h5>
+    <h5 class="show-title card-title my-2">{{title}}</h5>
     <p class="card-subtitle">S1 E1 - Name of this episode</p>
       </div>
     <div>
@@ -21,12 +21,29 @@
 
 <script>
 import EllipseMenu from "./EllipseMenu.vue";
+import axios from 'axios'
 
 export default {
   name: "RegEmTile",
   components: {
     EllipseMenu,
   },
+  props: ['title', 'imgPath'],
+  data(){
+    return{
+      showImg: ''
+    }
+  },
+  created(){
+  axios.get(`https://image.tmdb.org/t/p/original${this.imgPath}`)
+  .then((response) => {
+    this.showImg = response.config.url
+
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+  }
 };
 </script>
 
