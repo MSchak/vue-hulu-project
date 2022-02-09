@@ -3,13 +3,13 @@
     <router-link to="/details"
       ><img
         class="card-img-top"
-        src="https://via.placeholder.com/350x200"
+        :src="movieImg"
         alt=""
     /></router-link>
     <ellipse-menu class="on-img"></ellipse-menu>
     <div class="card-body d-flex justify-content-between">
       <div>
-    <h5 class="show-title card-title my-2">Show title</h5>
+    <h5 class="show-title card-title my-2">{{movieTitle}}</h5>
       </div>
     <div>
     <ellipse-menu class="pt-2 pe-2"></ellipse-menu>
@@ -20,13 +20,32 @@
 
 <script>
 import EllipseMenu from "./EllipseMenu.vue";
+import axios from 'axios'
 
 export default {
   name: "MoviesForYouTile",
   components: {
     EllipseMenu,
   },
-}
+  props: ['key', 'movieTitle', 'movieImgPath'],
+  data(){
+    return{
+      movieImg: '',
+    }
+  },
+  created(){
+    axios.get(`https://image.tmdb.org/t/p/original${this.movieImgPath}`)
+      .then((response) => {
+       console.log(response)
+       this.movieImg = response.config.url
+       console.log(this.movieImg)
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+  }
+  }
+
 </script>
 
 <style scoped>

@@ -3,19 +3,8 @@
     <h2>Movies For You</h2>
     <div class="slide-container">
       <div class="slide-items d-flex" :class="carouselClasses">
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-       <movies-for-you-tile></movies-for-you-tile>
-        
+       <movies-for-you-tile v-for="movie in moviesList" :key="movie.id"
+          :movieTitle="movie.title" :movieImgPath="movie.backdrop_path" ></movies-for-you-tile>
       </div>
       <div class="slide-buttons">
         <button @click="scrollBack()" class="back-btn btn btn-light">
@@ -31,6 +20,7 @@
 
 <script>
 import MoviesForYouTile from "./MoviesForYouTile.vue"
+import axios from 'axios'
 
 export default {
   name: "MoviesForYou",
@@ -39,7 +29,8 @@ export default {
   },
   data() {
     return{
-      carouselClasses: ""
+      carouselClasses: "",
+      moviesList: []
     }
   },
   methods: {
@@ -50,6 +41,16 @@ export default {
       this.carouselClasses = "scroll-back"
     },
   },
+   created(){
+    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1')
+      .then((response) => {
+        this.moviesList = response.data.results
+        console.log(this.moviesList)
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+  }
 };
 </script>
 

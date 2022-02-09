@@ -2,9 +2,14 @@
   <div class="related-slideshow my-3">
     <h2>TV For You</h2>
     <div class="slide-container">
-      <div class="slide-items d-flex" :class="carouselClasses">
-      <tv-for-you-tile v-for="show in tvShows" :key="show.imdb_id" :showKey="show.imdb_id" :showTitle="show.title">
-      </tv-for-you-tile>
+      <div v-if="red == true" class="slide-items d-flex" :class="carouselClasses">
+        <tv-for-you-tile
+          v-for="show in tvShows"
+          :key="show.imdb_id"
+          :showKey="show.imdb_id"
+          :showTitle="show.title"
+        >
+        </tv-for-you-tile>
       </div>
       <div class="slide-buttons">
         <button @click="scrollBack()" class="back-btn btn btn-light">
@@ -31,15 +36,17 @@ export default {
     return {
       carouselClasses: "",
       tvShows: [],
+      red: true,
       options: {
         method: "GET",
-        url: 'https://movies-tvshows-data-imdb.p.rapidapi.com/',
-  params: {type: 'get-trending-shows', page: '1'},
-  headers: {
-    'x-rapidapi-host': 'movies-tvshows-data-imdb.p.rapidapi.com',
-    'x-rapidapi-key': '0bd8a923e7msh8c59b63cd726838p1433d2jsne4605bc6e80f'
-  }
-}
+        url: "https://movies-tvshows-data-imdb.p.rapidapi.com/",
+        params: { type: "get-trending-shows", page: "1" },
+        headers: {
+          "x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com",
+          "x-rapidapi-key":
+            "0bd8a923e7msh8c59b63cd726838p1433d2jsne4605bc6e80f",
+        },
+      },
     };
   },
   methods: {
