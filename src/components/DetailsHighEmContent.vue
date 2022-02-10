@@ -17,7 +17,7 @@
         <button class="btn play-btn"><fa icon="play-circle" size="2x"/></button>
       </div>
       <div class="d-flex align-items-center mx-1 mx-lg-3">
-        <p class="play-ep">Watch next episode: {{ episodeNumber }}</p>
+        <p class="play-ep">Watch next episode: {{}}</p>
       </div>
     </div>
     </div>
@@ -36,33 +36,28 @@ export default {
     return {
       showDetails: {},
       episodeNumber: "S1 E3",
-        options: {
-        method: "GET",
-        url: "https://movies-tvshows-data-imdb.p.rapidapi.com/",
-        params: { type: "get-show-images-by-imdb", imdb: "tt2741602" },
-        headers: {
-          "x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com",
-          "x-rapidapi-key":
-            "0bd8a923e7msh8c59b63cd726838p1433d2jsne4605bc6e80f",
-        },
-      },
+      tvShowImg: "",
+      tvShowDetails: {},
     };
   },
     created() {
-    axios
-      .request(this.options)
+     axios.get(`https://api.themoviedb.org/3/tv/${this.showIdAgain}?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`)
       .then((response) => {
-        console.log(response.data);
-        this.showDetails = response.data;
+        console.log(response)
+        this.tvShowDetails = response.data
+        return axios.get(`https://image.tmdb.org/t/p/original${this.tvShowDetails.backdrop_path}`)
+      }) 
+      .then((info) => {
+        this.tvShowImg = info.config.url
       })
-      .catch(function (error) {
-        console.error(error);
+      .catch((error) => {
+        console.log(error);
       });
   },
   computed: {
     highEmImg() {
       return {
-        backgroundImage: `url(${this.showDetails.fanart})`,
+        backgroundImage: `url(${this.tvShowImg})`,
       };
     },
   },

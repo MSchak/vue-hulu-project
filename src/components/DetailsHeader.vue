@@ -1,11 +1,11 @@
 <template>
   <div class="details-header row my-3 align-items-center w-100">
     <div class="col-7 text-end pe-0 pe-xl-5">
-      <p class="title mb-0">Show title</p>
+      <p class="title mb-0">{{tvShowTitle}}</p>
     </div>
 
     <div class="col text-end">
-      <button class="btn"><router-link to="/"><fa icon="times" size="1x" class="x-icon"/></router-link></button>
+      <button @click="$emit('closeModal')" class="btn"><fa icon="times" size="1x" class="x-icon"/></button>
     </div>
   </div>
 </template>
@@ -13,13 +13,14 @@
 <script>
 export default {
   name: "DetailsHeader",
+  props: ['tvShowTitle']
 };
 </script>
 
 <style scoped>
 
 .details-header{
-  position: fixed;
+  position: absolute;
   z-index: 100;
   height: 60px;
 }

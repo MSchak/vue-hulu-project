@@ -39,8 +39,8 @@ created(){
       .then((response) => {
        this.showImg = response.config.url
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(function(error){
+        console.log(error);
       })
   }
 };
@@ -57,9 +57,6 @@ created(){
   border: none;
 }
 
-.thing-btn{
-
-}
 .card-body{
   padding: 0px;
 }

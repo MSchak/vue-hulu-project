@@ -2,7 +2,7 @@
   <div id="home">
     <main-navigation></main-navigation>
     <section class="container-fluid pb-2">
-    <div class="thing" v-if="event"><tv-details :showID="showID"></tv-details></div>
+    <div class="thing" v-if="event" @close-the-modal="event = false" ><tv-details :showID="showID"></tv-details></div>
     <high-em-content></high-em-content>
     </section>
 
