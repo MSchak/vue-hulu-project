@@ -2,12 +2,13 @@
   <div id="home">
     <main-navigation></main-navigation>
     <section class="container-fluid pb-2">
+    <div class="thing" v-if="event"><tv-details :showID="showID"></tv-details></div>
     <high-em-content></high-em-content>
     </section>
 
 <section class="container px-xl-4">
     <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2 mt-lg-4 pt-lg-1">
-    <tv-for-you></tv-for-you>
+    <tv-for-you @open-modal="(otherThings)"></tv-for-you>
     </div>
 
     <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2">
@@ -31,6 +32,7 @@ import MainNavigation from '../components/MainNavigation.vue'
 import TvForYou from '../components/TvForYou.vue'
 import MoviesForYou from '../components/MoviesForYou.vue'
 import KeepWatching from '../components/KeepWatching.vue'
+import TvDetails from '../components/TvDetails.vue'
 
 export default {
   name: 'Home',
@@ -40,6 +42,20 @@ export default {
     TvForYou,
     MoviesForYou,
     KeepWatching,
+    TvDetails
+  },
+  data(){
+    return{
+      event: false,
+      showID: ''
+    }
+  },
+  methods: {
+    otherThings({showKey}){
+      this.event = true
+      this.showID = showKey
+      console.log(this.showID)
+    }
   }
 }
 </script>
@@ -51,6 +67,16 @@ export default {
 
 .container{
   max-width: 550px;
+}
+
+.thing{
+      width: 90vw;
+    height: 100vh;
+    position: fixed;
+    left: 5%;
+    background: white;
+    z-index: 1000;
+    overflow: scroll;
 }
 
 @media (min-width: 576px){

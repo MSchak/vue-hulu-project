@@ -6,8 +6,11 @@
         <tv-for-you-tile
           v-for="show in tvShows"
           :key="show.id"
+          :showKey="show.id"
           :showTitle="show.name"
           :showImgPath="show.backdrop_path"
+          @open-modal="doingThings"
+
         >
         </tv-for-you-tile>
       </div>
@@ -46,6 +49,11 @@ export default {
     scrollBack() {
       this.carouselClasses = "scroll-back";
     },
+    doingThings({key}){
+        this.$emit('openModal', {
+          showKey: key
+        })
+      },
   },
   created() {
     axios
@@ -53,6 +61,7 @@ export default {
       .then((response) => {
         this.tvShows = response.data.results
         console.log(this.tvShows)
+        
       })
       .catch(function (error) {
         console.error(error);

@@ -97,6 +97,7 @@ export default {
     EpisodesTab,
     ShowTile,
   },
+  props: ['showIdAgain'],
   data() {
     return {
       tab: 1,

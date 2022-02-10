@@ -1,13 +1,14 @@
 <template>
      <div class="show-img card mx-1">
-    <router-link to="/details"
-      ><img
+       <button @click="doingThings" class="thing-btn btn p-0">
+<img
         class="card-img-top"
         :src="showImg"
         alt=""
-    /></router-link>
+    />
     <ellipse-menu class="on-img"></ellipse-menu>
-     <h5 class="show-title card-title my-2">{{showTitle}}</h5>
+    </button>
+     <h5 class="show-title card-title my-2">{{showTitle}}{{showKey}}</h5>
   </div>
 </template>
 
@@ -17,7 +18,7 @@ import axios from 'axios'
 
 export default {
   name: "TvForYouTile",
-  props: ['showImgPath', 'showTitle'],
+  props: ['showKey', 'showImgPath', 'showTitle'],
   components: {
     EllipseMenu,
   },
@@ -25,7 +26,14 @@ export default {
     return{
       showImg: '',
     }
-  },  
+  },
+  methods: {
+      doingThings(){
+        this.$emit('openModal', {
+          key: this.showKey
+        })
+      },
+  }, 
 created(){
     axios.get(`https://image.tmdb.org/t/p/original${this.showImgPath}`)
       .then((response) => {
@@ -49,6 +57,9 @@ created(){
   border: none;
 }
 
+.thing-btn{
+
+}
 .card-body{
   padding: 0px;
 }

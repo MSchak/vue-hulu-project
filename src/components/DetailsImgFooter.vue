@@ -9,6 +9,7 @@
 <script>
 export default {
   name: "DetailsImgFooter",
+  props: ['showIdAgain'],
 };
 </script>
 
