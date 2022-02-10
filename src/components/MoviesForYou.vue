@@ -30,7 +30,8 @@ export default {
   data() {
     return{
       carouselClasses: "",
-      moviesList: []
+      moviesList: [],
+      moviesListArray: []
     }
   },
   methods: {
@@ -44,7 +45,9 @@ export default {
    created(){
     axios.get('https://api.themoviedb.org/3/movie/popular?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1')
       .then((response) => {
-        this.moviesList = response.data.results
+        this.moviesListArray = response.data.results
+        this.moviesList = this.moviesListArray.slice(0, 10)
+
       })
       .catch((error) => {
         console.error(error);

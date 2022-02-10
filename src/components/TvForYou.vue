@@ -38,6 +38,7 @@ export default {
   data() {
     return {
       carouselClasses: "",
+      tvShowsArray: [],
       tvShows: [],
       red: true,
     }
@@ -59,8 +60,8 @@ export default {
     axios
       .request('https://api.themoviedb.org/3/tv/popular?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1')
       .then((response) => {
-        this.tvShows = response.data.results
-        console.log(this.tvShows)
+        this.tvShowsArray = response.data.results
+        this.tvShows = this.tvShowsArray.slice(0, 10)
         
       })
       .catch(function (error) {

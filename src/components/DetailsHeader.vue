@@ -5,7 +5,7 @@
     </div>
 
     <div class="col text-end">
-      <button @click="$emit('closeModal')" class="btn"><fa icon="times" size="1x" class="x-icon"/></button>
+      <button class="btn" @click="$emit('closeModal')"><fa icon="times" size="1x" class="x-icon"/></button>
     </div>
   </div>
 </template>

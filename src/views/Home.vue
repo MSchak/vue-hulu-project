@@ -2,7 +2,7 @@
   <div id="home">
     <main-navigation></main-navigation>
     <section class="container-fluid pb-2">
-    <div class="thing" v-if="event" @close-the-modal="event = false" ><tv-details :showID="showID"></tv-details></div>
+    <div class="thing" v-if="event"><tv-details :showID="showID" @close-modal="event=false"></tv-details></div>
     <high-em-content></high-em-content>
     </section>
 
@@ -46,7 +46,7 @@ export default {
   },
   data(){
     return{
-      event: false,
+      event: '',
       showID: ''
     }
   },
@@ -55,7 +55,7 @@ export default {
       this.event = true
       this.showID = showKey
       console.log(this.showID)
-    }
+    },
   }
 }
 </script>

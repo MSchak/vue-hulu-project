@@ -29,7 +29,8 @@ export default {
   data() {
     return{
       carouselClasses: "",
-      keepWatchingShows: []
+      keepWatchingShows: [],
+      keepWatchingShowsArray: []
     }
   },
   methods: {
@@ -43,7 +44,9 @@ export default {
   created(){
     axios.get('https://api.themoviedb.org/3/trending/tv/week?api_key=51c374b022c8809f8ebb065eaa0a82f6')
     .then((response) => {
-    this.keepWatchingShows = response.data.results
+    this.keepWatchingShowsArray = response.data.results
+    this.keepWatchingShows = this.keepWatchingShowsArray.slice(0, 10)
+
     console.log(this.keepWatchingShows)
     })
     .catch((error) => {

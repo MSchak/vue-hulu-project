@@ -1,7 +1,7 @@
 <template>
   <div id="tv-details">
     <div class="container-fluid">
-        <details-header @close-modal="$emit('closeTheModal')" :tvShowTitle="showDetails.name"></details-header>
+        <details-header :tvShowTitle="showDetails.name" @close-modal="$emit('closeModal')"></details-header>
         <details-high-em-content :showIdAgain="showID"></details-high-em-content>
         <details-img-footer :showIdAgain="showID"></details-img-footer>
         <sub-nav :showIdAgain="showID"></sub-nav>
