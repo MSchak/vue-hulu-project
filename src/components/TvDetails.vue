@@ -39,6 +39,7 @@ export default {
       axios.get(`https://api.themoviedb.org/3/tv/${this.showID}?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`)
       .then((response) => {
           this.showDetails = response.data
+          console.log(this.showDetails)
           this.showName = this.showDetails.name
           this.showDescription = this.showDetails.overview
           this.numOfSeasons = this.showDetails.seasons.length

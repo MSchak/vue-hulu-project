@@ -2,7 +2,7 @@
   <div id="home">
     <main-navigation></main-navigation>
     <section class="container-fluid pb-2">
-    <div class="thing" v-if="showModal"><tv-details :showID="showID" @close-modal="showModal=false"></tv-details></div>
+    <div class="mdl" v-if="showModal"><tv-details :showID="showID" @close-modal="showModal=false"></tv-details></div>
     <high-em-content></high-em-content>
     </section>
 
@@ -68,7 +68,7 @@ export default {
   max-width: 550px;
 }
 
-.thing{
+.mdl{
       width: 90vw;
     height: 100vh;
     position: fixed;
