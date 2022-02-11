@@ -1,6 +1,6 @@
 <template>
      <div class="show-img card mx-1">
-       <button @click="doingThings" class="thing-btn btn p-0">
+       <button @click="openModal" class="thing-btn btn p-0">
 <img
         class="card-img-top"
         :src="showImg"
@@ -8,7 +8,7 @@
     />
     <ellipse-menu class="on-img"></ellipse-menu>
     </button>
-     <h5 class="show-title card-title my-2">{{showTitle}}{{showKey}}</h5>
+     <h5 class="show-title card-title my-2">{{showTitle}}</h5>
   </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
     }
   },
   methods: {
-      doingThings(){
+      openModal(){
         this.$emit('openModal', {
           key: this.showKey
         })

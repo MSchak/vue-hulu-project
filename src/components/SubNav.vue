@@ -38,7 +38,7 @@
   </div>
 
   <div v-if="tab === 1" class="pane row">
-    <episodes-tab></episodes-tab>
+    <episodes-tab :showIdAgain="showIdAgain" :numOfSeasons="numOfSeasons"></episodes-tab>
   </div>
 
   <div class="you-make-like tab-content row pt-4">
@@ -97,7 +97,7 @@ export default {
     EpisodesTab,
     ShowTile,
   },
-  props: ['showIdAgain'],
+  props: ['showIdAgain','numOfSeasons'],
   data() {
     return {
       tab: 1,

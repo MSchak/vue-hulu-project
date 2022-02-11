@@ -12,12 +12,12 @@
           Season 1
         </button>
       </li>
-      <li class="drpdwn-item">
+      <li v-if="numOfSeasons >= 2" class="drpdwn-item">
         <button @click="showSeason(2)" class="ssn-btn btn w-100 text-start">
           Season 2
         </button>
       </li>
-      <li class="drpdwn-item">
+      <li v-if="numOfSeasons >= 3" class="drpdwn-item">
         <button @click="showSeason(3)" class="ssn-btn btn w-100 text-start">
           Season 3
         </button>
@@ -28,7 +28,8 @@
       <div class="col p-0">
         <div v-if="btn === 1">
           <div class="m-4">Season One</div>
-          <show-grid></show-grid>
+           <div class="grid-container m-1 d-flex flex-row flex-wrap justify-content-center ms-xl-0">
+        <ep-tile v-for="episode in seasonOneArray" :key="episode.id" :season="1" :episodeKey="episode.episode_number" :showIdAgain="showIdAgain"></ep-tile>
         </div>
       </div>
     </div>
@@ -37,7 +38,9 @@
       <div class="col p-0">
         <div v-if="btn === 2">
           <div class="m-4">Season Two</div>
-          <show-grid></show-grid>
+              <div class="grid-container m-1 d-flex flex-row flex-wrap justify-content-center ms-xl-0">
+        <ep-tile v-for="episode in seasonTwoArray" :key="episode.id" :season="2" :episodeKey="episode.episode_number" :showIdAgain="showIdAgain"></ep-tile>
+        </div>
         </div>
       </div>
     </div>
@@ -46,26 +49,34 @@
       <div class="col p-0">
         <div v-if="btn === 3">
           <div class="m-4">Season Three</div>
-          <show-grid></show-grid>
+                <div class="grid-container m-1 d-flex flex-row flex-wrap justify-content-center ms-xl-0">
+        <ep-tile v-for="episode in seasonThreeArray" :key="episode.id" :season="3" :episodeKey="episode.episode_number" :showIdAgain="showIdAgain"></ep-tile>
+        </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
-import ShowGrid from "./ShowGrid.vue";
+import EpTile from "./EpTile.vue";
+import axios from "axios";
 
 export default {
   name: "EpisodesTab",
   components: {
-    ShowGrid,
+    EpTile
   },
+  props: ["showIdAgain", "numOfSeasons"],
   data() {
     return {
       active: false,
       btn: 1,
       seasonNumber: 1,
+      seasonOneArray: [],
+      seasonTwoArray: [],
+      seasonThreeArray: []
     };
   },
   methods: {
@@ -77,6 +88,28 @@ export default {
       this.seasonNumber = season;
       this.toggle();
     },
+  },
+  created() {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/tv/${this.showIdAgain}/season/1?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`
+      )
+      .then((response) => {
+        this.seasonOneArray = response.data.episodes;
+        return axios.get(`https://api.themoviedb.org/3/tv/${this.showIdAgain}/season/2?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`)
+      }) 
+      .then((info) => {
+        console.log(info);
+        this.seasonTwoArray = info.data.episodes;
+        return axios.get(`https://api.themoviedb.org/3/tv/${this.showIdAgain}/season/3?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`)
+      })
+      .then((res) => {
+        console.log(res);
+        this.seasonThreeArray = res.data.episodes;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 </script>
@@ -121,6 +154,4 @@ export default {
   color: black;
   font-weight: bold;
 }
-
-
 </style>

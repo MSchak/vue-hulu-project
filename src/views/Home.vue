@@ -2,13 +2,13 @@
   <div id="home">
     <main-navigation></main-navigation>
     <section class="container-fluid pb-2">
-    <div class="thing" v-if="event"><tv-details :showID="showID" @close-modal="event=false"></tv-details></div>
+    <div class="thing" v-if="showModal"><tv-details :showID="showID" @close-modal="showModal=false"></tv-details></div>
     <high-em-content></high-em-content>
     </section>
 
 <section class="container px-xl-4">
     <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2 mt-lg-4 pt-lg-1">
-    <tv-for-you @open-modal="(otherThings)"></tv-for-you>
+    <tv-for-you @open-modal="(openModal)"></tv-for-you>
     </div>
 
     <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2">
@@ -46,15 +46,14 @@ export default {
   },
   data(){
     return{
-      event: '',
+      showModal: '',
       showID: ''
     }
   },
   methods: {
-    otherThings({showKey}){
-      this.event = true
+    openModal({showKey}){
+      this.showModal = true
       this.showID = showKey
-      console.log(this.showID)
     },
   }
 }

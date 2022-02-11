@@ -2,17 +2,16 @@
   <div class="ep-tile me-1 p-0 d-flex justify-content-center">
     <div class="episode-card card border-0">
       <img
-        src="https://via.placeholder.com/350x200"
+        :src="epImg"
         class="card-img-top"
         alt=""
       />
       <div class="card-body pt-1 d-flex">
         <div>
-          <p class="ep-number"><strong>Episode 1</strong></p>
-          <h5>Episode title</h5>
+          <p class="ep-number"><strong>Episode {{epNumber}}</strong></p>
+          <h5>{{epName}}</h5>
           <p class="ep-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            semper viverra purus, at fermentum mi venenatis eget.
+            {{epDescription}}
           </p>
         </div>
         <div>
@@ -25,11 +24,41 @@
 
 <script>
 import EllipseMenu from "./EllipseMenu.vue";
+import axios from "axios"
 
 export default {
   name: "EpTile",
+  props: ['season', 'episodeKey','showIdAgain'],
   components: {
     EllipseMenu,
+  },
+  data(){
+    return{
+      epNumber: "",
+      epName: "",
+      epDescription: "",
+      epImgPath: "",
+      epImg: "",
+    }
+  },
+    created() {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/tv/${this.showIdAgain}/season/${this.season}/episode/${this.episodeKey}?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`
+      )
+      .then((response) => {
+        this.epNumber = response.data.episode_number
+        this.epName = response.data.name
+        this.epDescription = response.data.overview
+        this.epImgPath = response.data.still_path
+        return axios.get(`https://image.tmdb.org/t/p/original/${this.epImgPath}`)
+      })
+      .then((info) =>{
+        this.epImg = info.config.url
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 </script>

@@ -2,15 +2,14 @@
   <div class="related-slideshow my-3">
     <h2>TV For You</h2>
     <div class="slide-container">
-      <div v-if="red == true" class="slide-items d-flex" :class="carouselClasses">
+      <div class="slide-items d-flex" :class="carouselClasses">
         <tv-for-you-tile
           v-for="show in tvShows"
           :key="show.id"
           :showKey="show.id"
           :showTitle="show.name"
           :showImgPath="show.backdrop_path"
-          @open-modal="doingThings"
-
+          @open-modal="openModal"
         >
         </tv-for-you-tile>
       </div>
@@ -40,7 +39,6 @@ export default {
       carouselClasses: "",
       tvShowsArray: [],
       tvShows: [],
-      red: true,
     }
   },
   methods: {
@@ -50,7 +48,7 @@ export default {
     scrollBack() {
       this.carouselClasses = "scroll-back";
     },
-    doingThings({key}){
+    openModal({key}){
         this.$emit('openModal', {
           showKey: key
         })
