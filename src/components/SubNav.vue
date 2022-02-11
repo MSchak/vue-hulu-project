@@ -52,18 +52,7 @@
           mx-lg-4
         "
       >
-        <show-tile></show-tile>
-        <show-tile></show-tile>
-        <show-tile></show-tile>
-        <show-tile></show-tile>
-        <show-tile></show-tile>
-        <show-tile></show-tile>
-        <show-tile></show-tile>
-        <show-tile></show-tile>
-        <show-tile></show-tile>
-        <show-tile></show-tile>
-        <show-tile></show-tile>
-        <show-tile></show-tile>
+        <show-tile v-for="show in youMayLike" :key="show.id" :showID="show.id"></show-tile>
       </div>
     </div>
   </div>
@@ -72,15 +61,8 @@
     <div class="col">
       <div v-if="tab === 3" class="pane details">
         <h5 class="mb-3">About This Show</h5>
-        <h4>Show Title</h4>
-        <p class="show-description">
-          Description of the show will go here. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Praesent semper viverra purus, at
-          fermentum mi venenatis eget. Nullam lobortis, odio at pulvinar auctor,
-          ipsum nisi sollicitudin augue, id euismod leo mauris id ligula. Aenean
-          nec elit ut sem finibus molestie vitae quis quam. Pellentesque
-          vulputate, enim quis ultrices volutpat, mauris dolor finibus lacus, ac
-          cursus arcu nisi non dui.
+        <h4>{{showName}}</h4>
+        <p class="show-description">{{showDescription}}
         </p>
       </div>
     </div>
@@ -90,6 +72,7 @@
 <script>
 import EpisodesTab from "./EpisodesTab.vue";
 import ShowTile from "../components/ShowTile.vue";
+import axios from "axios"
 
 export default {
   name: "SubNav",
@@ -97,12 +80,22 @@ export default {
     EpisodesTab,
     ShowTile,
   },
-  props: ['showIdAgain','numOfSeasons'],
+  props: ['showIdAgain','numOfSeasons', 'showName', 'showDescription'],
   data() {
     return {
       tab: 1,
+      youMayLike: []
     };
   },
+  created(){
+    axios.get('https://api.themoviedb.org/3/trending/tv/week?api_key=51c374b022c8809f8ebb065eaa0a82f6')
+      .then((response) => {
+       this.youMayLike = response.data.results.splice(0, 10)
+      })
+      .catch(function(error){
+        console.log(error);
+      })
+  }
 };
 </script>
 

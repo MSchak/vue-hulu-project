@@ -29,10 +29,10 @@
 
 import HighEmContent from '../components/HighEmContent.vue'
 import MainNavigation from '../components/MainNavigation.vue'
-import TvForYou from '../components/TvForYou.vue'
 import MoviesForYou from '../components/MoviesForYou.vue'
 import KeepWatching from '../components/KeepWatching.vue'
 import TvDetails from '../components/TvDetails.vue'
+import TvForYou from '../components/TvForYou.vue'
 
 export default {
   name: 'Home',

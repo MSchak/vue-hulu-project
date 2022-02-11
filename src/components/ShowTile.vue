@@ -3,17 +3,14 @@
     <router-link to="/details"
       ><img
         class="card-img-top"
-        src="https://via.placeholder.com/350x200"
+        :src="showImg"
         alt=""
     /></router-link>
     <div class="d-flex">
       <div>
-        <h5 class="card-title my-2 pt-1">Show title</h5>
+        <h5 class="card-title my-2 pt-1">{{showTitle}}</h5>
         <p class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-          semper viverra purus, at fermentum mi venenatis eget. Nullam lobortis,
-          odio at pulvinar auctor, ipsum nisi sollicitudin augue, id euismod leo
-          mauris id ligula.
+          {{showDescription}}
         </p>
       </div>
       <div>
@@ -25,12 +22,37 @@
 
 <script>
 import EllipseMenu from "./EllipseMenu.vue";
+import axios from "axios"
 
 export default {
   name: "ShowTile",
+  props: ['showID'],
   components: {
     EllipseMenu,
   },
+  data(){
+    return{
+      showTitle: "",
+      showDescription: "",
+      showImgPath: "",
+      showImg: ""
+    }
+  },
+    created(){
+    axios.get(`https://api.themoviedb.org/3/tv/${this.showID}?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`)
+      .then((response) => {
+        this.showTitle = response.data.name
+        this.showDescription = response.data.overview
+        this.showImgPath = response.data.backdrop_path
+        return axios.get(`https://image.tmdb.org/t/p/original${this.showImgPath}`)
+      })
+      .then((info) => {
+        this.showImg = info.config.url
+      })
+      .catch(function(error){
+        console.log(error);
+      })
+  }
 };
 </script>
 
