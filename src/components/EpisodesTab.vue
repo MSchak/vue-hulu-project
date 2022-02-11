@@ -27,8 +27,7 @@
     <div class="seasons-content row ms-1">
       <div class="col p-0">
         <div v-if="btn === 1">
-          <div class="m-4">Season One</div>
-           <div class="grid-container m-1 d-flex flex-row flex-wrap justify-content-center ms-xl-0">
+           <div class="grid-container m-1 d-flex flex-row flex-wrap ms-xl-0 ps-2 ps-lg-4 mt-4">
         <ep-tile v-for="episode in seasonOneArray" :key="episode.id" :season="1" :episodeKey="episode.episode_number" :showIdAgain="showIdAgain"></ep-tile>
         </div>
       </div>
@@ -37,8 +36,7 @@
     <div class="seasons-content row ms-1">
       <div class="col p-0">
         <div v-if="btn === 2">
-          <div class="m-4">Season Two</div>
-              <div class="grid-container m-1 d-flex flex-row flex-wrap justify-content-center ms-xl-0">
+              <div class="grid-container m-1 d-flex flex-row flex-wrap ms-xl-0 ps-2 ps-lg-4 mt-4">
         <ep-tile v-for="episode in seasonTwoArray" :key="episode.id" :season="2" :episodeKey="episode.episode_number" :showIdAgain="showIdAgain"></ep-tile>
         </div>
         </div>
@@ -48,8 +46,7 @@
     <div class="seasons-content row ms-1">
       <div class="col p-0">
         <div v-if="btn === 3">
-          <div class="m-4">Season Three</div>
-                <div class="grid-container m-1 d-flex flex-row flex-wrap justify-content-center ms-xl-0">
+                <div class="grid-container m-1 d-flex flex-row flex-wrap ms-xl-0 ps-2 ps-lg-4 mt-4">
         <ep-tile v-for="episode in seasonThreeArray" :key="episode.id" :season="3" :episodeKey="episode.episode_number" :showIdAgain="showIdAgain"></ep-tile>
         </div>
         </div>
