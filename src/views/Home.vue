@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <main-navigation></main-navigation>
+    <main-navigation :navClass="navClass" :navItem="navItem" :dark="dark" :select="select"></main-navigation>
     <section class="container-fluid pb-2">
       <div class="mdl" v-if="showModal">
         <tv-details
@@ -59,6 +59,10 @@ export default {
       showID: "",
       movieModal:"",
       movieID: "",
+      navClass: "nav-container",
+      navItem: "nav-item",
+      dark: "",
+      select: "select"
     };
   },
   methods: {
@@ -70,8 +74,16 @@ export default {
       this.movieModal = true;
       this.movieID = movieKey;
     },
-
+    updateHeader(){
+      this.navClass = "nav-container-dark"
+      this.navItem = "nav-item-dark"
+      this.dark = "dark"
+      this.select = "select-dark"
+    }
   },
+    mounted(){
+    window.addEventListener('scroll', this.updateHeader)
+    }
 };
 </script>
 <style scoped>
