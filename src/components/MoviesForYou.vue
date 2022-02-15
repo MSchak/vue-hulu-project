@@ -3,8 +3,8 @@
     <h2>Movies For You</h2>
     <div class="slide-container">
       <div class="slide-items d-flex" :class="carouselClasses">
-       <movies-for-you-tile v-for="movie in moviesList" :key="movie.id"
-          :movieTitle="movie.title" :movieImgPath="movie.backdrop_path" ></movies-for-you-tile>
+       <movies-for-you-tile v-for="movie in moviesList" :key="movie.id" :movieKey="movie.id"
+          :movieTitle="movie.title" :movieImgPath="movie.backdrop_path" @open-modal="openModal" ></movies-for-you-tile>
       </div>
       <div class="slide-buttons">
         <button @click="scrollBack()" class="back-btn btn btn-light">
@@ -41,12 +41,18 @@ export default {
     scrollBack() {
       this.carouselClasses = "scroll-back"
     },
+    openModal({key}){
+      this.$emit('openModal', {
+      movieKey : key
+      })
+    },
   },
    created(){
     axios.get('https://api.themoviedb.org/3/movie/popular?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1')
       .then((response) => {
         this.moviesListArray = response.data.results
         this.moviesList = this.moviesListArray.slice(0, 10)
+        console.log(this.moviesList)
 
       })
       .catch((error) => {

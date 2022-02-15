@@ -1,9 +1,9 @@
 <template>
   <div id="tv-details">
     <div class="container-fluid">
-        <details-header :tvShowTitle="showDetails.name" @close-modal="$emit('closeModal')"></details-header>
+        <tv-details-header :tvShowTitle="showDetails.name" @close-modal="$emit('closeModal')"></tv-details-header>
         <tv-details-high-em-content :showIdAgain="showID" :episodeTitle="episodeTitle" :episodeDescription="episodeDescription"></tv-details-high-em-content>
-        <details-img-footer :showIdAgain="showID"></details-img-footer>
+        <tv-details-img-footer :showIdAgain="showID"></tv-details-img-footer>
         <sub-nav :showIdAgain="showID" :numOfSeasons="numOfSeasons" :showName="showName" :showDescription="showDescription"></sub-nav>
     </div>
   </div>
@@ -12,8 +12,8 @@
 <script>
 import TvDetailsHighEmContent from "../components/TvDetailsHighEmContent.vue";
 import SubNav from "../components/SubNav.vue";
-import DetailsHeader from "../components/DetailsHeader.vue";
-import DetailsImgFooter from "../components/DetailsImgFooter.vue";
+import TvDetailsHeader from "../components/TvDetailsHeader.vue";
+import TvDetailsImgFooter from "./TvDetailsImgFooter.vue";
 import axios from 'axios'
 
 export default {
@@ -21,8 +21,8 @@ export default {
   components: {
     TvDetailsHighEmContent,
     SubNav,
-    DetailsHeader,
-    DetailsImgFooter,
+    TvDetailsHeader,
+    TvDetailsImgFooter,
   },
   props: ['showID'],
   data(){

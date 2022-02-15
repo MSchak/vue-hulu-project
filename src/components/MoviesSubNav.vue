@@ -12,22 +12,13 @@
             :class="{ active: tab == 1 }"
             class="nav-link h-100"
           >
-            Episodes
+            You may also Like
           </button>
         </li>
         <li class="nav-item h-100" role="presentation">
           <button
             @click="tab = 2"
             :class="{ active: tab == 2 }"
-            class="nav-link h-100"
-          >
-            You may also like
-          </button>
-        </li>
-        <li class="nav-item h-100" role="presentation">
-          <button
-            @click="tab = 3"
-            :class="{ active: tab == 3 }"
             class="nav-link h-100"
           >
             Details
@@ -37,13 +28,8 @@
     </div>
   </div>
 
-  <div v-if="tab === 1" class="pane row">
-    <episodes-tab :showIdAgain="showIdAgain" :numOfSeasons="numOfSeasons"></episodes-tab>
-  </div>
-
-  <div class="you-make-like tab-content row pt-4">
-    <div v-if="tab === 2" class="pane">
-      <div
+  <div v-if="tab === 1" class="pane you-make-like tab-content row pt-4">
+        <div
         class="
           you-may-like
           d-flex
@@ -54,15 +40,14 @@
       >
         <show-tile v-for="show in youMayLike" :key="show.id" :showID="show.id"></show-tile>
       </div>
-    </div>
   </div>
 
-  <div class="details tab-content row ms-0 ms-lg-4 ps-1">
+  <div class="details tab-content row ms-0 ms-lg-4 ps-1 pt-4">
     <div class="col">
-      <div v-if="tab === 3" class="pane details">
+      <div v-if="tab === 2" class="pane details">
         <h5 class="mb-3">About This Show</h5>
-        <h4>{{showName}}</h4>
-        <p class="show-description">{{showDescription}}
+        <h4>{{movieTitle}}</h4>
+        <p class="movie-description">{{movieDescription}}
         </p>
       </div>
     </div>
@@ -70,17 +55,15 @@
 </template>
 
 <script>
-import EpisodesTab from "./EpisodesTab.vue";
 import ShowTile from "../components/ShowTile.vue";
 import axios from "axios"
 
 export default {
-  name: "SubNav",
+  name: "MoviesSubNav",
   components: {
-    EpisodesTab,
     ShowTile,
   },
-  props: ['showIdAgain','numOfSeasons', 'showName', 'showDescription'],
+  props: ['movieIdAgain', 'movieTitle', 'movieDescription'],
   data() {
     return {
       tab: 1,
@@ -130,8 +113,7 @@ export default {
 .details {
   height: 600px;
 }
-
-.show-description {
+.movie-description {
   font-size: 1em;
   letter-spacing: 0.5px;
   line-height: 24px;
@@ -141,7 +123,7 @@ export default {
 }
 
 @media (min-width: 576px) {
-  .show-description {
+  .movie-description {
     width: 50%;
   }
 }

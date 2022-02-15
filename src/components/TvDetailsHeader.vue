@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "DetailsHeader",
+  name: "TvDetailsHeader",
   props: ['tvShowTitle']
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
      <div class="show-img card mx-1">
-       <button @click="openModal" class="thing-btn btn p-0">
+       <button @click="openModal" class="modal-btn btn p-0">
 <img
         class="card-img-top"
         :src="showImg"

@@ -1,11 +1,12 @@
 <template>
   <div class="show-img card mx-1">
-    <router-link to="/details"
-      ><img
+    <button @click="openModal" class="modal-btn btn p-0">
+      <img
         class="card-img-top"
         :src="movieImg"
         alt=""
-    /></router-link>
+    />
+    </button>
     <ellipse-menu class="on-img"></ellipse-menu>
     <div class="card-body d-flex justify-content-between">
       <div>
@@ -27,16 +28,24 @@ export default {
   components: {
     EllipseMenu,
   },
-  props: ['key', 'movieTitle', 'movieImgPath'],
+  props: ['movieKey', 'movieTitle', 'movieImgPath'],
   data(){
     return{
       movieImg: '',
+    }
+  },
+  methods: {
+    openModal(){
+       this.$emit('openModal', {
+          key: this.movieKey
+        })
     }
   },
   created(){
     axios.get(`https://image.tmdb.org/t/p/original${this.movieImgPath}`)
       .then((response) => {
        this.movieImg = response.config.url
+       console.log(this.key)
       })
       .catch((error) => {
         console.error(error);
