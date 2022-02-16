@@ -112,25 +112,41 @@ export default {
 .scroll-back {
   transform: translateX(0%);
 }
-@media (min-width: 768px){
-    .back-btn {
-  bottom: 100px;
-}
-
-.fwd-btn {
-  bottom: 100px;
-}
-}
-@media (min-width: 1200px){
+@media (min-width: 768px) {
   .back-btn {
-  bottom: 120px;
+    bottom: 85px;
+  }
+
+  .fwd-btn {
+    bottom: 85px;
+  }
 }
 
-.fwd-btn {
-  bottom: 120px;
+@media (min-width: 992px){
+    .back-btn {
+    bottom: 100px;
+  }
+
+  .fwd-btn {
+    bottom: 100px;
+  }
 }
+@media (min-width: 1200px) {
+  .back-btn {
+    bottom: 120px;
+  }
+
+  .fwd-btn {
+    bottom: 120px;
+  }
 }
-@media (min-width: 1400px){
-  
+@media (min-width: 1400px) {
+  .back-btn {
+    bottom: 100px;
+  }
+
+  .fwd-btn {
+    bottom: 100px;
+  }
 }
 </style>

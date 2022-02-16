@@ -60,10 +60,7 @@ created(){
 .card-body{
   padding: 0px;
 }
-.card-subtitle {
-  font-size: .75em;
-  overflow:hidden;
-}
+
 .on-img {
   position: absolute;
   top: 10px;
@@ -77,9 +74,6 @@ created(){
 @media (min-width: 992px){
 .show-img {
   min-width: 25%;
-}
-.card-subtitle{
-  font-size: .875em;
 }
 }
 

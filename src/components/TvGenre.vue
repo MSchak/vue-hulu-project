@@ -1,17 +1,16 @@
 <template>
   <div class="related-slideshow my-3">
-    <h2>TV For You</h2>
+    <h2>Reality TV</h2>
     <div class="slide-container">
       <div class="slide-items d-flex" :class="carouselClasses">
-        <tv-for-you-tile
-          v-for="show in tvShows"
+        <reg-em-tile
+          v-for="show in keepWatchingShows"
           :key="show.id"
           :showKey="show.id"
-          :showTitle="show.name"
-          :showImgPath="show.backdrop_path"
-          @open-modal="openModal"
-        >
-        </tv-for-you-tile>
+          :imgPath="show.backdrop_path"
+          :title="show.name"
+           @open-modal="openModal"
+        ></reg-em-tile>
       </div>
       <div class="slide-buttons">
         <button @click="scrollBack()" class="back-btn btn btn-light">
@@ -26,20 +25,20 @@
 </template>
 
 <script>
-import TvForYouTile from "./TvForYouTile.vue";
+import RegEmTile from "./RegEmTile.vue";
 import axios from "axios";
 
 export default {
-  name: "TVForYou",
+  name: "TvGenre",
   components: {
-    TvForYouTile,
+    RegEmTile,
   },
   data() {
     return {
       carouselClasses: "",
-      tvShowsArray: [],
-      tvShows: [],
-    }
+      keepWatchingShows: [],
+      keepWatchingShowsArray: [],
+    };
   },
   methods: {
     scrollFwd() {
@@ -48,7 +47,7 @@ export default {
     scrollBack() {
       this.carouselClasses = "scroll-back";
     },
-    openModal({key}){
+       openModal({key}){
         this.$emit('openModal', {
           showKey: key
         })
@@ -56,14 +55,17 @@ export default {
   },
   created() {
     axios
-      .request('https://api.themoviedb.org/3/tv/popular?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1')
+      .get(
+        "https://api.themoviedb.org/3/tv/2778/similar?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1"
+      )
       .then((response) => {
-        this.tvShowsArray = response.data.results
-        this.tvShows = this.tvShowsArray.slice(0, 10)
-        
+        this.keepWatchingShowsArray = response.data.results;
+        this.keepWatchingShows = this.keepWatchingShowsArray.slice(0, 10);
+
+        console.log(this.keepWatchingShows);
       })
-      .catch(function (error) {
-        console.error(error);
+      .catch((error) => {
+        console.log(error);
       });
   },
 };

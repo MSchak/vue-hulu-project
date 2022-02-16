@@ -1,26 +1,17 @@
 <template>
-  <div
-    :style="highEmImg"
-    class="high-em-img row"
-  >
-        <div class="high-em-content pb-2 gradient d-flex align-items-end">
-      <div
-        class="col-4 m-4 ms-md-4 ps-2 ps-md-3 pb-lg-2 p-xxl-4"
-      >
-        <div class="show-logo d-flex mb-4">
-          <img src="" alt="" />
-        </div>
+  <div :style="highEmImg" class="high-em-img row">
+    <div class="high-em-content pb-2 gradient d-flex align-items-end">
+      <div class="col-4 m-4 ms-md-4 ps-2 ps-md-3 pb-lg-2 p-xxl-4">
         <div class="ep-title">
-          <p>{{ showDetails.title }}</p>
+          <p>{{ showTitle }}</p>
         </div>
         <p class="ep-decription">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          mollis commodo augue sed molestie.
+          {{ showDescription }}
         </p>
-        <high-em-buttons></high-em-buttons>
+        <high-em-buttons @open-modal="openModal"></high-em-buttons>
       </div>
-      </div>
-          </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -29,30 +20,45 @@ import axios from "axios";
 
 export default {
   name: "HighEmContent",
+    components: {
+    HighEmButtons,
+  },
   data() {
     return {
-      showDetails: {},
-      options: {
-        method: "GET",
-        url: "https://movies-tvshows-data-imdb.p.rapidapi.com/",
-        params: { type: "get-show-images-by-imdb", imdb: "tt2741602" },
-        headers: {
-          "x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com",
-          "x-rapidapi-key":
-            "0bd8a923e7msh8c59b63cd726838p1433d2jsne4605bc6e80f",
-        },
-      },
+      showDetails: [],
+      showImgPath: "",
+      showTitle: "",
+      showDescription: "",
+      showImg: "",
+      key: ""
     };
   },
-  components: {
-    HighEmButtons,
+  methods:{
+    openModal(){
+      console.log(this.key)
+        this.$emit('openModal', {
+          showKey: this.key
+        })
+      },
   },
   created() {
     axios
-      .request(this.options)
+      .get(
+        `https://api.themoviedb.org/3/tv/top_rated?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`
+      )
       .then((response) => {
-        console.log(response.data);
-        this.showDetails = response.data;
+        this.showDetails = response.data.results.slice(0, 1);
+        this.showImgPath = this.showDetails[0].backdrop_path;
+        this.showTitle = this.showDetails[0].name;
+        this.showDescription = this.showDetails[0].overview;
+        this.key = this.showDetails[0].id
+        console.log(this.showDetails);
+        return axios.get(
+          `https://image.tmdb.org/t/p/original/${this.showImgPath}`
+        );
+      })
+      .then((info) => {
+        this.showImg = info.config.url;
       })
       .catch(function (error) {
         console.error(error);
@@ -61,7 +67,7 @@ export default {
   computed: {
     highEmImg() {
       return {
-        backgroundImage: `url(${this.showDetails.fanart})`,
+        backgroundImage: `url(${this.showImg})`,
       };
     },
   },
@@ -108,7 +114,7 @@ export default {
   .high-em-img {
     height: 440px;
   }
-   .gradient {
+  .gradient {
     background-image: linear-gradient(
       to left,
       rgba(253, 253, 253, 15%),
@@ -128,19 +134,16 @@ export default {
   .high-em-img {
     height: 560px;
   }
-
 }
 @media (min-width: 1200px) {
   .high-em-img {
     height: 600px;
   }
-
 }
 
 @media (min-width: 1400px) {
   .high-em-img {
     height: 700px;
   }
-
 }
 </style>

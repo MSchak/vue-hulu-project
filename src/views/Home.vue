@@ -14,20 +14,20 @@
           @close-modal="movieModal = false"
         ></movie-details>
       </div>
-      <high-em-content></high-em-content>
+      <high-em-content @open-modal="openShowModal"></high-em-content>
     </section>
 
     <section class="container px-xl-4">
       <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2 mt-lg-4 pt-lg-1">
-        <tv-for-you @open-modal="(openShowModal)"></tv-for-you>
+        <tv-for-you @open-modal="openShowModal"></tv-for-you>
       </div>
 
       <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2">
-        <movies-for-you @open-modal="(openMovieModal)"></movies-for-you>
+        <movies-for-you @open-modal="openMovieModal"></movies-for-you>
       </div>
 
       <div class="row mx-1 mx-md-2 ps-md-1 my-lg-2">
-        <keep-watching></keep-watching>
+        <tv-genre @open-modal="openShowModal"></tv-genre>
       </div>
     </section>
   </div>
@@ -37,7 +37,7 @@
 import HighEmContent from "../components/HighEmContent.vue";
 import MainNavigation from "../components/MainNavigation.vue";
 import MoviesForYou from "../components/MoviesForYou.vue";
-import KeepWatching from "../components/KeepWatching.vue";
+import TvGenre from "../components/TvGenre.vue";
 import TvDetails from "../components/TvDetails.vue";
 import TvForYou from "../components/TvForYou.vue";
 import MovieDetails from "../components/MovieDetails.vue"
@@ -49,7 +49,7 @@ export default {
     MainNavigation,
     TvForYou,
     MoviesForYou,
-    KeepWatching,
+    TvGenre,
     TvDetails,
     MovieDetails
   },
@@ -68,6 +68,7 @@ export default {
     openShowModal({ showKey }) {
       this.showModal = true;
       this.showID = showKey;
+      console.log(this.showKey)
     },
       openMovieModal({ movieKey }) {
       this.movieModal = true;

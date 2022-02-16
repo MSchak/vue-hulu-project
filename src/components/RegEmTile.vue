@@ -1,16 +1,17 @@
 <template>
   <div class="show-img card mx-1">
-    <router-link to="/details"
-      ><img
+    <button @click="openModal" class="modal-btn btn p-0"> 
+   <img
         class="card-img-top"
         :src="showImg"
         alt=""
-    /></router-link>
+    />
     <ellipse-menu class="on-img"></ellipse-menu>
+    </button>
     <div class="card-body d-flex justify-content-between">
       <div>
     <h5 class="show-title card-title my-2">{{title}}</h5>
-    <p class="card-subtitle">S1 E1 - Name of this episode</p>
+    <p class="card-subtitle">S1 E1 - Pilot</p>
       </div>
     <div>
     <ellipse-menu class="pt-2 pe-2"></ellipse-menu>
@@ -28,12 +29,19 @@ export default {
   components: {
     EllipseMenu,
   },
-  props: ['title', 'imgPath'],
+  props: ['title', 'imgPath', 'showKey'],
   data(){
     return{
       showImg: ''
     }
   },
+   methods: {
+      openModal(){
+        this.$emit('openModal', {
+          key: this.showKey
+        })
+      },
+   },
   created(){
   axios.get(`https://image.tmdb.org/t/p/original${this.imgPath}`)
   .then((response) => {
