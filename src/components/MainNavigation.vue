@@ -39,7 +39,7 @@
 <script>
 export default {
   name: "MainNavigation",
-  props: ["navClass", "navItem", "dark", "select"],
+  props: ["navClass", "navItem", "select"],
   data() {
     return {
       selected: "3",

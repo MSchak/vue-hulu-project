@@ -29,7 +29,7 @@ export default {
       return{
         movieDetails: [],
         movieTitle: "",
-        movieDescription: ""
+        movieDescription: "",
       }
   },
   created(){

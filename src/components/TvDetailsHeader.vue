@@ -1,5 +1,5 @@
 <template>
-  <div class="details-header row my-3 align-items-center w-100">
+  <div class="details-header row py-3 align-items-center">
     <div class="col-7 text-end pe-0 pe-xl-5">
       <p class="title mb-0">{{tvShowTitle}}</p>
     </div>
@@ -13,7 +13,7 @@
 <script>
 export default {
   name: "TvDetailsHeader",
-  props: ['tvShowTitle']
+  props: ['tvShowTitle',]
 };
 </script>
 
@@ -23,8 +23,8 @@ export default {
   position: absolute;
   z-index: 100;
   height: 60px;
+  width: 100%;
 }
-
 
 .title{
    font-size: .625em;
