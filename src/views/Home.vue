@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="home" >
     <main-navigation :navClass="navClass" :navItem="navItem" :select="select"></main-navigation>
     <section class="container-fluid pb-2">
       <div class="mdl" v-if="showModal">
@@ -99,6 +99,7 @@ export default {
 };
 </script>
 <style scoped>
+
 #home {
   height: 100vh;
 }
@@ -108,10 +109,10 @@ export default {
 }
 
 .mdl {
-  width: 90vw;
-  height: 100vh;
+  width: 100vw;
+  height:  100vh;
   position: fixed;
-  left: 5%;
+  left: 0%;
   background: white;
   z-index: 1000;
   overflow: scroll;
@@ -133,6 +134,12 @@ export default {
   .container {
     max-width: 1200px;
   }
+
+  .mdl {
+  width: 90vw;
+  left: 5%;
+  box-shadow: 0px 0px 152px black;
+}
 }
 @media (min-width: 1200px) {
   .container {

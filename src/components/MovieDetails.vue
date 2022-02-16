@@ -38,7 +38,6 @@ export default {
           this.movieDetails = response.data
           this.movieTitle = this.movieDetails.original_title
           this.movieDescription = this.movieDetails.overview
-          console.log(this.movieDetails)
       }) 
       .catch((error) => {
         console.log(error);

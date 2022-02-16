@@ -48,8 +48,6 @@
           you-may-like
           d-flex
           flex-row flex-wrap
-          justify-content-center
-          mx-lg-4
         "
       >
         <show-tile v-for="show in youMayLike" :key="show.id" :showID="show.id"></show-tile>
@@ -88,7 +86,7 @@ export default {
     };
   },
   created(){
-    axios.get('https://api.themoviedb.org/3/trending/tv/week?api_key=51c374b022c8809f8ebb065eaa0a82f6')
+    axios.get(`https://api.themoviedb.org/3/tv/${this.showIdAgain}/similar?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1`)
       .then((response) => {
        this.youMayLike = response.data.results.splice(0, 10)
       })
@@ -123,9 +121,8 @@ export default {
   border-bottom: 4px solid rgb(203 26 6);
 }
 
-.you-may-like .col {
-  padding-right: 1px;
-  padding-left: 0px;
+.you-may-like{
+  padding-left: 25px;
 }
 .details {
   height: 600px;
@@ -154,5 +151,9 @@ export default {
   .nav-link {
     font-size: 0.875em;
   }
+
+  .you-may-like{
+  padding-left: 40px;
+}
 }
 </style>
