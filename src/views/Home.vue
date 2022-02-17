@@ -30,6 +30,10 @@
         <tv-genre @open-modal="openShowModal"></tv-genre>
       </div>
     </section>
+    <footer class="d-flex flex-column-reverse flex-sm-row align-items-center justify-content-evenly">
+      <p class="m-0">"This product uses the TMDB API but is not endorsed or certified by TMDB."</p> 
+      <img class="tmdb" src="../assets/tmdb-logo.png" alt="TMDB logo"/>
+    </footer>
   </div>
 </template>
 
@@ -126,6 +130,22 @@ export default {
 .mdl {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+footer{
+  height: 60px;
+  background-color: #EBEDF2;
+}
+
+footer p{
+  color: #636E85;
+  font-size: 12px;
+  text-align: center;
+}
+
+.tmdb{
+  width: 150px;
+  text-align: center;
 }
 
 @media (min-width: 576px) {
