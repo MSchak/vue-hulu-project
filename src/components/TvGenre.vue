@@ -1,6 +1,6 @@
 <template>
   <div class="related-slideshow my-3">
-    <h2>Reality TV</h2>
+    <h2>You May Also Like</h2>
     <div class="slide-container">
       <div class="slide-items d-flex" :class="carouselClasses">
         <reg-em-tile
@@ -56,13 +56,11 @@ export default {
   created() {
     axios
       .get(
-        "https://api.themoviedb.org/3/tv/2778/similar?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1"
+        "https://api.themoviedb.org/3/tv/115036/similar?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1"
       )
       .then((response) => {
         this.keepWatchingShowsArray = response.data.results;
         this.keepWatchingShows = this.keepWatchingShowsArray.slice(0, 10);
-
-        console.log(this.keepWatchingShows);
       })
       .catch((error) => {
         console.log(error);

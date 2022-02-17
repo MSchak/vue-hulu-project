@@ -2,16 +2,15 @@
   <div id="nav">
     <div :class="navClass" class="container-fluid px-md-4">
       <div class="row align-items-center h-100 mx-1 me-4 pt-1 px-xl-2">
-        <div class="col-1">
+        <div class="col-3">
           <p class="title mb-0">hulu</p>
         </div>
 
-        <div class="col-10 text-center nav-items">
+        <div class="col-6 text-center nav-items">
           <select :class="select" name="menu" id="menu" v-model="selected" @change="navigateTo">
             <option value="1">Welcome</option>
             <option value="2">Plans</option>
             <option value="3">Home</option>
-            <option value="4">Details</option>
           </select>
 
           <ul class="nav-menu d-flex justify-content-evenly mb-0">
@@ -22,13 +21,10 @@
               <router-link :class="navItem" to="/plans">Plans</router-link>
             </li>
             <li><router-link :class="navItem" to="/">Home</router-link></li>
-            <li>
-              <router-link :class="navItem" to="/details">Details</router-link>
-            </li>
           </ul>
         </div>
 
-        <div class="col-1 text-end search">
+        <div class="col-3 text-end search">
           <fa icon="search" size="lg" />
         </div>
       </div>
@@ -53,8 +49,6 @@ export default {
         this.$router.push("/plans");
       } else if (this.selected == 3) {
         this.$router.push("/");
-      } else if (this.selected == 4) {
-        this.$router.push("/details");
       }
     },
   },

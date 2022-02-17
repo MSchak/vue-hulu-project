@@ -52,7 +52,6 @@ export default {
         this.showTitle = this.showDetails[0].name;
         this.showDescription = this.showDetails[0].overview;
         this.key = this.showDetails[0].id
-        console.log(this.showDetails);
         return axios.get(
           `https://image.tmdb.org/t/p/original/${this.showImgPath}`
         );
@@ -79,7 +78,7 @@ export default {
   height: 700px;
   padding: 0;
   background-size: cover;
-  background-position: fixed;
+  background-position: center;
 }
 
 .gradient {

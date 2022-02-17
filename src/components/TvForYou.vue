@@ -61,6 +61,7 @@ export default {
         this.tvShowsArray = response.data.results
         this.tvShows = this.tvShowsArray.slice(0, 10)
         
+        
       })
       .catch(function (error) {
         console.error(error);

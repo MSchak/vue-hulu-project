@@ -61,7 +61,8 @@ export default {
       movieID: "",
       navClass: "nav-container",
       navItem: "nav-item",
-      select: "select"
+      select: "select",
+      screenWidth: ""
     };
   },
   methods: {
@@ -91,7 +92,7 @@ export default {
       this.navClass = "nav-container"
       this.navItem = "nav-item"
       this.select = "select"
-    }
+    },
   },
     mounted(){
     window.addEventListener('scroll', this.checkValue)
@@ -116,6 +117,15 @@ export default {
   background: white;
   z-index: 1000;
   overflow: scroll;
+}
+
+.mdl::-webkit-scrollbar {
+  display: none;
+}
+
+.mdl {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @media (min-width: 576px) {

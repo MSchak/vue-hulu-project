@@ -45,7 +45,6 @@ export default {
     axios.get(`https://image.tmdb.org/t/p/original${this.movieImgPath}`)
       .then((response) => {
        this.movieImg = response.config.url
-       console.log(this.key)
       })
       .catch((error) => {
         console.error(error);

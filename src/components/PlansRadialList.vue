@@ -1,6 +1,6 @@
 <template>
   <div class="plans-radial row mx-2 justify-content-center">
-    <div class="plans-container d-flex justify-content-evenly">
+    <div class="plans-container d-flex">
       <div
         class="plans-card card mx-1"
         :class="{ 'highlight-card': plan == 1 }"
@@ -12,7 +12,7 @@
           Most Popular
         </div>
         <div class="card-body">
-          <p>Hulu</p>
+          <p>{{planInfo[1].name}}</p>
           <input
             type="radio"
             id="1"
@@ -36,7 +36,7 @@
           Bundle &amp; Save
         </div>
         <div class="card-body">
-          <p>Hulu, Disney+, and ESPN+</p>
+          <p>{{planInfo[2].name}}</p>
           <input
             type="radio"
             id="2"
@@ -60,7 +60,7 @@
           Bundle &amp; Save
         </div>
         <div class="card-body">
-          <p>Hulu (No Ads), Disney+, and ESPN+</p>
+          <p>{{planInfo[3].name}}</p>
           <input
             type="radio"
             id="3"
@@ -78,7 +78,7 @@
         :class="{ 'highlight-card': plan == 4 }"
       >
         <div class="card-body">
-          <p>Hulu + Live TV, Disney+, and ESPN+</p>
+          <p>{{planInfo[4].name}}</p>
           <input
             type="radio"
             id="4"
@@ -96,7 +96,7 @@
         :class="{ 'highlight-card': plan == 5 }"
       >
         <div class="card-body">
-          <p>Hulu (No Ads)</p>
+          <p>{{planInfo[5].name}}</p>
           <input
             type="radio"
             id="5"
@@ -114,7 +114,7 @@
         :class="{ 'highlight-card': plan == 6 }"
       >
         <div class="card-body">
-          <p>Hulu (No Ads) + Live TV, Disney+, and ESPN+</p>
+          <p>{{planInfo[6].name}}</p>
           <input
             type="radio"
             id="6"
@@ -131,11 +131,10 @@
 
   <div class="plan-details-container d-flex justify-content-center">
     <div class="plan-details" v-if="plan == 1">
-      <h3>Get Hulu 30 days free</h3>
-      <p><strong>then $6.99/month</strong></p>
+      <h3>{{planInfo[1].heading}}</h3>
+      <p><strong>{{planInfo[1].p}}</strong></p>
       <p class="details-info">
-        Our ad-supported plan lets you watch exclusive series, hit movies,
-        Originals, kids shows, and tons more.
+        {{planInfo[1].details}}
       </p>
     </div>
 
@@ -145,10 +144,9 @@
         src="../assets/bndle-logos-color.png"
         alt="Bundle Logos"
       />
-      <p><strong>Get Hulu, Disney+, and ESPN+ for $13.99/month.</strong></p>
+      <p><strong>{{planInfo[2].p}}</strong></p>
       <p class="details-info">
-        Access live sports with ESPN+, endless, ad-free entertainment with
-        Disney+, and award-winning Hulu Originals with Hulu (ad-supported).
+        {{planInfo[2].details}}
       </p>
     </div>
 
@@ -159,33 +157,29 @@
         alt="Bundle Logos"
       />
       <p>
-        <strong>Get Hulu (No Ads) Disney+, and ESPN+ for $19.99/month.</strong>
+        <strong>{{planInfo[3].p}}</strong>
       </p>
       <p class="details-info">
-        Access live sports with ESPN+, endless, ad-free entertainment with
-        Disney+, and award-winning Hulu Originals with Hulu (No Ads).
+        {{planInfo[3].details}}
       </p>
     </div>
 
     <div class="plan-details" v-if="plan == 4">
       <p>
         <strong
-          >Get Hulu + Live TV, Disney+, and ESPN+ for $69.99/month.</strong
+          >{{planInfo[4].p}}</strong
         >
       </p>
       <p class="details-info">
-        Access 75+ channels with Live TV, endless, ad-free entertainment with
-        Disney+, live sports with ESPN+, and award-winning Hulu originals with
-        Hulu (ad-supported).
+        {{planInfo[4].details}}
       </p>
     </div>
 
     <div class="plan-details" v-if="plan == 5">
-      <h3>Get Hulu (No Ads) 30 days free</h3>
-      <p><strong>then $12.99/month</strong></p>
+      <h3>{{planInfo[5].heading}}</h3>
+      <p><strong>{{planInfo[5].p}}</strong></p>
       <p class="details-info">
-        Our ad-free plan lets you watch exclusive series, hit movies, Originals,
-        kids shows, and tons more with no ad interruptions.
+        {{planInfo[5].details}}
       </p>
     </div>
 
@@ -197,21 +191,18 @@
       />
       <p>
         <strong
-          >Get Hulu (No Ads) + Live TV, Disney+, and ESPN+ for
-          $75.99/month.</strong
+          >{{planInfo[6].p}}</strong
         >
       </p>
       <p class="details-info">
-        Access 75+ channels with Live TV, endless, ad-free entertainment with
-        Disney+, live sports with ESPN+, and award-winning Hulu originals with
-        Hulu (No Ads).
+        {{planInfo[6].details}}
       </p>
     </div>
   </div>
 
   <div class="submit row align-items-end">
     <div class="submit-btn col mb-4">
-      <div><input type="submit" value="Select" class="select w-100" /></div>
+      <div><input @click="reply" type="submit" value="Select" class="select w-100" /></div>
     </div>
   </div>
 </template>
@@ -222,7 +213,22 @@ export default {
   data() {
     return {
       plan: 0,
+      planInfo: [
+        {name: "null"},
+        {name: "Hulu", heading:"Get Hulu 30 days free" , p:"then $6.99/month", details: "Our ad-supported plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more."},
+        {name: "Hulu, Disney+, and ESPN+", p:"Get Hulu, Disney+, and ESPN+ for $13.99/month.", details:"Access live sports with ESPN+, endless, ad-free entertainment with Disney+, and award-winning Hulu Originals with Hulu (ad-supported)." },
+        {name: "Hulu (No Ads), Disney+, and ESPN+", p:"Get Hulu (No Ads) Disney+, and ESPN+ for $19.99/month.", details:"Access live sports with ESPN+, endless, ad-free entertainment with Disney+, and award-winning Hulu Originals with Hulu (No Ads)." },
+        {name: "Hulu + Live TV, Disney+, and ESPN+", p:"Get Hulu + Live TV, Disney+, and ESPN+ for $69.99/month.", details:"Access 75+ channels with Live TV, endless, ad-free entertainment with Disney+, live sports with ESPN+, and award-winning Hulu originals with Hulu (ad-supported)." },
+        {name: "Hulu (No Ads)", heading: "Get Hulu (No Ads) 30 days free", p:"then $12.99/month", details:"Our ad-free plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more with no ad interruptions." },
+        {name: "Hulu (No Ads) + Live TV, Disney+, and ESPN+", p:"Get Hulu (No Ads) + Live TV, Disney+, and ESPN+ for $75.99/month.", details:" Access 75+ channels with Live TV, endless, ad-free entertainment with Disney+, live sports with ESPN+, and award-winning Hulu originals with Hulu (No Ads)." },
+      ],
     };
+  },
+  methods: {
+    reply(){
+      alert(`Thank you for signing up for the ${this.planInfo[this.plan].name} plan.`)
+
+    },
   },
 };
 </script>

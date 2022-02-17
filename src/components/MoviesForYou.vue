@@ -52,8 +52,6 @@ export default {
       .then((response) => {
         this.moviesListArray = response.data.results
         this.moviesList = this.moviesListArray.slice(0, 10)
-        console.log(this.moviesList)
-
       })
       .catch((error) => {
         console.error(error);

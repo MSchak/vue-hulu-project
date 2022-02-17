@@ -42,7 +42,6 @@ export default {
     created() {
      axios.get(`https://api.themoviedb.org/3/tv/${this.showIdAgain}?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`)
       .then((response) => {
-        console.log(response)
         this.tvShowDetails = response.data
         return axios.get(`https://image.tmdb.org/t/p/original${this.tvShowDetails.backdrop_path}`)
       }) 

@@ -65,6 +65,7 @@ created(){
   position: absolute;
   top: 10px;
   right: 10px;
+  color: white;
 }
 @media (min-width: 768px){
   .show-img {
