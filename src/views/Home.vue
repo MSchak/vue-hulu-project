@@ -32,7 +32,7 @@
     </section>
     <footer class="d-flex flex-column-reverse flex-sm-row align-items-center justify-content-evenly">
       <p class="m-0">"This product uses the TMDB API but is not endorsed or certified by TMDB."</p> 
-      <img class="tmdb" src="../assets/tmdb-logo.png" alt="TMDB logo"/>
+      <img class="tmdb pb-sm-1 pt-2 pt-sm-0" src="../assets/tmdb-logo.png" alt="TMDB logo"/>
     </footer>
   </div>
 </template>
