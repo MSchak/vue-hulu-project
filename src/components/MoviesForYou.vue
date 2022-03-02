@@ -24,22 +24,41 @@ import axios from 'axios'
 
 export default {
   name: "MoviesForYou",
-  components: {
+  components: {                           
     MoviesForYouTile
   },
   data() {
     return{
-      carouselClasses: "",
+      carouselClasses: "scZero",
       moviesList: [],
-      moviesListArray: []
+      moviesListArray: [],
+      scWidth: ""
     }
   },
   methods: {
     scrollFwd() {
-      this.carouselClasses = "scroll"
+      this.scWidth= screen.width
+      if(this.carouselClasses === "scZero"){
+      this.carouselClasses = "scOne"
+      }
+      else if(this.carouselClasses === "scOne" && this.scWidth < 1400){
+      this.carouselClasses = "scTwo"
+      } else if(this.carouselClasses === "scTwo" && this.scWidth < 992){
+      this.carouselClasses = "scThree"
+      } else if(this.carouselClasses === "scThree" && this.scWidth < 768){
+      this.carouselClasses = "scFour"
+      }
     },
     scrollBack() {
-      this.carouselClasses = "scroll-back"
+      if(this.carouselClasses === "scOne"){
+      this.carouselClasses = "scZero"
+      } else if(this.carouselClasses === "scTwo"){
+      this.carouselClasses = "scOne"
+      } else if(this.carouselClasses === "scThree"){
+      this.carouselClasses = "scTwo"
+      } else if(this.carouselClasses === "scFour"){
+      this.carouselClasses = "scThree"
+      }
     },
     openModal({key}){
       this.$emit('openModal', {
@@ -80,16 +99,15 @@ export default {
 .back-btn,
 .fwd-btn {
   position: absolute;
+  top: 38%
 }
 
 .back-btn {
   left: 0px;
-  bottom: 90px;
 }
 
 .fwd-btn {
   right: -10px;
-  bottom: 90px;
 }
 
 .btn-light {
@@ -102,49 +120,36 @@ export default {
   left: 0px;
   transition: transform 850ms;
 }
-
-.scroll {
-  transform: translateX(-100%);
-}
-
-.scroll-back {
+.scZero {
   transform: translateX(0%);
 }
-@media (min-width: 768px) {
-  .back-btn {
-    bottom: 85px;
-  }
-
-  .fwd-btn {
-    bottom: 85px;
-  }
+.scOne {
+  transform: translateX(-100%);
+}
+.scTwo {
+  transform: translateX(-200%);
+}
+.scThree {
+  transform: translateX(-300%);
+}
+.scFour{
+  transform: translateX(-400%);
 }
 
+@media (min-width: 768px){
+  .scThree{
+  transform: translateX(-240%);
+}
+}
 @media (min-width: 992px){
-    .back-btn {
-    bottom: 100px;
-  }
-
-  .fwd-btn {
-    bottom: 100px;
-  }
+  .scTwo{
+  transform: translateX(-155%);
 }
-@media (min-width: 1200px) {
-  .back-btn {
-    bottom: 120px;
-  }
-
-  .fwd-btn {
-    bottom: 120px;
-  }
 }
-@media (min-width: 1400px) {
-  .back-btn {
-    bottom: 100px;
-  }
-
-  .fwd-btn {
-    bottom: 100px;
-  }
+@media (min-width: 1400px){
+  .scOne{
+  transform: translateX(-103%);
 }
+}
+
 </style>
