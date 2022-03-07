@@ -107,6 +107,7 @@ export default {
 
 #home {
   height: 100vh;
+  display: none;
 }
 
 .container {
