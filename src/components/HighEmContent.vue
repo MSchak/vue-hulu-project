@@ -5,7 +5,7 @@
         <div class="ep-title">
           <p>{{ showTitle }}</p>
         </div>
-        <p class="ep-decription">
+        <p class="ep-description">
           {{ showDescription }}
         </p>
         <high-em-buttons @open-modal="openModal"></high-em-buttons>
@@ -99,7 +99,7 @@ export default {
   margin-bottom: 10px;
 }
 
-.ep-decription {
+.ep-description {
   display: none;
 }
 
@@ -121,7 +121,7 @@ export default {
     );
   }
 
-  .ep-decription {
+  .ep-description {
     font-family: "Graphik Regular";
     color: white;
     font-size: 0.875em;
