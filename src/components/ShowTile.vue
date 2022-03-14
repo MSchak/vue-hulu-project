@@ -73,7 +73,7 @@ export default {
   font-size: 0.875em;
   line-height: 21px;
   color: #6b7790;
-  opacity: 80%;
+  opacity: .80;
   margin-right: 25px;
 }
 

@@ -85,6 +85,7 @@ export default {
   line-height: 21px;
   color: #6b7790;
   margin-right: 25px;
+  opacity: .80;
 }
 
 

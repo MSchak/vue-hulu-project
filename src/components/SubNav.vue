@@ -134,7 +134,7 @@ export default {
   line-height: 24px;
   word-spacing: 1px;
   color: #6b7790;
-  opacity: 80%;
+  opacity: .80;
 }
 
 @media (min-width: 576px) {
