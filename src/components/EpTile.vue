@@ -81,6 +81,7 @@ export default {
 }
 
 .ep-description {
+  opacity: 80%;
   font-size: 0.875em;
   line-height: 21px;
   color: #6b7790;
