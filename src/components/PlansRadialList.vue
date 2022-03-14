@@ -324,7 +324,7 @@ input[type="radio"] {
 
 .details-info{
   color: #636E85;
-  opacity: 85%;
+  opacity: .85;
 }
 .bundle-logos {
   width: 200px;
