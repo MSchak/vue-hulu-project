@@ -1,9 +1,9 @@
 <template>
-  <div class="related-slideshow my-3">
+  <div class="related-slideshow my-1 my-sm-3">
     <h2>Movies For You</h2>
     <div class="slide-container">
       <div
-        class="slide-items d-flex"
+        class="slide-items d-flex align-items-center"
         :style="`transform: translateX(${translateXValue}%)`"
       >
         <movies-for-you-tile

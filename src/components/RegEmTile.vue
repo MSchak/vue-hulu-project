@@ -78,6 +78,10 @@ export default {
   top: 10px;
   right: 10px;
 }
+.show-title{
+  height: 16px;
+  overflow: hidden;
+}
 @media (min-width: 768px){
   .show-img {
   min-width: 33.33333%;
