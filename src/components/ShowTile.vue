@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 .show-img {
-  width: 49%;
+  width: 45%;
   position: relative;
 }
 .card {
@@ -76,6 +76,11 @@ export default {
   opacity: .80;
   margin-right: 25px;
   display: none;
+}
+@media (min-width: 576px){
+  .show-img{
+    width: 48%;
+  }
 }
 
 @media (min-width: 768px){
