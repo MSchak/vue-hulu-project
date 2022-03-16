@@ -86,7 +86,7 @@ export default {
   padding: 10px 4px;
   border-radius: 4px;
       background-color: #00000014;
-  opacity: 60%;
+  opacity: .9;
   font-family: "Graphik Regular";
   font-weight: bold;
   text-transform: uppercase;
@@ -101,7 +101,7 @@ export default {
   padding: 10px 4px;
   border-radius: 4px;
       background-color: #00000014;
-  opacity: 90%;
+  opacity: .9;
   font-family: "Graphik Regular";
   font-weight: bold;
   text-transform: uppercase;
