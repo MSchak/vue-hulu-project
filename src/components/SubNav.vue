@@ -109,10 +109,12 @@ export default {
 
 .nav-link {
   font-family: "Graphik Medium";
-  font-size: 0.75em;
+  font-size: 0.55em;
   color: #6b7790;
   text-transform: uppercase;
   border: none;
+  padding: 0.5rem 0.5rem;
+
 }
 
 .nav-link.active {
@@ -137,6 +139,13 @@ export default {
   opacity: .80;
 }
 
+@media (min-width: 350px){
+  .nav-link{
+    font-size: 0.75em;
+    padding: 0.5rem 1rem;
+
+}
+}
 @media (min-width: 576px) {
   .show-description {
     width: 50%;

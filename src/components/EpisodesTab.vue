@@ -113,7 +113,7 @@ export default {
 
 <style scoped>
 .drpdwn-btn {
-  width: 325px;
+  width: 240px;
   height: 64px;
   padding: 0px 24px;
   font-family: "Graphik Regular";
@@ -150,5 +150,11 @@ export default {
 .ssn-btn:hover {
   color: black;
   font-weight: bold;
+}
+
+@media (min-width: 350px){
+  .drpdwn-btn{
+    width: 325px;
+  }
 }
 </style>
