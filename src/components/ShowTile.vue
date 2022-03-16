@@ -6,7 +6,7 @@
         :src="showImg"
         alt=""
     /></router-link>
-    <div class="d-flex">
+    <div class="d-flex justify-content-between">
       <div>
         <h5 class="card-title my-2 pt-1">{{showTitle}}</h5>
         <p class="description">
@@ -75,11 +75,16 @@ export default {
   color: #6b7790;
   opacity: .80;
   margin-right: 25px;
+  display: none;
 }
 
 @media (min-width: 768px){
   .show-img{
     width: 32%;
+  }
+
+  .description{
+    display: block;
   }
 }
 

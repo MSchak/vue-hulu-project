@@ -6,7 +6,7 @@
         class="card-img-top"
         alt=""
       />
-      <div class="card-body pt-1 d-flex">
+      <div class="card-body pt-1 d-flex justify-content-between">
         <div>
           <p class="ep-number"><strong>Episode {{epNumber}}</strong></p>
           <h5>{{epName}}</h5>
