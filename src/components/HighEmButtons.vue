@@ -16,13 +16,14 @@
     </div>
 
     <div>
-      <button @click="$emit('openModal')" class="btn btn-outline-light me-2">Details
+      <button @click="$emit('openModal')" class="btn btn-outline-light me-2">
+        Details
       </button>
     </div>
 
-    <div class="ellipse d-flex">
+    <!--<div class="ellipse d-flex">
       <fa icon="ellipsis-v" class="ellipse align-self-center" />
-    </div>
+    </div>-->
   </div>
 </template>
 

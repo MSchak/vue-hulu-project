@@ -1,58 +1,60 @@
 <template>
   <div class="show-img card pb-3 me-1">
     <router-link to="/details"
-      ><img
-        class="card-img-top"
-        :src="showImg"
-        alt=""
+      ><img class="card-img-top" :src="showImg" alt=""
     /></router-link>
     <div class="d-flex justify-content-between">
       <div>
-        <h5 class="card-title my-2 pt-1">{{showTitle}}</h5>
+        <h5 class="card-title my-2 pt-1">{{ showTitle }}</h5>
         <p class="description">
-          {{showDescription}}
+          {{ showDescription }}
         </p>
       </div>
-      <div>
+      <!--<div>
         <ellipse-menu class="pt-2 pe-2"></ellipse-menu>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
 
 <script>
-import EllipseMenu from "./EllipseMenu.vue";
-import axios from "axios"
+//import EllipseMenu from "./EllipseMenu.vue";
+import axios from "axios";
 
 export default {
   name: "ShowTile",
-  props: ['showID'],
+  props: ["showID"],
   components: {
-    EllipseMenu,
+    // EllipseMenu,
   },
-  data(){
-    return{
+  data() {
+    return {
       showTitle: "",
       showDescription: "",
       showImgPath: "",
-      showImg: ""
-    }
+      showImg: "",
+    };
   },
-    created(){
-    axios.get(`https://api.themoviedb.org/3/tv/${this.showID}?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`)
+  created() {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/tv/${this.showID}?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`
+      )
       .then((response) => {
-        this.showTitle = response.data.name
-        this.showDescription = response.data.overview
-        this.showImgPath = response.data.backdrop_path
-        return axios.get(`https://image.tmdb.org/t/p/original${this.showImgPath}`)
+        this.showTitle = response.data.name;
+        this.showDescription = response.data.overview;
+        this.showImgPath = response.data.backdrop_path;
+        return axios.get(
+          `https://image.tmdb.org/t/p/original${this.showImgPath}`
+        );
       })
       .then((info) => {
-        this.showImg = info.config.url
+        this.showImg = info.config.url;
       })
-      .catch(function(error){
+      .catch(function (error) {
         console.log(error);
-      })
-  }
+      });
+  },
 };
 </script>
 
@@ -73,34 +75,34 @@ export default {
   font-size: 0.875em;
   line-height: 21px;
   color: #6b7790;
-  opacity: .80;
+  opacity: 0.8;
   margin-right: 25px;
   display: none;
 }
-@media (min-width: 576px){
-  .show-img{
+@media (min-width: 576px) {
+  .show-img {
     width: 48%;
   }
 }
 
-@media (min-width: 768px){
-  .show-img{
+@media (min-width: 768px) {
+  .show-img {
     width: 32%;
   }
 
-  .description{
+  .description {
     display: block;
   }
 }
 
-@media (min-width: 1200px){
-  .show-img{
+@media (min-width: 1200px) {
+  .show-img {
     width: 24%;
   }
 }
 
-@media (min-width: 1600px){
-  .show-img{
+@media (min-width: 1600px) {
+  .show-img {
     width: 19%;
   }
 }

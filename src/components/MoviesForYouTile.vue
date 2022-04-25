@@ -1,62 +1,58 @@
 <template>
   <div class="show-img card mx-1">
     <button @click="openModal" class="modal-btn btn p-0">
-      <img
-        class="card-img-top"
-        :src="movieImg"
-        alt=""
-    />
+      <img class="card-img-top" :src="movieImg" alt="" />
     </button>
-    <ellipse-menu class="on-img"></ellipse-menu>
+    <!--<ellipse-menu class="on-img"></ellipse-menu>-->
     <div class="card-body d-flex justify-content-between">
       <div>
-    <h5 class="show-title card-title my-2">{{movieTitle}}</h5>
+        <h5 class="show-title card-title my-2">{{ movieTitle }}</h5>
       </div>
-    <div>
+      <!--<div>
     <ellipse-menu class="pt-2 pe-2"></ellipse-menu>
+    </div>-->
     </div>
-  </div>
   </div>
 </template>
 
 <script>
-import EllipseMenu from "./EllipseMenu.vue";
-import axios from 'axios'
+//import EllipseMenu from "./EllipseMenu.vue";
+import axios from "axios";
 
 export default {
   name: "MoviesForYouTile",
   components: {
-    EllipseMenu,
+    // EllipseMenu,
   },
-  props: ['movieKey', 'movieTitle', 'movieImgPath'],
-  data(){
-    return{
-      movieImg: '',
-    }
+  props: ["movieKey", "movieTitle", "movieImgPath"],
+  data() {
+    return {
+      movieImg: "",
+    };
   },
   methods: {
-    openModal(){
-       this.$emit('openModal', {
-          key: this.movieKey
-        })
-    }
+    openModal() {
+      this.$emit("openModal", {
+        key: this.movieKey,
+      });
+    },
   },
-  created(){
-    axios.get(`https://image.tmdb.org/t/p/original${this.movieImgPath}`)
+  created() {
+    axios
+      .get(`https://image.tmdb.org/t/p/original${this.movieImgPath}`)
       .then((response) => {
-       this.movieImg = response.config.url
+        this.movieImg = response.config.url;
       })
       .catch((error) => {
         console.error(error);
-      })
-  }
-  }
-
+      });
+  },
+};
 </script>
 
 <style scoped>
 .show-img {
-  min-width: 49.0%;
+  min-width: 49%;
   overflow: hidden;
   position: relative;
 }
@@ -65,7 +61,7 @@ export default {
   border: none;
 }
 
-.card-body{
+.card-body {
   padding: 0px;
 }
 
@@ -75,26 +71,24 @@ export default {
   right: 10px;
 }
 
-.show-title{
+.show-title {
   height: 16px;
   overflow: hidden;
 }
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .show-img {
-  min-width: 33.33333%;
+    min-width: 33.33333%;
+  }
 }
-}
-@media (min-width: 992px){
-.show-img {
-  min-width: 25%;
-}
-
-}
-
-@media (min-width: 1400px){
-.show-img {
-  min-width: 20%;
-}
+@media (min-width: 992px) {
+  .show-img {
+    min-width: 25%;
+  }
 }
 
+@media (min-width: 1400px) {
+  .show-img {
+    min-width: 20%;
+  }
+}
 </style>

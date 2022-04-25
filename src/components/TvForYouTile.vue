@@ -1,54 +1,51 @@
 <template>
-     <div class="show-img card mx-1">
-       <button @click="openModal" class="modal-btn btn p-0">
-<img
-        class="card-img-top"
-        :src="showImg"
-        alt=""
-    />
-    <ellipse-menu class="on-img"></ellipse-menu>
+  <div class="show-img card mx-1">
+    <button @click="openModal" class="modal-btn btn p-0">
+      <img class="card-img-top" :src="showImg" alt="" />
+      <!--<ellipse-menu class="on-img"></ellipse-menu>-->
     </button>
-     <h5 class="show-title card-title my-2">{{showTitle}}</h5>
+    <h5 class="show-title card-title my-2">{{ showTitle }}</h5>
   </div>
 </template>
 
 <script>
-import EllipseMenu from "./EllipseMenu.vue"
-import axios from 'axios'
+//import EllipseMenu from "./EllipseMenu.vue"
+import axios from "axios";
 
 export default {
   name: "TvForYouTile",
-  props: ['showKey', 'showImgPath', 'showTitle'],
+  props: ["showKey", "showImgPath", "showTitle"],
   components: {
-    EllipseMenu,
+    //  EllipseMenu,
   },
-  data(){
-    return{
-      showImg: '',
-    }
+  data() {
+    return {
+      showImg: "",
+    };
   },
   methods: {
-      openModal(){
-        this.$emit('openModal', {
-          key: this.showKey
-        })
-      },
-  }, 
-created(){
-    axios.get(`https://image.tmdb.org/t/p/original${this.showImgPath}`)
+    openModal() {
+      this.$emit("openModal", {
+        key: this.showKey,
+      });
+    },
+  },
+  created() {
+    axios
+      .get(`https://image.tmdb.org/t/p/original${this.showImgPath}`)
       .then((response) => {
-       this.showImg = response.config.url
+        this.showImg = response.config.url;
       })
-      .catch(function(error){
+      .catch(function (error) {
         console.log(error);
-      })
-  }
+      });
+  },
 };
 </script>
 
 <style scoped>
 .show-img {
-  min-width: 49.0%;
+  min-width: 49%;
   overflow: hidden;
   position: relative;
 }
@@ -57,7 +54,7 @@ created(){
   border: none;
 }
 
-.card-body{
+.card-body {
   padding: 0px;
 }
 
@@ -68,25 +65,24 @@ created(){
   color: white;
 }
 
-.show-title{
+.show-title {
   height: 16px;
   overflow: hidden;
 }
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .show-img {
-  min-width: 33.33333%;
+    min-width: 33.33333%;
+  }
 }
-}
-@media (min-width: 992px){
-.show-img {
-  min-width: 25%;
-}
-}
-
-@media (min-width: 1400px){
-.show-img {
-  min-width: 20%;
-}
+@media (min-width: 992px) {
+  .show-img {
+    min-width: 25%;
+  }
 }
 
+@media (min-width: 1400px) {
+  .show-img {
+    min-width: 20%;
+  }
+}
 </style>

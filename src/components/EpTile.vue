@@ -18,23 +18,23 @@
             {{ epDescription }}
           </p>
         </div>
-        <div>
+        <!--<div>
           <ellipse-menu class="pt-2 pe-2"></ellipse-menu>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import EllipseMenu from "./EllipseMenu.vue";
+//import EllipseMenu from "./EllipseMenu.vue";
 import axios from "axios";
 
 export default {
   name: "EpTile",
   props: ["season", "episodeKey", "showIdAgain"],
   components: {
-    EllipseMenu,
+    //EllipseMenu,
   },
   data() {
     return {
