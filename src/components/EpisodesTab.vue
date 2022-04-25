@@ -2,9 +2,16 @@
   <div class="episodes-tab drpdwn my-4">
     <button
       @click="toggle"
-      class="drpdwn-btn btn btn-light ms-3 ms-lg-4 d-flex justify-content-between align-items-center"
+      class="
+        drpdwn-btn
+        btn btn-light
+        ms-3 ms-lg-4
+        d-flex
+        justify-content-between
+        align-items-center
+      "
     >
-      Season {{ seasonNumber }}<fa icon="caret-down"/>
+      Season {{ seasonNumber }}<fa icon="caret-down" />
     </button>
     <ul v-if="active" class="drpdwn-menu p-0 ms-4">
       <li class="drpdwn-item">
@@ -27,32 +34,80 @@
     <div class="seasons-content row ms-1">
       <div class="col p-0">
         <div v-if="btn === 1">
-           <div class="grid-container m-1 d-flex flex-row flex-wrap ms-xl-0 ps-2 ps-lg-4 mt-4">
-        <ep-tile v-for="episode in seasonOneArray" :key="episode.id" :season="1" :episodeKey="episode.episode_number" :showIdAgain="showIdAgain"></ep-tile>
+          <div
+            class="
+              grid-container
+              m-1
+              d-flex
+              flex-row flex-wrap
+              ms-xl-0
+              ps-2 ps-lg-4
+              mt-4
+            "
+          >
+            <ep-tile
+              v-for="episode in seasonOneArray"
+              :key="episode.id"
+              :season="1"
+              :episodeKey="episode.episode_number"
+              :showIdAgain="showIdAgain"
+            ></ep-tile>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="seasons-content row ms-1">
-      <div class="col p-0">
-        <div v-if="btn === 2">
-              <div class="grid-container m-1 d-flex flex-row flex-wrap ms-xl-0 ps-2 ps-lg-4 mt-4">
-        <ep-tile v-for="episode in seasonTwoArray" :key="episode.id" :season="2" :episodeKey="episode.episode_number" :showIdAgain="showIdAgain"></ep-tile>
-        </div>
+      <div class="seasons-content row ms-1">
+        <div class="col p-0">
+          <div v-if="btn === 2">
+            <div
+              class="
+                grid-container
+                m-1
+                d-flex
+                flex-row flex-wrap
+                ms-xl-0
+                ps-2 ps-lg-4
+                mt-4
+              "
+            >
+              <ep-tile
+                v-for="episode in seasonTwoArray"
+                :key="episode.id"
+                :season="2"
+                :episodeKey="episode.episode_number"
+                :showIdAgain="showIdAgain"
+              ></ep-tile>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="seasons-content row ms-1">
-      <div class="col p-0">
-        <div v-if="btn === 3">
-                <div class="grid-container m-1 d-flex flex-row flex-wrap ms-xl-0 ps-2 ps-lg-4 mt-4">
-        <ep-tile v-for="episode in seasonThreeArray" :key="episode.id" :season="3" :episodeKey="episode.episode_number" :showIdAgain="showIdAgain"></ep-tile>
-        </div>
+      <div class="seasons-content row ms-1">
+        <div class="col p-0">
+          <div v-if="btn === 3">
+            <div
+              class="
+                grid-container
+                m-1
+                d-flex
+                flex-row flex-wrap
+                ms-xl-0
+                ps-2 ps-lg-4
+                mt-4
+              "
+            >
+              <ep-tile
+                v-for="episode in seasonThreeArray"
+                :key="episode.id"
+                :season="3"
+                :episodeKey="episode.episode_number"
+                :showIdAgain="showIdAgain"
+              ></ep-tile>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -63,7 +118,7 @@ import axios from "axios";
 export default {
   name: "EpisodesTab",
   components: {
-    EpTile
+    EpTile,
   },
   props: ["showIdAgain", "numOfSeasons"],
   data() {
@@ -73,7 +128,7 @@ export default {
       seasonNumber: 1,
       seasonOneArray: [],
       seasonTwoArray: [],
-      seasonThreeArray: []
+      seasonThreeArray: [],
     };
   },
   methods: {
@@ -93,12 +148,15 @@ export default {
       )
       .then((response) => {
         this.seasonOneArray = response.data.episodes;
-        return axios.get(`https://api.themoviedb.org/3/tv/${this.showIdAgain}/season/2?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`)
-      }) 
+        return axios.get(
+          `https://api.themoviedb.org/3/tv/${this.showIdAgain}/season/2?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`
+        );
+      })
       .then((info) => {
-        console.log(info);
         this.seasonTwoArray = info.data.episodes;
-        return axios.get(`https://api.themoviedb.org/3/tv/${this.showIdAgain}/season/3?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`)
+        return axios.get(
+          `https://api.themoviedb.org/3/tv/${this.showIdAgain}/season/3?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`
+        );
       })
       .then((res) => {
         console.log(res);
@@ -152,8 +210,8 @@ export default {
   font-weight: bold;
 }
 
-@media (min-width: 350px){
-  .drpdwn-btn{
+@media (min-width: 350px) {
+  .drpdwn-btn {
     width: 325px;
   }
 }
