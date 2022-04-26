@@ -81,13 +81,6 @@ export default {
   background-color: white;
 }
 
-.title {
-  transition: transform 200ms;
-}
-
-.title:hover {
-  transform: translateY(-2px);
-}
 .title a {
   font-family: "Graphik Black";
   font-size: 1.5em;
@@ -97,20 +90,8 @@ export default {
   text-decoration: none;
 }
 
-.title a:hover {
-  transform: scale(20);
-}
-
 .title a:focus {
   border: 1px solid blue;
-}
-
-.title-dark {
-  transition: transform 200ms;
-}
-
-.title-dark:hover {
-  transform: translateY(-2px);
 }
 
 .title-dark a {

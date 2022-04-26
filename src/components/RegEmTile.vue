@@ -62,6 +62,23 @@ export default {
   border: none;
 }
 
+.modal-btn,
+.card-img-top {
+  transition: 500ms ease;
+}
+
+.modal-btn:hover {
+  background-color: black;
+}
+
+.modal-btn:focus {
+  border: 2px solid blue;
+}
+
+.card-img-top:hover {
+  opacity: 75%;
+}
+
 .card-body {
   padding: 0px;
 }

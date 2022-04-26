@@ -136,6 +136,14 @@ export default {
   background-color: white;
 }
 
+.btn-light:hover {
+  box-shadow: 0px 0px 5px;
+}
+
+.btn-light:focus {
+  border: 1px solid blue;
+}
+
 .slide-items {
   position: relative;
   left: 0px;
