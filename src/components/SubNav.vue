@@ -38,19 +38,20 @@
   </div>
 
   <div v-if="tab === 1" class="pane row">
-    <episodes-tab :showIdAgain="showIdAgain" :numOfSeasons="numOfSeasons"></episodes-tab>
+    <episodes-tab
+      :showIdAgain="showIdAgain"
+      :numOfSeasons="numOfSeasons"
+    ></episodes-tab>
   </div>
 
   <div class="you-make-like tab-content row pt-4">
     <div v-if="tab === 2" class="pane">
-      <div
-        class="
-          you-may-like
-          d-flex
-          flex-row flex-wrap
-        "
-      >
-        <show-tile v-for="show in youMayLike" :key="show.id" :showID="show.id"></show-tile>
+      <div class="you-may-like d-flex flex-row flex-wrap">
+        <show-tile
+          v-for="show in youMayLike"
+          :key="show.id"
+          :showID="show.id"
+        ></show-tile>
       </div>
     </div>
   </div>
@@ -59,9 +60,8 @@
     <div class="col">
       <div v-if="tab === 3" class="pane details">
         <h5 class="mb-3">About This Show</h5>
-        <h4>{{showName}}</h4>
-        <p class="show-description">{{showDescription}}
-        </p>
+        <h4>{{ showName }}</h4>
+        <p class="show-description">{{ showDescription }}</p>
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@
 <script>
 import EpisodesTab from "./EpisodesTab.vue";
 import ShowTile from "../components/ShowTile.vue";
-import axios from "axios"
+import axios from "axios";
 
 export default {
   name: "SubNav",
@@ -78,22 +78,25 @@ export default {
     EpisodesTab,
     ShowTile,
   },
-  props: ['showIdAgain','numOfSeasons', 'showName', 'showDescription'],
+  props: ["showIdAgain", "numOfSeasons", "showName", "showDescription"],
   data() {
     return {
       tab: 1,
-      youMayLike: []
+      youMayLike: [],
     };
   },
-  created(){
-    axios.get(`https://api.themoviedb.org/3/tv/${this.showIdAgain}/similar?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1`)
+  created() {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/tv/${this.showIdAgain}/similar?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US&page=1`
+      )
       .then((response) => {
-       this.youMayLike = response.data.results.splice(0, 10)
+        this.youMayLike = response.data.results.splice(0, 10);
       })
-      .catch(function(error){
+      .catch(function (error) {
         console.log(error);
-      })
-  }
+      });
+  },
 };
 </script>
 
@@ -114,7 +117,11 @@ export default {
   text-transform: uppercase;
   border: none;
   padding: 0.5rem 0.5rem;
+  transition: 250ms ease;
+}
 
+.nav-link:hover {
+  color: #292c33;
 }
 
 .nav-link.active {
@@ -123,7 +130,7 @@ export default {
   border-bottom: 4px solid rgb(203 26 6);
 }
 
-.you-may-like{
+.you-may-like {
   padding-left: 25px;
 }
 .details {
@@ -136,15 +143,14 @@ export default {
   line-height: 24px;
   word-spacing: 1px;
   color: #6b7790;
-  opacity: .80;
+  opacity: 0.8;
 }
 
-@media (min-width: 350px){
-  .nav-link{
+@media (min-width: 350px) {
+  .nav-link {
     font-size: 0.75em;
     padding: 0.5rem 1rem;
-
-}
+  }
 }
 @media (min-width: 576px) {
   .show-description {
@@ -161,8 +167,8 @@ export default {
     font-size: 0.875em;
   }
 
-  .you-may-like{
-  padding-left: 40px;
-}
+  .you-may-like {
+    padding-left: 40px;
+  }
 }
 </style>

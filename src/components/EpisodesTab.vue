@@ -177,6 +177,15 @@ export default {
   font-family: "Graphik Regular";
   font-size: 20px;
   border-radius: 0px;
+  transition: 250ms ease;
+}
+
+.drpdwn-btn:hover {
+  background-color: rgba(221, 221, 221, 0.527);
+}
+
+.drpdwn-btn:focus {
+  border: 1px solid blue;
 }
 
 .btn:focus {
@@ -208,6 +217,10 @@ export default {
 .ssn-btn:hover {
   color: black;
   font-weight: bold;
+}
+
+.ssn-btn:focus {
+  border: 1px solid blue;
 }
 
 @media (min-width: 350px) {

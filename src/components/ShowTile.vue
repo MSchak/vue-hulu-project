@@ -1,8 +1,6 @@
 <template>
   <div class="show-img card pb-3 me-1">
-    <router-link to="/details"
-      ><img class="card-img-top" :src="showImg" alt=""
-    /></router-link>
+    <img class="card-img-top" :src="showImg" alt="" />
     <div class="d-flex justify-content-between">
       <div>
         <h5 class="card-title my-2 pt-1">{{ showTitle }}</h5>
@@ -65,6 +63,13 @@ export default {
 }
 .card {
   border: none;
+}
+
+.card-img-top {
+  transition: 350ms ease;
+}
+.card-img-top:hover {
+  box-shadow: 0px 0px 5px black;
 }
 
 .card-title {

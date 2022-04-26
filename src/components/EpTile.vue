@@ -73,6 +73,13 @@ export default {
 .ep-tile {
   width: 48%;
 }
+.card-img-top {
+  transition: 350ms ease;
+}
+.card-img-top:hover {
+  box-shadow: 0px 0px 5px black;
+}
+
 .card-body {
   padding: 0px;
 }
