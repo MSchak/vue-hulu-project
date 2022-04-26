@@ -3,7 +3,7 @@
     <div :class="navClass" class="container-fluid px-md-4">
       <div class="row align-items-center h-100 mx-1 me-4 pt-1 px-xl-2">
         <div class="col-3">
-          <p class="title mb-0">
+          <p :class="title" class="mb-0">
             <router-link to="/welcome">hulu</router-link>
           </p>
         </div>
@@ -43,7 +43,7 @@
 <script>
 export default {
   name: "MainNavigation",
-  props: ["navClass", "navItem", "select"],
+  props: ["navClass", "navItem", "select", "title"],
   data() {
     return {
       selected: "3",
@@ -81,6 +81,13 @@ export default {
   background-color: white;
 }
 
+.title {
+  transition: transform 200ms;
+}
+
+.title:hover {
+  transform: translateY(-2px);
+}
 .title a {
   font-family: "Graphik Black";
   font-size: 1.5em;
@@ -91,10 +98,31 @@ export default {
 }
 
 .title a:hover {
-  font-size: 160%;
+  transform: scale(20);
 }
 
 .title a:focus {
+  border: 1px solid blue;
+}
+
+.title-dark {
+  transition: transform 200ms;
+}
+
+.title-dark:hover {
+  transform: translateY(-2px);
+}
+
+.title-dark a {
+  font-family: "Graphik Black";
+  font-size: 1.5em;
+  letter-spacing: 3px;
+  z-index: 101;
+  color: black;
+  text-decoration: none;
+}
+
+.title-dark a:focus {
   border: 1px solid blue;
 }
 
@@ -157,6 +185,7 @@ export default {
   list-style-type: none;
   padding: 10px;
   border-radius: 10px;
+  transition: 0.5s ease;
 }
 .nav-items ul li:hover {
   background-color: rgba(221, 221, 221, 0.527);

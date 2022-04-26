@@ -43,6 +43,17 @@ export default {
   padding: 5px 0px;
   height: 32px;
   width: 94px;
+  transition: 0.5s ease;
+}
+
+.btn-light:hover {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.btn:focus {
+  border: 1px solid blue;
 }
 
 .btn-outline-white {

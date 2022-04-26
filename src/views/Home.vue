@@ -1,6 +1,11 @@
 <template>
-  <div id="home" >
-    <main-navigation :navClass="navClass" :navItem="navItem" :select="select"></main-navigation>
+  <div id="home">
+    <main-navigation
+      :navClass="navClass"
+      :navItem="navItem"
+      :select="select"
+      :title="title"
+    ></main-navigation>
     <section class="container-fluid pb-2">
       <div class="mdl" v-if="showModal">
         <tv-details
@@ -8,7 +13,7 @@
           @close-modal="showModal = false"
         ></tv-details>
       </div>
-       <div class="mdl" v-if="movieModal">
+      <div class="mdl" v-if="movieModal">
         <movie-details
           :movieID="movieID"
           @close-modal="movieModal = false"
@@ -30,9 +35,23 @@
         <tv-genre @open-modal="openShowModal"></tv-genre>
       </div>
     </section>
-    <footer class="d-flex flex-column-reverse flex-sm-row align-items-center justify-content-evenly">
-      <p class="m-0">"This product uses the TMDB API but is not endorsed or certified by TMDB."</p> 
-      <img class="tmdb pb-sm-1 pt-2 pt-sm-0" src="../assets/tmdb-logo.png" alt="TMDB logo"/>
+    <footer
+      class="
+        d-flex
+        flex-column-reverse flex-sm-row
+        align-items-center
+        justify-content-evenly
+      "
+    >
+      <p class="m-0">
+        "This product uses the TMDB API but is not endorsed or certified by
+        TMDB."
+      </p>
+      <img
+        class="tmdb pb-sm-1 pt-2 pt-sm-0"
+        src="../assets/tmdb-logo.png"
+        alt="TMDB logo"
+      />
     </footer>
   </div>
 </template>
@@ -44,7 +63,7 @@ import MoviesForYou from "../components/MoviesForYou.vue";
 import TvGenre from "../components/TvGenre.vue";
 import TvDetails from "../components/TvDetails.vue";
 import TvForYou from "../components/TvForYou.vue";
-import MovieDetails from "../components/MovieDetails.vue"
+import MovieDetails from "../components/MovieDetails.vue";
 
 export default {
   name: "Home",
@@ -55,56 +74,58 @@ export default {
     MoviesForYou,
     TvGenre,
     TvDetails,
-    MovieDetails
+    MovieDetails,
   },
   data() {
     return {
       showModal: "",
       showID: "",
-      movieModal:"",
+      movieModal: "",
       movieID: "",
       navClass: "nav-container",
       navItem: "nav-item",
       select: "select",
-      screenWidth: ""
+      title: "title",
+      screenWidth: "",
     };
   },
   methods: {
     openShowModal({ showKey }) {
       this.showModal = true;
       this.showID = showKey;
-      console.log(this.showKey)
+      console.log(this.showKey);
     },
-      openMovieModal({ movieKey }) {
+    openMovieModal({ movieKey }) {
       this.movieModal = true;
       this.movieID = movieKey;
     },
-    checkValue(){
-      this.scrollPosition = window.scrollY
-      if (this.scrollPosition > 60){
-        this.updateHeader()
+    checkValue() {
+      this.scrollPosition = window.scrollY;
+      if (this.scrollPosition > 60) {
+        this.updateHeader();
       } else {
-        this.revertHeader()
+        this.revertHeader();
       }
     },
-    updateHeader(){
-      this.navClass = "nav-container-dark"
-      this.navItem = "nav-item-dark"
-      this.select = "select-dark"
+    updateHeader() {
+      this.navClass = "nav-container-dark";
+      this.navItem = "nav-item-dark";
+      this.select = "select-dark";
+      this.title = "title-dark";
     },
-    revertHeader(){
-      this.navClass = "nav-container"
-      this.navItem = "nav-item"
-      this.select = "select"
+    revertHeader() {
+      this.navClass = "nav-container";
+      this.navItem = "nav-item";
+      this.select = "select";
+      this.title = "title";
     },
   },
-    mounted(){
-    window.addEventListener('scroll', this.checkValue)
-    }
+  mounted() {
+    window.addEventListener("scroll", this.checkValue);
+  },
 };
 </script>
 <style scoped>
-
 #home {
   height: 100vh;
 }
@@ -115,7 +136,7 @@ export default {
 
 .mdl {
   width: 100vw;
-  height:  100vh;
+  height: 100vh;
   position: fixed;
   left: 0%;
   background: white;
@@ -132,18 +153,18 @@ export default {
   scrollbar-width: none;
 }
 
-footer{
+footer {
   height: 60px;
-  background-color: #EBEDF2;
+  background-color: #ebedf2;
 }
 
-footer p{
-  color: #636E85;
+footer p {
+  color: #636e85;
   font-size: 12px;
   text-align: center;
 }
 
-.tmdb{
+.tmdb {
   width: 150px;
   text-align: center;
 }
@@ -166,10 +187,10 @@ footer p{
   }
 
   .mdl {
-  width: 90vw;
-  left: 5%;
-  box-shadow: 0px 0px 152px black;
-}
+    width: 90vw;
+    left: 5%;
+    box-shadow: 0px 0px 152px black;
+  }
 }
 @media (min-width: 1200px) {
   .container {
