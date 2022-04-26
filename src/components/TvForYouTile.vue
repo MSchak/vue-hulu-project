@@ -68,7 +68,7 @@ export default {
 }
 
 .card-img-top:hover {
-  opacity: 75%;
+  opacity: 0.75;
 }
 
 .card-body {
