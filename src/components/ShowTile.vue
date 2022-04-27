@@ -1,6 +1,7 @@
 <template>
   <div class="show-img card pb-3 me-1">
-    <img class="card-img-top" :src="showImg" alt="" />
+    <img v-if="showImg" :src="showImg" class="card-img-top" alt="" />
+    <img v-else src="../assets/loading-image.jpg" class="card-img-top" alt="" />
     <div class="d-flex justify-content-between">
       <div>
         <h5 class="card-title my-2 pt-1">{{ showTitle }}</h5>

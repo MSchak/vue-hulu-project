@@ -12,7 +12,7 @@
           Most Popular
         </div>
         <div class="card-body">
-          <p>{{planInfo[1].name}}</p>
+          <p>{{ planInfo[1].name }}</p>
           <input
             type="radio"
             id="1"
@@ -36,7 +36,7 @@
           Bundle &amp; Save
         </div>
         <div class="card-body">
-          <p>{{planInfo[2].name}}</p>
+          <p>{{ planInfo[2].name }}</p>
           <input
             type="radio"
             id="2"
@@ -60,7 +60,7 @@
           Bundle &amp; Save
         </div>
         <div class="card-body">
-          <p>{{planInfo[3].name}}</p>
+          <p>{{ planInfo[3].name }}</p>
           <input
             type="radio"
             id="3"
@@ -78,7 +78,7 @@
         :class="{ 'highlight-card': plan == 4 }"
       >
         <div class="card-body">
-          <p>{{planInfo[4].name}}</p>
+          <p>{{ planInfo[4].name }}</p>
           <input
             type="radio"
             id="4"
@@ -96,7 +96,7 @@
         :class="{ 'highlight-card': plan == 5 }"
       >
         <div class="card-body">
-          <p>{{planInfo[5].name}}</p>
+          <p>{{ planInfo[5].name }}</p>
           <input
             type="radio"
             id="5"
@@ -114,7 +114,7 @@
         :class="{ 'highlight-card': plan == 6 }"
       >
         <div class="card-body">
-          <p>{{planInfo[6].name}}</p>
+          <p>{{ planInfo[6].name }}</p>
           <input
             type="radio"
             id="6"
@@ -131,10 +131,12 @@
 
   <div class="plan-details-container d-flex justify-content-center">
     <div class="plan-details" v-if="plan == 1">
-      <h3>{{planInfo[1].heading}}</h3>
-      <p><strong>{{planInfo[1].p}}</strong></p>
+      <h3>{{ planInfo[1].heading }}</h3>
+      <p>
+        <strong>{{ planInfo[1].p }}</strong>
+      </p>
       <p class="details-info">
-        {{planInfo[1].details}}
+        {{ planInfo[1].details }}
       </p>
     </div>
 
@@ -144,9 +146,11 @@
         src="../assets/bndle-logos-color.png"
         alt="Bundle Logos"
       />
-      <p><strong>{{planInfo[2].p}}</strong></p>
+      <p>
+        <strong>{{ planInfo[2].p }}</strong>
+      </p>
       <p class="details-info">
-        {{planInfo[2].details}}
+        {{ planInfo[2].details }}
       </p>
     </div>
 
@@ -157,29 +161,29 @@
         alt="Bundle Logos"
       />
       <p>
-        <strong>{{planInfo[3].p}}</strong>
+        <strong>{{ planInfo[3].p }}</strong>
       </p>
       <p class="details-info">
-        {{planInfo[3].details}}
+        {{ planInfo[3].details }}
       </p>
     </div>
 
     <div class="plan-details" v-if="plan == 4">
       <p>
-        <strong
-          >{{planInfo[4].p}}</strong
-        >
+        <strong>{{ planInfo[4].p }}</strong>
       </p>
       <p class="details-info">
-        {{planInfo[4].details}}
+        {{ planInfo[4].details }}
       </p>
     </div>
 
     <div class="plan-details" v-if="plan == 5">
-      <h3>{{planInfo[5].heading}}</h3>
-      <p><strong>{{planInfo[5].p}}</strong></p>
+      <h3>{{ planInfo[5].heading }}</h3>
+      <p>
+        <strong>{{ planInfo[5].p }}</strong>
+      </p>
       <p class="details-info">
-        {{planInfo[5].details}}
+        {{ planInfo[5].details }}
       </p>
     </div>
 
@@ -190,19 +194,24 @@
         alt="Bundle Logos"
       />
       <p>
-        <strong
-          >{{planInfo[6].p}}</strong
-        >
+        <strong>{{ planInfo[6].p }}</strong>
       </p>
       <p class="details-info">
-        {{planInfo[6].details}}
+        {{ planInfo[6].details }}
       </p>
     </div>
   </div>
 
   <div class="submit row align-items-end">
     <div class="submit-btn col mb-4">
-      <div><input @click="reply" type="submit" value="Select" class="select w-100" /></div>
+      <div>
+        <input
+          @click="reply"
+          type="submit"
+          value="Select"
+          class="select w-100"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -214,20 +223,55 @@ export default {
     return {
       plan: 0,
       planInfo: [
-        {name: "null"},
-        {name: "Hulu", heading:"Get Hulu 30 days free" , p:"then $6.99/month", details: "Our ad-supported plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more."},
-        {name: "Hulu, Disney+, and ESPN+", p:"Get Hulu, Disney+, and ESPN+ for $13.99/month.", details:"Access live sports with ESPN+, endless, ad-free entertainment with Disney+, and award-winning Hulu Originals with Hulu (ad-supported)." },
-        {name: "Hulu (No Ads), Disney+, and ESPN+", p:"Get Hulu (No Ads) Disney+, and ESPN+ for $19.99/month.", details:"Access live sports with ESPN+, endless, ad-free entertainment with Disney+, and award-winning Hulu Originals with Hulu (No Ads)." },
-        {name: "Hulu + Live TV, Disney+, and ESPN+", p:"Get Hulu + Live TV, Disney+, and ESPN+ for $69.99/month.", details:"Access 75+ channels with Live TV, endless, ad-free entertainment with Disney+, live sports with ESPN+, and award-winning Hulu originals with Hulu (ad-supported)." },
-        {name: "Hulu (No Ads)", heading: "Get Hulu (No Ads) 30 days free", p:"then $12.99/month", details:"Our ad-free plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more with no ad interruptions." },
-        {name: "Hulu (No Ads) + Live TV, Disney+, and ESPN+", p:"Get Hulu (No Ads) + Live TV, Disney+, and ESPN+ for $75.99/month.", details:" Access 75+ channels with Live TV, endless, ad-free entertainment with Disney+, live sports with ESPN+, and award-winning Hulu originals with Hulu (No Ads)." },
+        { name: "null" },
+        {
+          name: "Hulu",
+          heading: "Get Hulu 30 days free",
+          p: "then $6.99/month",
+          details:
+            "Our ad-supported plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more.",
+        },
+        {
+          name: "Hulu, Disney+, and ESPN+",
+          p: "Get Hulu, Disney+, and ESPN+ for $13.99/month.",
+          details:
+            "Access live sports with ESPN+, endless, ad-free entertainment with Disney+, and award-winning Hulu Originals with Hulu (ad-supported).",
+        },
+        {
+          name: "Hulu (No Ads), Disney+, and ESPN+",
+          p: "Get Hulu (No Ads) Disney+, and ESPN+ for $19.99/month.",
+          details:
+            "Access live sports with ESPN+, endless, ad-free entertainment with Disney+, and award-winning Hulu Originals with Hulu (No Ads).",
+        },
+        {
+          name: "Hulu + Live TV, Disney+, and ESPN+",
+          p: "Get Hulu + Live TV, Disney+, and ESPN+ for $69.99/month.",
+          details:
+            "Access 75+ channels with Live TV, endless, ad-free entertainment with Disney+, live sports with ESPN+, and award-winning Hulu originals with Hulu (ad-supported).",
+        },
+        {
+          name: "Hulu (No Ads)",
+          heading: "Get Hulu (No Ads) 30 days free",
+          p: "then $12.99/month",
+          details:
+            "Our ad-free plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more with no ad interruptions.",
+        },
+        {
+          name: "Hulu (No Ads) + Live TV, Disney+, and ESPN+",
+          p: "Get Hulu (No Ads) + Live TV, Disney+, and ESPN+ for $75.99/month.",
+          details:
+            " Access 75+ channels with Live TV, endless, ad-free entertainment with Disney+, live sports with ESPN+, and award-winning Hulu originals with Hulu (No Ads).",
+        },
       ],
     };
   },
   methods: {
-    reply(){
-      alert(`Thank you for signing up for the ${this.planInfo[this.plan].name} plan.`)
-
+    reply() {
+      alert(
+        `Thank you for signing up for the ${
+          this.planInfo[this.plan].name
+        } plan.`
+      );
     },
   },
 };
@@ -252,6 +296,10 @@ export default {
 .card {
   border: none;
   box-shadow: 0 10px 20px -5px rgb(0 0 0 / 8%);
+}
+
+.card:hover {
+  border: 1px solid #29a869;
 }
 
 .highlight-card {
@@ -296,11 +344,16 @@ export default {
   left: 0px;
 }
 
+.radio:focus {
+  border: 1px solid blue;
+}
+
 input[type="radio"] {
   border: 0px;
   width: 100%;
   height: 2em;
 }
+
 .check {
   position: absolute;
   bottom: 10px;
@@ -314,17 +367,17 @@ input[type="radio"] {
   width: 50%;
   text-align: start;
 }
-.plan-details h3{
-  font-size: .875em;
+.plan-details h3 {
+  font-size: 0.875em;
   margin-bottom: 4px;
 }
-.plan-details p{
+.plan-details p {
   margin-bottom: 8px;
 }
 
-.details-info{
-  color: #636E85;
-  opacity: .85;
+.details-info {
+  color: #636e85;
+  opacity: 0.85;
 }
 .bundle-logos {
   width: 200px;
@@ -358,12 +411,12 @@ input[type="radio"] {
     display: none;
   }
 
-  .plan-details-container{
-    display: none!important;
+  .plan-details-container {
+    display: none !important;
   }
 
-  .plan-details{
-    display:none;
+  .plan-details {
+    display: none;
   }
 }
 </style>

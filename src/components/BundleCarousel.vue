@@ -4,10 +4,14 @@
       <div class="card-body m-2">
         <h3 class="card-title mb-4">Hulu (No Ads)</h3>
         <img class="bndle-logos" src="../assets/bndle-logos-color.png" alt="" />
-                <p class="pt-3"><span class="price">$19.99</span><span class="time-period">/ month</span></p>
+        <p class="pt-3">
+          <span class="price">$19.99</span
+          ><span class="time-period">/ month</span>
+        </p>
 
-        <p class="card-text pb-4">
-         Access live sports with ESPN+, endless, ad-free entertainment with Disney+, and award-winning Hulu Originals with Hulu (No Ads).
+        <p class="card-text pb-5 mb-3">
+          Access live sports with ESPN+, endless, ad-free entertainment with
+          Disney+, and award-winning Hulu Originals with Hulu (No Ads).
         </p>
         <button class="btn btn-outline-dark w-100">Select</button>
       </div>
@@ -18,10 +22,15 @@
         <div><p class="badge">Save 36% -$7.98 Off*</p></div>
         <h3 class="card-title mb-4">Hulu</h3>
         <img class="bndle-logos" src="../assets/bndle-logos-color.png" alt="" />
-                <p class="pt-3"><span class="price">$13.99</span><span class="time-period">/ month</span></p>
+        <p class="pt-3">
+          <span class="price">$13.99</span
+          ><span class="time-period">/ month</span>
+        </p>
 
         <p class="card-text pb-4">
-          Access live sports with ESPN+, endless, ad-free entertainment with Disney+, and award-winning Hulu Originals with Hulu (ad-supported). *In monthly savings.
+          Access live sports with ESPN+, endless, ad-free entertainment with
+          Disney+, and award-winning Hulu Originals with Hulu (ad-supported).
+          *In monthly savings.
         </p>
         <button class="btn btn-dark w-100">Select</button>
       </div>
@@ -31,10 +40,15 @@
       <div class="card-body m-2">
         <h3 class="card-title mb-4">Hulu (No Ads) + Live TV</h3>
         <img class="bndle-logos" src="../assets/bndle-logos-color.png" alt="" />
-                <p class="pt-3"><span class="price">$75.99</span><span class="time-period">/ month</span></p>
+        <p class="pt-3">
+          <span class="price">$75.99</span
+          ><span class="time-period">/ month</span>
+        </p>
 
         <p class="card-text pb-4">
-          Access 75+ channels with Live TV, endless, ad-free entertainment with Disney+, live sports with ESPN+, and award-winning Hulu originals with Hulu (No Ads).
+          Access 75+ channels with Live TV, endless, ad-free entertainment with
+          Disney+, live sports with ESPN+, and award-winning Hulu originals with
+          Hulu (No Ads).
         </p>
         <button class="btn btn-outline-dark w-100">Select</button>
       </div>
@@ -43,7 +57,6 @@
 </template>
 
 <script>
-
 export default {
   name: "BundleCarousel",
 };
@@ -93,13 +106,13 @@ export default {
 .bndle-logos {
   width: 80%;
 }
-.price{
-    font-family: "Graphik Medium";
-    font-size: 2em;
+.price {
+  font-family: "Graphik Medium";
+  font-size: 2em;
 }
-.time-period{
-    font-family: "Graphik Bold";
-    font-size: 1.125em;
+.time-period {
+  font-family: "Graphik Bold";
+  font-size: 1.125em;
 }
 .card-text {
   color: #636e85;
@@ -117,7 +130,16 @@ export default {
   padding: 12px;
 }
 
-.btn-dark{
+.btn-dark {
+  color: white;
+}
+
+.btn-dark:hover {
+  box-shadow: inset 0px 0px 5px 2px white;
+}
+
+.btn-outline-dark:hover {
+  background-color: #272c35;
   color: white;
 }
 </style>

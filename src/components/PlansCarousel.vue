@@ -10,9 +10,8 @@
           ><span class="time-period">/ month</span>
         </p>
         <p class="card-text pb-4">
-          Our ad-free plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more with no ad interruptions.
-
-
+          Our ad-free plan lets you watch exclusive series, hit movies,
+          Originals, kids shows, and tons more with no ad interruptions.
         </p>
         <button class="btn btn-outline-dark w-100">Select</button>
       </div>
@@ -28,9 +27,8 @@
           ><span class="time-period">/ month</span>
         </p>
         <p class="card-text pb-4">
-          Our ad-supported plan lets you watch exclusive series, hit movies, Originals, kids shows, and tons more.
-
-
+          Our ad-supported plan lets you watch exclusive series, hit movies,
+          Originals, kids shows, and tons more.
         </p>
         <button class="btn btn-dark w-100">Select</button>
       </div>
@@ -45,7 +43,9 @@
           ><span class="time-period">/ month</span>
         </p>
         <p class="card-text pb-3 mb-0">
-          Access 75+ channels with Live TV, endless, ad-free entertainment with Disney+, live sports with ESPN+, and award-winning Hulu originals with Hulu (ad-supported).
+          Access 75+ channels with Live TV, endless, ad-free entertainment with
+          Disney+, live sports with ESPN+, and award-winning Hulu originals with
+          Hulu (ad-supported).
         </p>
         <button class="btn btn-outline-dark w-100">Select</button>
       </div>
@@ -131,6 +131,15 @@ export default {
 }
 
 .btn-dark {
+  color: white;
+}
+
+.btn-dark:hover {
+  box-shadow: inset 0px 0px 5px 2px white;
+}
+
+.btn-outline-dark:hover {
+  background-color: #272c35;
   color: white;
 }
 </style>

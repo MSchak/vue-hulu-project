@@ -6,7 +6,11 @@
       </div>
 
       <div class="col mt-3 pt-1 text-end">
-        <div><p class="login"><router-link class="login-link" to="/">Log In</router-link></p></div>
+        <div>
+          <p class="login">
+            <router-link class="login-link" to="/">Log In</router-link>
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -19,25 +23,24 @@ export default {
 </script>
 
 <style scoped>
-.plans-nav{
+.plans-nav {
   height: 60px;
   background-color: white;
 }
 
-.logo{
-height: 20px;
+.logo {
+  height: 20px;
 }
 
-.login{
+.login {
   font-family: "Graphik Black";
 }
 
-.login-link{
+.login-link {
   text-decoration: none;
   color: black;
-  text-transform:uppercase;
-  font-size: .85rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
   letter-spacing: 1px;
 }
-
 </style>
