@@ -1,7 +1,13 @@
 <template>
   <div class="show-img card mx-1">
     <button @click="openModal" class="modal-btn btn p-0">
-      <img class="card-img-top" :src="showImg" alt="" />
+      <img v-if="showImg" class="card-img-top" :src="showImg" alt="" />
+      <img
+        v-else
+        src="../assets/loading-image.jpg"
+        class="card-img-top"
+        alt=""
+      />
       <!--<ellipse-menu class="on-img"></ellipse-menu>-->
     </button>
     <h5 class="show-title card-title my-2">{{ showTitle }}</h5>

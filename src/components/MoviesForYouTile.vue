@@ -1,7 +1,13 @@
 <template>
   <div class="show-img card mx-1">
     <button @click="openModal" class="modal-btn btn p-0">
-      <img class="card-img-top" :src="movieImg" alt="" />
+      <img v-if="movieImg" class="card-img-top" :src="movieImg" alt="" />
+      <img
+        v-else
+        src="../assets/loading-image.jpg"
+        class="card-img-top"
+        alt=""
+      />
     </button>
     <!--<ellipse-menu class="on-img"></ellipse-menu>-->
     <div class="card-body d-flex justify-content-between">
