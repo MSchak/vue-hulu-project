@@ -102,16 +102,16 @@ export default {
 }
 .info {
   color: #1ac972;
-  font-family: "Graphik Medium";
+  font-family: "Graphik Medium", sans-serif;
   margin-bottom: 0px;
 }
 
 .price {
-  font-family: "Graphik Medium";
+  font-family: "Graphik Medium", sans-serif;
   font-size: 2em;
 }
 .time-period {
-  font-family: "Graphik Bold";
+  font-family: "Graphik Bold", sans-serif;
   font-size: 1.125em;
 }
 .card-text {
@@ -122,7 +122,7 @@ export default {
 
 .btn {
   text-transform: uppercase;
-  font-family: "Graphik Semibold";
+  font-family: "Graphik Semibold", sans-serif;
   font-size: 0.875rem;
   letter-spacing: 2px;
   border: 2px solid #272c35;

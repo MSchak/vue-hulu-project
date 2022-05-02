@@ -111,7 +111,7 @@ export default {
 }
 
 .nav-link {
-  font-family: "Graphik Medium";
+  font-family: "Graphik Medium", sans-serif;
   font-size: 0.55em;
   color: #6b7790;
   text-transform: uppercase;

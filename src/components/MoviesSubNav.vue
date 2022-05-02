@@ -29,24 +29,21 @@
   </div>
 
   <div v-if="tab === 1" class="pane you-make-like tab-content row pt-4">
-        <div
-        class="
-          you-may-like
-          d-flex
-          flex-row flex-wrap
-        "
-      >
-        <show-tile v-for="show in youMayLike" :key="show.id" :showID="show.id"></show-tile>
-      </div>
+    <div class="you-may-like d-flex flex-row flex-wrap">
+      <show-tile
+        v-for="show in youMayLike"
+        :key="show.id"
+        :showID="show.id"
+      ></show-tile>
+    </div>
   </div>
 
   <div class="details tab-content row ms-0 ms-lg-4 ps-1 pt-4">
     <div class="col">
       <div v-if="tab === 2" class="pane details">
         <h5 class="mb-3">About This Show</h5>
-        <h4>{{movieTitle}}</h4>
-        <p class="movie-description">{{movieDescription}}
-        </p>
+        <h4>{{ movieTitle }}</h4>
+        <p class="movie-description">{{ movieDescription }}</p>
       </div>
     </div>
   </div>
@@ -54,29 +51,32 @@
 
 <script>
 import ShowTile from "../components/ShowTile.vue";
-import axios from "axios"
+import axios from "axios";
 
 export default {
   name: "MoviesSubNav",
   components: {
     ShowTile,
   },
-  props: ['movieIdAgain', 'movieTitle', 'movieDescription'],
+  props: ["movieIdAgain", "movieTitle", "movieDescription"],
   data() {
     return {
       tab: 1,
-      youMayLike: []
+      youMayLike: [],
     };
   },
-  created(){
-    axios.get('https://api.themoviedb.org/3/trending/tv/week?api_key=51c374b022c8809f8ebb065eaa0a82f6')
+  created() {
+    axios
+      .get(
+        "https://api.themoviedb.org/3/trending/tv/week?api_key=51c374b022c8809f8ebb065eaa0a82f6"
+      )
       .then((response) => {
-       this.youMayLike = response.data.results.splice(0, 10)
+        this.youMayLike = response.data.results.splice(0, 10);
       })
-      .catch(function(error){
+      .catch(function (error) {
         console.log(error);
-      })
-  }
+      });
+  },
 };
 </script>
 
@@ -91,7 +91,7 @@ export default {
 }
 
 .nav-link {
-  font-family: "Graphik Medium";
+  font-family: "Graphik Medium", sans-serif;
   font-size: 0.75em;
   color: #6b7790;
   text-transform: uppercase;
@@ -104,7 +104,7 @@ export default {
   border-bottom: 4px solid rgb(203 26 6);
 }
 
-.you-may-like{
+.you-may-like {
   padding-left: 25px;
 }
 .details {
@@ -116,7 +116,7 @@ export default {
   line-height: 24px;
   word-spacing: 1px;
   color: #6b7790;
-  opacity: .80;
+  opacity: 0.8;
 }
 
 @media (min-width: 576px) {
@@ -134,9 +134,8 @@ export default {
     font-size: 0.875em;
   }
 
-
-  .you-may-like{
-  padding-left: 40px;
-}
+  .you-may-like {
+    padding-left: 40px;
+  }
 }
 </style>

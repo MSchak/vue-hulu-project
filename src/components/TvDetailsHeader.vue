@@ -29,7 +29,7 @@ export default {
 
 .title {
   font-size: 0.625em;
-  font-family: "Graphik Light";
+  font-family: "Graphik Light", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   color: white;

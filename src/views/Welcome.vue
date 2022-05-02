@@ -84,7 +84,7 @@ export default {
 }
 
 .plain {
-  font-family: "Graphik Regular";
+  font-family: "Graphik Regular", sans-serif;
   font-weight: bold;
   color: white;
   font-size: 1.125em;
@@ -98,7 +98,7 @@ export default {
 }
 
 .special {
-  font-family: "Graphik Regular";
+  font-family: "Graphik Regular", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   color: #00ed82;
@@ -128,7 +128,7 @@ export default {
 }
 
 .sign-up-link {
-  font-family: "Graphik Thin";
+  font-family: "Graphik Thin", sans-serif;
   color: #ffffff;
   font-size: 16px;
   letter-spacing: 1px;
@@ -147,7 +147,7 @@ h1 {
 
 .tv-details {
   font-size: 1em;
-  font-family: "Graphik Light";
+  font-family: "Graphik Light", sans-serif;
   color: white;
   max-width: 680px;
   letter-spacing: 1px;

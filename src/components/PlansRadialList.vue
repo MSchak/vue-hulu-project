@@ -315,7 +315,7 @@ export default {
 
 .card-body p {
   font-weight: bold;
-  font-family: "Graphik Medium";
+  font-family: "Graphik Medium", sans-serif;
   font-size: 1.125em;
 }
 .highlight {
@@ -325,7 +325,7 @@ export default {
   padding-top: 5px;
   font-size: 0.625em;
   text-transform: uppercase;
-  font-family: "Graphik Semibold";
+  font-family: "Graphik Semibold", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -335,7 +335,7 @@ export default {
   padding-top: 5px;
   font-size: 0.625em;
   text-transform: uppercase;
-  font-family: "Graphik Semibold";
+  font-family: "Graphik Semibold", sans-serif;
   letter-spacing: 1px;
 }
 .radio {
@@ -393,13 +393,19 @@ input[type="radio"] {
 
 .select {
   text-transform: uppercase;
-  font-family: "Graphik Regular";
+  font-family: "Graphik Regular", sans-serif;
   font-size: 0.875rem;
   letter-spacing: 2px;
   background-color: #272c35;
   color: white;
   padding: 12px;
   border-radius: 6px;
+}
+
+.select:hover {
+  background-color: white;
+  color: #272c35;
+  font-family: "Graphik Semibold", sans-serif;
 }
 
 @media (min-width: 992px) {

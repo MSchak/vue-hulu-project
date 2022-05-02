@@ -1,37 +1,38 @@
 <template>
   <div :style="highEmImg" class="high-em-content high-em-img row">
     <div class="gradient d-flex align-items-end pb-2">
-    <div class="col-10 col-md-6 col-xxl-4 m-4 m-lg-5 align-content-end p-0">
-      <div class="show-logo d-flex mb-4">
-        <img src="" alt="" />
-      </div>
+      <div class="col-10 col-md-6 col-xxl-4 m-4 m-lg-5 align-content-end p-0">
+        <div class="show-logo d-flex mb-4">
+          <img src="" alt="" />
+        </div>
 
-      <p class="ep-title">S1 E1 - Episode Title</p>
+        <p class="ep-title">S1 E1 - Episode Title</p>
 
-      <p class="ep-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-        mollis commodo augue sed molestie.
-      </p>
-      <div class="d-flex">
-      <div>
-        <button class="btn play-btn"><fa icon="play-circle" size="2x"/></button>
+        <p class="ep-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          mollis commodo augue sed molestie.
+        </p>
+        <div class="d-flex">
+          <div>
+            <button class="btn play-btn">
+              <fa icon="play-circle" size="2x" />
+            </button>
+          </div>
+          <div class="d-flex align-items-center mx-1 mx-lg-3">
+            <p class="play-ep">Watch next episode: {{}}</p>
+          </div>
+        </div>
       </div>
-      <div class="d-flex align-items-center mx-1 mx-lg-3">
-        <p class="play-ep">Watch next episode: {{}}</p>
-      </div>
-    </div>
-    </div>
     </div>
   </div>
 </template>
 
 <script>
-
 import axios from "axios";
 
 export default {
   name: "DetailsHighEmContent",
-  props: ['showIdAgain'],
+  props: ["showIdAgain"],
   data() {
     return {
       showDetails: {},
@@ -40,15 +41,20 @@ export default {
       tvShowDetails: {},
     };
   },
-    created() {
-     axios.get(`https://api.themoviedb.org/3/tv/${this.showIdAgain}?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`)
+  created() {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/tv/${this.showIdAgain}?api_key=51c374b022c8809f8ebb065eaa0a82f6&language=en-US`
+      )
       .then((response) => {
-        console.log(response)
-        this.tvShowDetails = response.data
-        return axios.get(`https://image.tmdb.org/t/p/original${this.tvShowDetails.backdrop_path}`)
-      }) 
+        console.log(response);
+        this.tvShowDetails = response.data;
+        return axios.get(
+          `https://image.tmdb.org/t/p/original${this.tvShowDetails.backdrop_path}`
+        );
+      })
       .then((info) => {
-        this.tvShowImg = info.config.url
+        this.tvShowImg = info.config.url;
       })
       .catch((error) => {
         console.log(error);
@@ -79,8 +85,8 @@ export default {
 }
 
 .ep-title {
-  font-family: "Graphik Medium";
-  font-size: .875em;
+  font-family: "Graphik Medium", sans-serif;
+  font-size: 0.875em;
   line-height: 1.5em;
   letter-spacing: 0.5px;
   color: white;
@@ -88,19 +94,19 @@ export default {
 }
 
 .ep-description {
-  font-family: "Graphik Regular";
+  font-family: "Graphik Regular", sans-serif;
   color: white;
-  font-size: .75em
+  font-size: 0.75em;
 }
 
-.play-btn{
+.play-btn {
   padding: 0px;
 }
-.play-btn{
-    color: white;
+.play-btn {
+  color: white;
 }
 .play-ep {
-    font-family: "Graphik Medium";
+  font-family: "Graphik Medium", sans-serif;
   font-size: 0.875em;
   letter-spacing: 0.5px;
   line-height: 1.375em;
@@ -109,34 +115,33 @@ export default {
   margin-bottom: 0px;
 }
 
-@media (min-width: 768px){
-    .gradient {
+@media (min-width: 768px) {
+  .gradient {
     background-image: linear-gradient(
       to left,
       rgba(253, 253, 253, 15%),
       rgb(203 26 6 / 81%)
     );
+  }
 }
+@media (min-width: 992px) {
+  .ep-description {
+    font-size: 0.875em;
+  }
+  .play-btn {
+    font-size: 25px;
+  }
 }
-@media (min-width: 992px){
 
-.ep-description {
-  font-size: .875em
-}
-.play-btn{
-  font-size: 25px;
-}
-}
-
-@media (min-width: 1600px){
- .high-em-image{
-   max-height: 750px;
- }
- .ep-title{
-   font-size: 1.125em;
- }
- .ep-description{
-   font-size: 1.125em;
- }
+@media (min-width: 1600px) {
+  .high-em-image {
+    max-height: 750px;
+  }
+  .ep-title {
+    font-size: 1.125em;
+  }
+  .ep-description {
+    font-size: 1.125em;
+  }
 }
 </style>

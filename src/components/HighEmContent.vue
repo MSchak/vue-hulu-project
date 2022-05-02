@@ -20,7 +20,7 @@ import axios from "axios";
 
 export default {
   name: "HighEmContent",
-    components: {
+  components: {
     HighEmButtons,
   },
   data() {
@@ -30,16 +30,16 @@ export default {
       showTitle: "",
       showDescription: "",
       showImg: "",
-      key: ""
+      key: "",
     };
   },
-  methods:{
-    openModal(){
-      console.log(this.key)
-        this.$emit('openModal', {
-          showKey: this.key
-        })
-      },
+  methods: {
+    openModal() {
+      console.log(this.key);
+      this.$emit("openModal", {
+        showKey: this.key,
+      });
+    },
   },
   created() {
     axios
@@ -51,7 +51,7 @@ export default {
         this.showImgPath = this.showDetails[0].backdrop_path;
         this.showTitle = this.showDetails[0].name;
         this.showDescription = this.showDetails[0].overview;
-        this.key = this.showDetails[0].id
+        this.key = this.showDetails[0].id;
         return axios.get(
           `https://image.tmdb.org/t/p/original/${this.showImgPath}`
         );
@@ -91,7 +91,7 @@ export default {
 }
 
 .ep-title p {
-  font-family: "Graphik Medium";
+  font-family: "Graphik Medium", sans-serif;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.29px;
@@ -122,7 +122,7 @@ export default {
   }
 
   .ep-description {
-    font-family: "Graphik Regular";
+    font-family: "Graphik Regular", sans-serif;
     color: white;
     font-size: 0.875em;
     display: block;

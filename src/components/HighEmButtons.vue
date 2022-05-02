@@ -36,7 +36,7 @@ export default {
 <style scoped>
 .btn {
   text-transform: uppercase;
-  font-family: "Graphik Semibold";
+  font-family: "Graphik Semibold", sans-serif;
   font-size: 0.85em;
   letter-spacing: 2px;
   border: 2px solid white;

@@ -82,7 +82,7 @@ export default {
 }
 
 .title a {
-  font-family: "Graphik Black";
+  font-family: "Graphik Black", sans-serif;
   font-size: 1.5em;
   letter-spacing: 3px;
   z-index: 101;
@@ -95,7 +95,7 @@ export default {
 }
 
 .title-dark a {
-  font-family: "Graphik Black";
+  font-family: "Graphik Black", sans-serif;
   font-size: 1.5em;
   letter-spacing: 3px;
   z-index: 101;
@@ -114,7 +114,7 @@ export default {
   border-radius: 4px;
   background-color: #00000014;
   opacity: 0.9;
-  font-family: "Graphik Regular";
+  font-family: "Graphik Regular", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
@@ -129,7 +129,7 @@ export default {
   border-radius: 4px;
   background-color: #00000014;
   opacity: 0.9;
-  font-family: "Graphik Regular";
+  font-family: "Graphik Regular",sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
@@ -138,7 +138,7 @@ export default {
 }
 
 .nav-items {
-  font-family: "Graphik Regular";
+  font-family: "Graphik Regular", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 14px;
@@ -149,14 +149,14 @@ export default {
   display: none !important;
 }
 .nav-item {
-  font-family: "Graphik Medium";
+  font-family: "Graphik Medium", sans-serif;
   text-decoration: none;
   font-size: 12px;
   color: white;
 }
 
 .nav-item-dark {
-  font-family: "Graphik Medium";
+  font-family: "Graphik Medium", sans-serif;
   text-decoration: none;
   font-size: 12px;
   color: black;

@@ -174,7 +174,7 @@ export default {
   width: 240px;
   height: 64px;
   padding: 0px 24px;
-  font-family: "Graphik Regular";
+  font-family: "Graphik Regular", sans-serif;
   font-size: 20px;
   border-radius: 0px;
   transition: 250ms ease;
@@ -201,7 +201,7 @@ export default {
 }
 
 .drpdwn-item {
-  font-family: "Graphik Regular";
+  font-family: "Graphik Regular", sans-serif;
   padding: 5px 12px;
 }
 

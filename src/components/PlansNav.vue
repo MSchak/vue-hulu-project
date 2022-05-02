@@ -33,7 +33,7 @@ export default {
 }
 
 .login {
-  font-family: "Graphik Black";
+  font-family: "Graphik Black", sans-serif;
 }
 
 .login-link {
